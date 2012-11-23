@@ -6,8 +6,14 @@
 //
 //
 
-#import "CCLayer.h"
+#import "cocos2d.h"
 
-@interface GamePlayLayer : CCLayer
+@interface GamePlayLayer : CCLayer {
+    NSMutableArray *windows;
+}
+
++(id) createWithHeight:(int)height andWidth:(int)width;
+
+-(void)start;
 
 @end

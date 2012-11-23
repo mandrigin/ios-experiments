@@ -7,19 +7,20 @@
 //
 
 #import "cocos2d.h"
-
-typedef enum {
-      kNormal
-    , kGhost
-    , kBadMan
-} GhostyWindowState;
+#import "GhostyWindowState.h"
 
 @interface GhostyWindow : CCMenuItemImage
-{
-    GhostyWindowState state;
-}
 
-@property (nonatomic, assign, getter = isSelected, setter = setSelected:) BOOL selected;
+@property (getter = isSelected, setter = setSelected:) BOOL selected;
 
+@property (getter = getState, setter = setState:) GhostyWindowState state;
+
+-(void)showPreview;
+
+-(void)showResult;
+
+-(void)showNormalState;
+
++(id)create:(GhostyWindowState)state;
 
 @end

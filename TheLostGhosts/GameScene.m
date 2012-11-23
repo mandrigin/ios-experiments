@@ -27,9 +27,8 @@
         int leftMargin = 30;
         int rightMargin = 30;
         
-        GamePlayLayer *gamePlayLayer = [GamePlayLayer alloc];
-        gamePlayLayer = [gamePlayLayer initWithSize:(int)size.height - (topMargin + bottomMargin):(int)size.width - (leftMargin + rightMargin)];
-        gamePlayLayer = [gamePlayLayer autorelease];
+        GamePlayLayer *gamePlayLayer = [GamePlayLayer createWithHeight: (int)size.height - (topMargin + bottomMargin)
+                                                              andWidth: (int)size.width - (leftMargin + rightMargin)];
         
         int x = (leftMargin);
         int y = (bottomMargin);
@@ -41,6 +40,8 @@
         GameHUDLayer *gameHudLayer = [GameHUDLayer node];
         
         [self addChild:gameHudLayer z:10];
+        
+        [gamePlayLayer start];
     }
     
     return self;

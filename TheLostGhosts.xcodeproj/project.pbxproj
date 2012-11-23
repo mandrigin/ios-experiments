@@ -148,6 +148,17 @@
 		74D35EBF165BCEEC0040F054 /* GhostyWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D35EBE165BCEEB0040F054 /* GhostyWindow.m */; };
 		74D35EC1165BD8A70040F054 /* wnd_fun_town_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 74D35EC0165BD8A70040F054 /* wnd_fun_town_normal.png */; };
 		74D35EC3165BD9FA0040F054 /* wnd_fun_town_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 74D35EC2165BD9FA0040F054 /* wnd_fun_town_selected.png */; };
+		74D35ECA165CB6010040F054 /* wnd_fun_town_correct.png in Resources */ = {isa = PBXBuildFile; fileRef = 74D35EC4165CB6000040F054 /* wnd_fun_town_correct.png */; };
+		74D35ECB165CB6010040F054 /* wnd_fun_town_preview_ghost.png in Resources */ = {isa = PBXBuildFile; fileRef = 74D35EC5165CB6000040F054 /* wnd_fun_town_preview_ghost.png */; };
+		74D35ECC165CB6010040F054 /* wnd_fun_town_fail_ghost.png in Resources */ = {isa = PBXBuildFile; fileRef = 74D35EC6165CB6010040F054 /* wnd_fun_town_fail_ghost.png */; };
+		74D35ECD165CB6010040F054 /* wnd_fun_town_fail_empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 74D35EC7165CB6010040F054 /* wnd_fun_town_fail_empty.png */; };
+		74D35ECE165CB6010040F054 /* wnd_fun_town_preview_badman.png in Resources */ = {isa = PBXBuildFile; fileRef = 74D35EC8165CB6010040F054 /* wnd_fun_town_preview_badman.png */; };
+		74D35ECF165CB6010040F054 /* wnd_fun_town_fail_badman.png in Resources */ = {isa = PBXBuildFile; fileRef = 74D35EC9165CB6010040F054 /* wnd_fun_town_fail_badman.png */; };
+		74D35ED3165F53FE0040F054 /* LevelLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D35ED2165F53FE0040F054 /* LevelLayout.m */; };
+		74D35ED6165F6B8B0040F054 /* LevelStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D35ED5165F6B8B0040F054 /* LevelStorage.m */; };
+		74D35ED9165F76890040F054 /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D35ED8165F76890040F054 /* Level.m */; };
+		74D35EDC165F76D40040F054 /* LevelFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D35EDB165F76D40040F054 /* LevelFactory.m */; };
+		74D35EDF165F7FC50040F054 /* LevelSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D35EDE165F7FC40040F054 /* LevelSettings.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -435,6 +446,23 @@
 		74D35EBE165BCEEB0040F054 /* GhostyWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GhostyWindow.m; sourceTree = "<group>"; };
 		74D35EC0165BD8A70040F054 /* wnd_fun_town_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wnd_fun_town_normal.png; sourceTree = "<group>"; };
 		74D35EC2165BD9FA0040F054 /* wnd_fun_town_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wnd_fun_town_selected.png; sourceTree = "<group>"; };
+		74D35EC4165CB6000040F054 /* wnd_fun_town_correct.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wnd_fun_town_correct.png; sourceTree = "<group>"; };
+		74D35EC5165CB6000040F054 /* wnd_fun_town_preview_ghost.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wnd_fun_town_preview_ghost.png; sourceTree = "<group>"; };
+		74D35EC6165CB6010040F054 /* wnd_fun_town_fail_ghost.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wnd_fun_town_fail_ghost.png; sourceTree = "<group>"; };
+		74D35EC7165CB6010040F054 /* wnd_fun_town_fail_empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wnd_fun_town_fail_empty.png; sourceTree = "<group>"; };
+		74D35EC8165CB6010040F054 /* wnd_fun_town_preview_badman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wnd_fun_town_preview_badman.png; sourceTree = "<group>"; };
+		74D35EC9165CB6010040F054 /* wnd_fun_town_fail_badman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wnd_fun_town_fail_badman.png; sourceTree = "<group>"; };
+		74D35ED1165F53FE0040F054 /* LevelLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelLayout.h; sourceTree = "<group>"; };
+		74D35ED2165F53FE0040F054 /* LevelLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelLayout.m; sourceTree = "<group>"; };
+		74D35ED4165F6B8B0040F054 /* LevelStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelStorage.h; sourceTree = "<group>"; };
+		74D35ED5165F6B8B0040F054 /* LevelStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelStorage.m; sourceTree = "<group>"; };
+		74D35ED7165F76890040F054 /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
+		74D35ED8165F76890040F054 /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level.m; sourceTree = "<group>"; };
+		74D35EDA165F76D40040F054 /* LevelFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelFactory.h; sourceTree = "<group>"; };
+		74D35EDB165F76D40040F054 /* LevelFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelFactory.m; sourceTree = "<group>"; };
+		74D35EDD165F7FC40040F054 /* LevelSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelSettings.h; sourceTree = "<group>"; };
+		74D35EDE165F7FC40040F054 /* LevelSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelSettings.m; sourceTree = "<group>"; };
+		74D35EE0165F83CC0040F054 /* GhostyWindowState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GhostyWindowState.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -493,6 +521,7 @@
 		74D35D18165BB2C40040F054 /* TheLostGhosts */ = {
 			isa = PBXGroup;
 			children = (
+				74D35ED0165F53E30040F054 /* Levels */,
 				74D35E9E165BB4B80040F054 /* Scenes */,
 				74D35E90165BB2C60040F054 /* AppDelegate.h */,
 				74D35E91165BB2C60040F054 /* AppDelegate.m */,
@@ -514,6 +543,12 @@
 				74D35EC0165BD8A70040F054 /* wnd_fun_town_normal.png */,
 				74D35EBB165BC6410040F054 /* wnd_fun_town_empty.png */,
 				74D35EB6165BC0B30040F054 /* game_bg_fun_town_pause.png */,
+				74D35EC4165CB6000040F054 /* wnd_fun_town_correct.png */,
+				74D35EC5165CB6000040F054 /* wnd_fun_town_preview_ghost.png */,
+				74D35EC6165CB6010040F054 /* wnd_fun_town_fail_ghost.png */,
+				74D35EC7165CB6010040F054 /* wnd_fun_town_fail_empty.png */,
+				74D35EC8165CB6010040F054 /* wnd_fun_town_preview_badman.png */,
+				74D35EC9165CB6010040F054 /* wnd_fun_town_fail_badman.png */,
 				74D35EAF165BBCDE0040F054 /* btn_pause_pressed.png */,
 				74D35EB0165BBCDE0040F054 /* btn_pause_normal.png */,
 				74D35EAA165BBB3B0040F054 /* splash_bg.png */,
@@ -899,6 +934,24 @@
 			name = Scenes;
 			sourceTree = "<group>";
 		};
+		74D35ED0165F53E30040F054 /* Levels */ = {
+			isa = PBXGroup;
+			children = (
+				74D35ED1165F53FE0040F054 /* LevelLayout.h */,
+				74D35ED2165F53FE0040F054 /* LevelLayout.m */,
+				74D35ED4165F6B8B0040F054 /* LevelStorage.h */,
+				74D35ED5165F6B8B0040F054 /* LevelStorage.m */,
+				74D35ED7165F76890040F054 /* Level.h */,
+				74D35ED8165F76890040F054 /* Level.m */,
+				74D35EDA165F76D40040F054 /* LevelFactory.h */,
+				74D35EDB165F76D40040F054 /* LevelFactory.m */,
+				74D35EDD165F7FC40040F054 /* LevelSettings.h */,
+				74D35EDE165F7FC40040F054 /* LevelSettings.m */,
+				74D35EE0165F83CC0040F054 /* GhostyWindowState.h */,
+			);
+			name = Levels;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -970,6 +1023,12 @@
 				74D35EBC165BC6410040F054 /* wnd_fun_town_empty.png in Resources */,
 				74D35EC1165BD8A70040F054 /* wnd_fun_town_normal.png in Resources */,
 				74D35EC3165BD9FA0040F054 /* wnd_fun_town_selected.png in Resources */,
+				74D35ECA165CB6010040F054 /* wnd_fun_town_correct.png in Resources */,
+				74D35ECB165CB6010040F054 /* wnd_fun_town_preview_ghost.png in Resources */,
+				74D35ECC165CB6010040F054 /* wnd_fun_town_fail_ghost.png in Resources */,
+				74D35ECD165CB6010040F054 /* wnd_fun_town_fail_empty.png in Resources */,
+				74D35ECE165CB6010040F054 /* wnd_fun_town_preview_badman.png in Resources */,
+				74D35ECF165CB6010040F054 /* wnd_fun_town_fail_badman.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1091,6 +1150,11 @@
 				74D35EB5165BBF010040F054 /* GamePauseLayer.m in Sources */,
 				74D35EBA165BC23C0040F054 /* GamePlayLayer.m in Sources */,
 				74D35EBF165BCEEC0040F054 /* GhostyWindow.m in Sources */,
+				74D35ED3165F53FE0040F054 /* LevelLayout.m in Sources */,
+				74D35ED6165F6B8B0040F054 /* LevelStorage.m in Sources */,
+				74D35ED9165F76890040F054 /* Level.m in Sources */,
+				74D35EDC165F76D40040F054 /* LevelFactory.m in Sources */,
+				74D35EDF165F7FC50040F054 /* LevelSettings.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
