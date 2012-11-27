@@ -9,6 +9,7 @@
 #import "GameScene.h"
 #import "GameHUDLayer.h"
 #import "GamePlayLayer.h"
+#import "Game.h"
 
 @implementation GameScene
 
@@ -22,13 +23,15 @@
         
         CGSize size = [[CCDirector sharedDirector] winSize];
         
-        int topMargin = 200;
+        int topMargin    = 200;
         int bottomMargin = 50;
-        int leftMargin = 30;
-        int rightMargin = 30;
+        int leftMargin   = 30;
+        int rightMargin  = 30;
         
+        Level *currentLevel = [[Game sharedGame] createCurrentLevel];
         GamePlayLayer *gamePlayLayer = [GamePlayLayer createWithHeight: (int)size.height - (topMargin + bottomMargin)
-                                                              andWidth: (int)size.width - (leftMargin + rightMargin)];
+                                                                 width: (int)size.width - (leftMargin + rightMargin)
+                                                              andLevel: currentLevel];
         
         int x = (leftMargin);
         int y = (bottomMargin);

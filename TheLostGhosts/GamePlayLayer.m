@@ -14,12 +14,10 @@
 #import "Level.h"
 #import "LevelFactory.h"
 
-#define SHOW_GHOSTS_DELAY 5.0f;
-
 @implementation GamePlayLayer
 
-+(id) createWithHeight:(int)height andWidth:(int)width {
-    return [[[self alloc] initWithSize:height:width] autorelease];
++(id) createWithHeight:(int)height width:(int)width andLevel:(Level *)level {
+    return [[[self alloc] initWithHeight:height width:width andLevel:level] autorelease];
 }
 
 -(void)start {
@@ -71,31 +69,13 @@
     if(result == kRoundWin) {
         [self showYouWinMessage];
     } else {
-        [self showYouLoseMessage];
+        [self showYouLoseMessage:result];
     }
 }
-
 
 -(void)hideWindows {
     for(GhostyWindow *gw in windows) {
         [gw showNormalState];
-    }
-}
-
-
--(void)onLevelFail {
-    [self showYouLoseMessage];
-}
-
--(void)checkResult {
-    bool isCorrect = true;
-    for(GhostyWindow *gw in windows) {
-        if(![gw isCorrect]) {
-            isCorrect = false;
-        }
-    }
-    if(isCorrect) {
-        [self showYouWinMessage];
     }
 }
 
@@ -109,10 +89,14 @@
 	[dialog release];
 }
 
--(void)showYouLoseMessage {
+-(void)showYouLoseMessage:(RoundResult)result {
 	UIAlertView* dialog = [[UIAlertView alloc] init];
 	[dialog setDelegate:self];
-	[dialog setTitle:@"Boo! It's a Bad Man!"];
+    if(result == kRoundLoseBadman) {
+        [dialog setTitle:@"Boo! It's a Bad Man!"];
+    } else {
+        [dialog setTitle:@"You haven't found enough ghosts!"];
+    }
 	[dialog setMessage:@"Oh oh oh... Buddy, you lose!"];
 	[dialog addButtonWithTitle:@"Okay"];
 	[dialog show];
@@ -125,11 +109,11 @@
 
 -(void)onWindowSelected:(GhostyWindow *)window {
     if([window getState] == kBadMan) {
-        [self onLevelFail];
+        [self showYouLoseMessage:kRoundLoseBadman];
     } else {
         numberOfWindowsLeft--;
         if(numberOfWindowsLeft == 0) {
-            [self checkResult];
+            [self showResult];
         }
     }
 }
@@ -140,15 +124,11 @@
 
 -(void)dealloc {
     [windows release];
-    [storage release];
     [super dealloc];
 }
 
--(id) initWithSize:(int)height :(int)width {
+-(id) initWithHeight:(int)height width:(int)width andLevel:(Level*)currentLevel {
     self = [super init];
-    self->storage = [LevelStorage create];
-    
-    Level *currentLevel = [(LevelFactory *)[[storage getFunTownLevels] objectAtIndex:0] createLevel];
     
     LevelSettings *settings = [currentLevel getSettings];
     
@@ -188,9 +168,9 @@
             for(j = 0; j < cols; ++j) {
                 currentX = colWidth * j;
                 
-                GhostyWindowState state = (GhostyWindowState)[[playgroundData objectAtIndex: (cols * i + j)] intValue];
+                GhostyWindowState wndState = (GhostyWindowState)[[playgroundData objectAtIndex: (cols * i + j)] intValue];
                 
-                GhostyWindow *windowSprite = [GhostyWindow createWithState:state layout:layout andCallback:^(GhostyWindow *sender) {
+                GhostyWindow *windowSprite = [GhostyWindow createWithState:wndState layout:layout andCallback:^(GhostyWindow *sender) {
                     if([sender isSelected]) {
                         [self onWindowSelected:sender];
                     } else {
@@ -212,7 +192,6 @@
                 [windowSprite setPosition:ccp(offsetX, offsetY)];
                 [menu addChild:windowSprite];
                 [windows addObject:windowSprite];
-                
             }
         }
         

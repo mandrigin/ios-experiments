@@ -8,6 +8,7 @@
 
 #import "cocos2d.h"
 #import "LevelStorage.h"
+#import "Level.h"
 
 typedef enum {
       kPreview
@@ -23,7 +24,6 @@ typedef enum {
 
 @interface GamePlayLayer : CCLayer {
     NSMutableArray *windows;
-    LevelStorage *storage;
     int numberOfWindowsLeft;
     int previewTime;
     int levelTime;
@@ -31,7 +31,7 @@ typedef enum {
     GameState state;
 }
 
-+(id) createWithHeight:(int)height andWidth:(int)width;
++(id) createWithHeight:(int)height width:(int)width andLevel:(Level *)level;
 
 -(void)start;
 
