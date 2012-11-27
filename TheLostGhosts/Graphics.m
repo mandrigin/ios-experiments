@@ -10,4 +10,8 @@
 
 @implementation Graphics
 
++(void)showGameScene {
+    
+}
+
 @end

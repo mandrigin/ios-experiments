@@ -10,6 +10,13 @@
 		744251B01664D546000D8F22 /* Graphics.m in Sources */ = {isa = PBXBuildFile; fileRef = 744251AF1664D546000D8F22 /* Graphics.m */; };
 		744251B31664D5D1000D8F22 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 744251B21664D5D1000D8F22 /* Game.m */; };
 		744251B61664D92B000D8F22 /* Events.m in Sources */ = {isa = PBXBuildFile; fileRef = 744251B51664D92B000D8F22 /* Events.m */; };
+		744251B91664E2EF000D8F22 /* LevelWinScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 744251B81664E2EF000D8F22 /* LevelWinScene.m */; };
+		744251BC1664E2FF000D8F22 /* LevelLoseScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 744251BB1664E2FF000D8F22 /* LevelLoseScene.m */; };
+		744251BF1664E30B000D8F22 /* GameCompletedScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 744251BE1664E30B000D8F22 /* GameCompletedScene.m */; };
+		744251C31664E75C000D8F22 /* level_win_fun_town.png in Resources */ = {isa = PBXBuildFile; fileRef = 744251C01664E75B000D8F22 /* level_win_fun_town.png */; };
+		744251C41664E75C000D8F22 /* level_lose_fun_town.png in Resources */ = {isa = PBXBuildFile; fileRef = 744251C11664E75B000D8F22 /* level_lose_fun_town.png */; };
+		744251C51664E75C000D8F22 /* level_lose_badman_fun_town.png in Resources */ = {isa = PBXBuildFile; fileRef = 744251C21664E75B000D8F22 /* level_lose_badman_fun_town.png */; };
+		744251C71664EA39000D8F22 /* game_completed.png in Resources */ = {isa = PBXBuildFile; fileRef = 744251C61664EA39000D8F22 /* game_completed.png */; };
 		74D35D07165BB2C40040F054 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74D35D06165BB2C40040F054 /* QuartzCore.framework */; };
 		74D35D09165BB2C40040F054 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74D35D08165BB2C40040F054 /* OpenGLES.framework */; };
 		74D35D0B165BB2C40040F054 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74D35D0A165BB2C40040F054 /* OpenAL.framework */; };
@@ -171,6 +178,16 @@
 		744251B21664D5D1000D8F22 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 		744251B41664D92B000D8F22 /* Events.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Events.h; sourceTree = "<group>"; };
 		744251B51664D92B000D8F22 /* Events.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Events.m; sourceTree = "<group>"; };
+		744251B71664E2EF000D8F22 /* LevelWinScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelWinScene.h; sourceTree = "<group>"; };
+		744251B81664E2EF000D8F22 /* LevelWinScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelWinScene.m; sourceTree = "<group>"; };
+		744251BA1664E2FF000D8F22 /* LevelLoseScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelLoseScene.h; sourceTree = "<group>"; };
+		744251BB1664E2FF000D8F22 /* LevelLoseScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelLoseScene.m; sourceTree = "<group>"; };
+		744251BD1664E30B000D8F22 /* GameCompletedScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameCompletedScene.h; sourceTree = "<group>"; };
+		744251BE1664E30B000D8F22 /* GameCompletedScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameCompletedScene.m; sourceTree = "<group>"; };
+		744251C01664E75B000D8F22 /* level_win_fun_town.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level_win_fun_town.png; sourceTree = "<group>"; };
+		744251C11664E75B000D8F22 /* level_lose_fun_town.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level_lose_fun_town.png; sourceTree = "<group>"; };
+		744251C21664E75B000D8F22 /* level_lose_badman_fun_town.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level_lose_badman_fun_town.png; sourceTree = "<group>"; };
+		744251C61664EA39000D8F22 /* game_completed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = game_completed.png; sourceTree = "<group>"; };
 		74D35D02165BB2C40040F054 /* TheLostGhosts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheLostGhosts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D35D06165BB2C40040F054 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		74D35D08165BB2C40040F054 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -562,6 +579,10 @@
 		74D35D19165BB2C40040F054 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				744251C61664EA39000D8F22 /* game_completed.png */,
+				744251C01664E75B000D8F22 /* level_win_fun_town.png */,
+				744251C11664E75B000D8F22 /* level_lose_fun_town.png */,
+				744251C21664E75B000D8F22 /* level_lose_badman_fun_town.png */,
 				74D35EC2165BD9FA0040F054 /* wnd_fun_town_selected.png */,
 				74D35EC0165BD8A70040F054 /* wnd_fun_town_normal.png */,
 				74D35EBB165BC6410040F054 /* wnd_fun_town_empty.png */,
@@ -939,6 +960,12 @@
 		74D35E9E165BB4B80040F054 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				744251B71664E2EF000D8F22 /* LevelWinScene.h */,
+				744251B81664E2EF000D8F22 /* LevelWinScene.m */,
+				744251BA1664E2FF000D8F22 /* LevelLoseScene.h */,
+				744251BB1664E2FF000D8F22 /* LevelLoseScene.m */,
+				744251BD1664E30B000D8F22 /* GameCompletedScene.h */,
+				744251BE1664E30B000D8F22 /* GameCompletedScene.m */,
 				74D35E96165BB2C60040F054 /* IntroLayer.h */,
 				74D35E97165BB2C60040F054 /* IntroLayer.m */,
 				74D35E9F165BB4DA0040F054 /* SplashScreenScene.h */,
@@ -1052,6 +1079,10 @@
 				74D35ECD165CB6010040F054 /* wnd_fun_town_fail_empty.png in Resources */,
 				74D35ECE165CB6010040F054 /* wnd_fun_town_preview_badman.png in Resources */,
 				74D35ECF165CB6010040F054 /* wnd_fun_town_fail_badman.png in Resources */,
+				744251C31664E75C000D8F22 /* level_win_fun_town.png in Resources */,
+				744251C41664E75C000D8F22 /* level_lose_fun_town.png in Resources */,
+				744251C51664E75C000D8F22 /* level_lose_badman_fun_town.png in Resources */,
+				744251C71664EA39000D8F22 /* game_completed.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1181,6 +1212,9 @@
 				744251B01664D546000D8F22 /* Graphics.m in Sources */,
 				744251B31664D5D1000D8F22 /* Game.m in Sources */,
 				744251B61664D92B000D8F22 /* Events.m in Sources */,
+				744251B91664E2EF000D8F22 /* LevelWinScene.m in Sources */,
+				744251BC1664E2FF000D8F22 /* LevelLoseScene.m in Sources */,
+				744251BF1664E30B000D8F22 /* GameCompletedScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

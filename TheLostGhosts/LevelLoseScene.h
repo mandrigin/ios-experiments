@@ -1,5 +1,5 @@
 //
-//  Graphics.h
+//  LevelLoseScene.h
 //  TheLostGhosts
 //
 //  Created by Igor Mandrigin on 11/27/12.
@@ -7,12 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CCScene.h"
 
-@interface Graphics : NSObject {
-    
-}
 
-+(void)showGameScene;
-
+@interface LevelLoseScene : CCScene
 
 @end

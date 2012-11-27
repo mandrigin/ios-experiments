@@ -13,6 +13,11 @@
 #import "LevelStorage.h"
 #import "Level.h"
 #import "LevelFactory.h"
+#import "Game.h"
+#import "GameCompletedScene.h"
+#import "LevelWinScene.h"
+#import "LevelLoseScene.h"
+
 
 @implementation GamePlayLayer
 
@@ -80,27 +85,15 @@
 }
 
 -(void)showYouWinMessage {
-	UIAlertView* dialog = [[UIAlertView alloc] init];
-	[dialog setDelegate:self];
-	[dialog setTitle:@"Wow! You're the winner!"];
-	[dialog setMessage:@"Greatest 4 ever!"];
-	[dialog addButtonWithTitle:@"Fuck yeah!"];
-	[dialog show];
-	[dialog release];
+    if([[Game sharedGame] isLastLevel]) {
+        [[CCDirector sharedDirector] replaceScene:[GameCompletedScene node]];
+    } else {
+        [[CCDirector sharedDirector] replaceScene:[LevelWinScene node]];
+    }
 }
 
 -(void)showYouLoseMessage:(RoundResult)result {
-	UIAlertView* dialog = [[UIAlertView alloc] init];
-	[dialog setDelegate:self];
-    if(result == kRoundLoseBadman) {
-        [dialog setTitle:@"Boo! It's a Bad Man!"];
-    } else {
-        [dialog setTitle:@"You haven't found enough ghosts!"];
-    }
-	[dialog setMessage:@"Oh oh oh... Buddy, you lose!"];
-	[dialog addButtonWithTitle:@"Okay"];
-	[dialog show];
-	[dialog release];
+    [[CCDirector sharedDirector] replaceScene:[LevelLoseScene node]];
 }
 
 - (void) alertView:(UIAlertView *)alert clickedButtonAtIndex:(NSInteger)buttonIndex

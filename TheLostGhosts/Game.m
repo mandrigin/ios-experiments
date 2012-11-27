@@ -40,6 +40,13 @@ Game *_singletonInst;
     return [(LevelFactory *)[[self->_storage getFunTownLevels] objectAtIndex:self->currentLevelIndex] createLevel];
 }
 
+-(bool)isLastLevel {
+    return self->currentLevelIndex ==  [[self->_storage getFunTownLevels] count] - 1;
+}
+
+-(void)incrementLevel {
+    self->currentLevelIndex++;
+}
 
 -(void) dealloc {
     [_storage release];

@@ -20,4 +20,8 @@
 
 -(Level *)createCurrentLevel;
 
+-(bool)isLastLevel;
+
+-(void)incrementLevel;
+
 @end
