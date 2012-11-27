@@ -14,8 +14,6 @@
 #import "Level.h"
 #import "LevelFactory.h"
 
-#define NUMBER_OF_ROWS 3;
-#define NUMBER_OF_COLS 4;
 #define SHOW_GHOSTS_DELAY 5.0f;
 
 @implementation GamePlayLayer
@@ -25,13 +23,58 @@
 }
 
 -(void)start {
-    // In one second transition to the new scene
     for(GhostyWindow *gw in windows) {
         [gw showPreview];
+        self->state = kPreview;
     }
-    float delay = SHOW_GHOSTS_DELAY
-    [self performSelector:@selector(hideWindows) withObject:nil afterDelay:delay];
+    [self schedule:@selector(onGameTick) interval:1.0];
 }
+
+-(void)onGameTick {
+    if(![[CCDirector sharedDirector] isPaused] && self->state != kFinished) {
+        self->currentTime++;
+        
+        switch (state) {
+            case kPreview:
+                if(self->currentTime > self->previewTime) {
+                    [self hideWindows];
+                    self->state = kGame;
+                    self->currentTime = 0;
+                }
+                break;
+                
+            case kGame:
+                if(self->currentTime > self->levelTime) {
+                    self->state = kFinished;
+                    [self showResult];
+                }
+                break;
+                
+            default:
+                break;
+        }
+    }
+}
+
+-(void)showResult {
+    RoundResult result = kRoundWin;
+    for(GhostyWindow *gw in windows) {
+        if(![gw isCorrect]) {
+            if([gw getState] == kBadMan) {
+                result = kRoundLoseBadman;
+            } else {
+                result = kRoundLose;
+            }
+        }
+    }
+    
+    if(result == kRoundWin) {
+        [self showYouWinMessage];
+    } else {
+        [self showYouLoseMessage];
+    }
+}
+
 
 -(void)hideWindows {
     for(GhostyWindow *gw in windows) {
@@ -39,19 +82,77 @@
     }
 }
 
+
+-(void)onLevelFail {
+    [self showYouLoseMessage];
+}
+
+-(void)checkResult {
+    bool isCorrect = true;
+    for(GhostyWindow *gw in windows) {
+        if(![gw isCorrect]) {
+            isCorrect = false;
+        }
+    }
+    if(isCorrect) {
+        [self showYouWinMessage];
+    }
+}
+
+-(void)showYouWinMessage {
+	UIAlertView* dialog = [[UIAlertView alloc] init];
+	[dialog setDelegate:self];
+	[dialog setTitle:@"Wow! You're the winner!"];
+	[dialog setMessage:@"Greatest 4 ever!"];
+	[dialog addButtonWithTitle:@"Fuck yeah!"];
+	[dialog show];
+	[dialog release];
+}
+
+-(void)showYouLoseMessage {
+	UIAlertView* dialog = [[UIAlertView alloc] init];
+	[dialog setDelegate:self];
+	[dialog setTitle:@"Boo! It's a Bad Man!"];
+	[dialog setMessage:@"Oh oh oh... Buddy, you lose!"];
+	[dialog addButtonWithTitle:@"Okay"];
+	[dialog show];
+	[dialog release];
+}
+
+- (void) alertView:(UIAlertView *)alert clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+}
+
+-(void)onWindowSelected:(GhostyWindow *)window {
+    if([window getState] == kBadMan) {
+        [self onLevelFail];
+    } else {
+        numberOfWindowsLeft--;
+        if(numberOfWindowsLeft == 0) {
+            [self checkResult];
+        }
+    }
+}
+
+-(void)onWindowDeselected:(GhostyWindow *)window {
+    numberOfWindowsLeft++;
+}
+
 -(void)dealloc {
     [windows release];
+    [storage release];
     [super dealloc];
 }
 
 -(id) initWithSize:(int)height :(int)width {
     self = [super init];
-    
-    LevelStorage *storage = [LevelStorage create];
+    self->storage = [LevelStorage create];
     
     Level *currentLevel = [(LevelFactory *)[[storage getFunTownLevels] objectAtIndex:0] createLevel];
     
     LevelSettings *settings = [currentLevel getSettings];
+    
+    self->numberOfWindowsLeft = [settings numOfGhosts];
     
     LevelLayout *layout = [settings getLayout];
     
@@ -73,6 +174,10 @@
         
         windows = [[NSMutableArray alloc] init];
         
+        self->previewTime = [[currentLevel getSettings] previewTime];
+        self->levelTime  = [[currentLevel getSettings] levelTime];
+        self->currentTime = 0;
+        
         CCMenu *menu = [CCMenu menuWithItems:nil];
         [menu setPosition:ccp(0, 0)];
         
@@ -85,7 +190,13 @@
                 
                 GhostyWindowState state = (GhostyWindowState)[[playgroundData objectAtIndex: (cols * i + j)] intValue];
                 
-                GhostyWindow *windowSprite = [GhostyWindow create:state];
+                GhostyWindow *windowSprite = [GhostyWindow createWithState:state layout:layout andCallback:^(GhostyWindow *sender) {
+                    if([sender isSelected]) {
+                        [self onWindowSelected:sender];
+                    } else {
+                        [self onWindowDeselected:sender];
+                    }
+                }];
                 
                 CGSize originalSize = [windowSprite contentSize];
                 float originalWidth = originalSize.width;

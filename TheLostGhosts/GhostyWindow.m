@@ -8,29 +8,30 @@
 
 #import "cocos2d.h"
 #import "GhostyWindow.h"
+#import "LevelLayout.h"
 
 @implementation GhostyWindow
 
-+(id) create:(GhostyWindowState)state {
++(id) createWithState:(GhostyWindowState)state layout:(LevelLayout *)layout andCallback:(void(^)(GhostyWindow* sender))callback; {
     
-    self = [super
-                itemFromNormalImage:@"wnd_fun_town_normal.png"
-                selectedImage:@"wnd_fun_town_normal.png"
-                block:^(id sender) {
-                        GhostyWindowState *item = (GhostyWindowState*)sender;
-                        if(![item isSelected]) {
-                            [item setWindowImage:@"wnd_fun_town_selected.png"];
-                            [item setSelected:YES];
-                        } else {
-                            [item setWindowImage:@"wnd_fun_town_normal.png"];
-                            [item setSelected:NO];
-                        }
-                }];
+    GhostyWindow *window = [GhostyWindow itemFromNormalImage:[layout windowNormal]
+                                               selectedImage:[layout windowNormal]
+                                                       block:^(id sender) {
+                                                           GhostyWindow *item = (GhostyWindow*)sender;
+                                                           [item toggleWindowSelection];
+                                                           callback(item);
+                                                       }];
     
-    [self setState:state];
-    [self showNormalState];
+    [window setState:state];
+    [window setLayout:layout];
     
-    return self;
+    [window showNormalState];
+    
+    return window;
+}
+
+-(void)setLayout:(LevelLayout *)layout {
+    self->_layout = layout;
 }
 
 
@@ -39,18 +40,36 @@
 }
 
 -(void)showNormalState {
-    [self setWindowImage:@"wnd_fun_town_normal.png"];
+    [self setWindowImage:[self->_layout windowNormal]];
     [self setSelected:NO];
+}
+
+-(void) selectWindow {
+    [self setSelected:YES];
+    [self setWindowImage:[self->_layout windowSelected]];
+}
+
+-(void) deselectWindow {
+    [self setSelected:NO];
+    [self setWindowImage:[self->_layout windowNormal]];
+}
+
+-(void)toggleWindowSelection {
+    if([self isSelected]) {
+        [self deselectWindow];
+    } else {
+        [self selectWindow];
+    }
 }
 
 -(void)showPreview {
     switch ([self getState]) {
         case kGhost:
-            [self setWindowImage:@"wnd_fun_town_preview_ghost.png"];
+            [self setWindowImage:[self->_layout windowPreviewGhost]];
             break;
             
         case kBadMan:
-            [self setWindowImage:@"wnd_fun_town_preview_badman.png"];
+            [self setWindowImage:[self->_layout windowPreviewBadMan]];
             break;
             
         case kEmpty:
@@ -64,22 +83,26 @@
     if([self isSelected]) {
         switch ([self getState]) {
             case kGhost:
-                [self setWindowImage:@"wnd_fun_town_correct.png"];
+                [self setWindowImage:[self->_layout windowCorrect]];
                 break;
             case kBadMan:
-                [self setWindowImage:@"wnd_fun_town_fail_badman.png"];
+                [self setWindowImage:[self->_layout windowFailBadMan]];
                 break;
             case kEmpty:
-                [self setWindowImage:@"wnd_fun_town_fail_empty.png"];
+                [self setWindowImage:[self->_layout windowFailEmpty]];
                 break;
             default:
                 break;
         }
     } else {
         if([self getState] == kGhost) {
-            [self setWindowImage:@"wnd_fun_town_fail_ghost.png"];
+            [self setWindowImage:[self->_layout windowFailEmpty]];
         }
     }
+}
+
+-(bool) isCorrect {
+    return ([self isSelected] && [self getState] == kGhost) || (!([self isSelected]) && [self getState] != kGhost);
 }
 
 @end

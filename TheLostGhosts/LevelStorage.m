@@ -13,7 +13,7 @@
 @implementation LevelStorage
 
 +(id)create {
-    return [[[LevelStorage alloc] init] autorelease];
+    return [[LevelStorage alloc] init];
 }
 
 -(id)init {
@@ -69,7 +69,6 @@
 }
 
 -(void)dealloc {
-    
     [funTownLevelLayout release];
     [funTownLevels release];
     [super dealloc];

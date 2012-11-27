@@ -20,21 +20,21 @@
 
 @property int   columns;
 
-@property(nonatomic, retain) NSString *windowCorrect;
+@property(readonly, nonatomic, retain) NSString *windowCorrect;
 
-@property(nonatomic, retain) NSString *windowFailEmpty;
+@property(readonly, nonatomic, retain) NSString *windowFailEmpty;
 
-@property(nonatomic, retain) NSString *windowFailGhost;
+@property(readonly, nonatomic, retain) NSString *windowFailGhost;
 
-@property(nonatomic, retain) NSString *windowFailBadMan;
+@property(readonly, nonatomic, retain) NSString *windowFailBadMan;
 
-@property(nonatomic, retain) NSString *windowPreviewGhost;
+@property(readonly, nonatomic, retain) NSString *windowPreviewGhost;
 
-@property(nonatomic, retain) NSString *windowPreviewBadMan;
+@property(readonly, nonatomic, retain) NSString *windowPreviewBadMan;
 
-@property(nonatomic, retain) NSString *windowSelected;
+@property(readonly, nonatomic, retain) NSString *windowSelected;
 
-@property(nonatomic, retain) NSString *windowNormal;
+@property(readonly, nonatomic, retain) NSString *windowNormal;
 
 +(id)createWithTopMargin:(float)topM
             bottomMargin:(float)bottomM
