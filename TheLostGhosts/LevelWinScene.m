@@ -8,6 +8,8 @@
 
 #import "LevelWinScene.h"
 #import "cocos2d.h"
+#import "Game.h"
+#import "GameScene.h"
 
 @implementation LevelWinScene
 
@@ -17,12 +19,17 @@
         // ask director for the window size
         CGSize size = [[CCDirector sharedDirector] winSize];
         
-        CCSprite *background = [CCSprite spriteWithFile:@"level_win_fun_town.png"];
+        CCSprite *background = [self createTouchableSprite:@"level_win_fun_town.png"
+                                              withCallback:^() {
+                                                  [[Game sharedGame] incrementLevel];
+                                                  [[CCDirector sharedDirector] replaceScene:[GameScene node]];
+                                              }];
         
         background.position = ccp(size.width/2, size.height/2);
         
         // add the label as a child to this Layer
         [self addChild: background];
+        
     }
     return self;
 }

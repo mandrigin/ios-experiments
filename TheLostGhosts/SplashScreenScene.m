@@ -8,7 +8,7 @@
 
 #import "SplashScreenScene.h"
 #import "IntroLayer.h"
-#import "GameScene.h"
+#import "MainMenuScene.h"
 
 @implementation SplashScreenScene
 
@@ -30,7 +30,7 @@
 
 -(void) makeTransition:(ccTime)dt
 {
-	[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[GameScene node] withColor:ccWHITE]];
+	[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[MainMenuScene node] withColor:ccWHITE]];
 }
 
 @end

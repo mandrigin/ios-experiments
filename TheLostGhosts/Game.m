@@ -37,7 +37,8 @@ Game *_singletonInst;
 }
 
 -(Level *)createCurrentLevel {
-    return [(LevelFactory *)[[self->_storage getFunTownLevels] objectAtIndex:self->currentLevelIndex] createLevel];
+    LevelFactory *factory = [[self->_storage getFunTownLevels] objectAtIndex:self->currentLevelIndex];
+    return [factory createLevel];
 }
 
 -(bool)isLastLevel {

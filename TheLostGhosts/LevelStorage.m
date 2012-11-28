@@ -48,6 +48,8 @@
 -(void)createFunTown {
     funTownLevels = [[NSMutableArray alloc] init];
     [self addLevelTo:funTownLevels layout:funTownLevelLayout ghosts:4 badMans:2 previewTime:5 levelTime:10];
+    [self addLevelTo:funTownLevels layout:funTownLevelLayout ghosts:5 badMans:2 previewTime:2 levelTime:5];
+
 }
 
 -(void)addLevelTo:(NSMutableArray*)array

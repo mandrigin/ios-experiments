@@ -17,6 +17,11 @@
 		744251C41664E75C000D8F22 /* level_lose_fun_town.png in Resources */ = {isa = PBXBuildFile; fileRef = 744251C11664E75B000D8F22 /* level_lose_fun_town.png */; };
 		744251C51664E75C000D8F22 /* level_lose_badman_fun_town.png in Resources */ = {isa = PBXBuildFile; fileRef = 744251C21664E75B000D8F22 /* level_lose_badman_fun_town.png */; };
 		744251C71664EA39000D8F22 /* game_completed.png in Resources */ = {isa = PBXBuildFile; fileRef = 744251C61664EA39000D8F22 /* game_completed.png */; };
+		744251CA1664EFBC000D8F22 /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 744251C91664EFBB000D8F22 /* MainMenuScene.m */; };
+		744251CC1664F033000D8F22 /* main_menu_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 744251CB1664F033000D8F22 /* main_menu_background.png */; };
+		744251CF1664F0B6000D8F22 /* btn_start_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 744251CD1664F0B6000D8F22 /* btn_start_normal.png */; };
+		744251D01664F0B6000D8F22 /* btn_start_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 744251CE1664F0B6000D8F22 /* btn_start_pressed.png */; };
+		744251D31664F321000D8F22 /* BaseScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 744251D21664F320000D8F22 /* BaseScene.m */; };
 		74D35D07165BB2C40040F054 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74D35D06165BB2C40040F054 /* QuartzCore.framework */; };
 		74D35D09165BB2C40040F054 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74D35D08165BB2C40040F054 /* OpenGLES.framework */; };
 		74D35D0B165BB2C40040F054 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74D35D0A165BB2C40040F054 /* OpenAL.framework */; };
@@ -188,6 +193,13 @@
 		744251C11664E75B000D8F22 /* level_lose_fun_town.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level_lose_fun_town.png; sourceTree = "<group>"; };
 		744251C21664E75B000D8F22 /* level_lose_badman_fun_town.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level_lose_badman_fun_town.png; sourceTree = "<group>"; };
 		744251C61664EA39000D8F22 /* game_completed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = game_completed.png; sourceTree = "<group>"; };
+		744251C81664EFBB000D8F22 /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuScene.h; sourceTree = "<group>"; };
+		744251C91664EFBB000D8F22 /* MainMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuScene.m; sourceTree = "<group>"; };
+		744251CB1664F033000D8F22 /* main_menu_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_menu_background.png; sourceTree = "<group>"; };
+		744251CD1664F0B6000D8F22 /* btn_start_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_start_normal.png; sourceTree = "<group>"; };
+		744251CE1664F0B6000D8F22 /* btn_start_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_start_pressed.png; sourceTree = "<group>"; };
+		744251D11664F320000D8F22 /* BaseScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseScene.h; sourceTree = "<group>"; };
+		744251D21664F320000D8F22 /* BaseScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseScene.m; sourceTree = "<group>"; };
 		74D35D02165BB2C40040F054 /* TheLostGhosts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheLostGhosts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D35D06165BB2C40040F054 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		74D35D08165BB2C40040F054 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -579,6 +591,9 @@
 		74D35D19165BB2C40040F054 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				744251CD1664F0B6000D8F22 /* btn_start_normal.png */,
+				744251CE1664F0B6000D8F22 /* btn_start_pressed.png */,
+				744251CB1664F033000D8F22 /* main_menu_background.png */,
 				744251C61664EA39000D8F22 /* game_completed.png */,
 				744251C01664E75B000D8F22 /* level_win_fun_town.png */,
 				744251C11664E75B000D8F22 /* level_lose_fun_town.png */,
@@ -980,6 +995,10 @@
 				74D35EB4165BBF010040F054 /* GamePauseLayer.m */,
 				74D35EB8165BC23B0040F054 /* GamePlayLayer.h */,
 				74D35EB9165BC23B0040F054 /* GamePlayLayer.m */,
+				744251C81664EFBB000D8F22 /* MainMenuScene.h */,
+				744251C91664EFBB000D8F22 /* MainMenuScene.m */,
+				744251D11664F320000D8F22 /* BaseScene.h */,
+				744251D21664F320000D8F22 /* BaseScene.m */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -1083,6 +1102,9 @@
 				744251C41664E75C000D8F22 /* level_lose_fun_town.png in Resources */,
 				744251C51664E75C000D8F22 /* level_lose_badman_fun_town.png in Resources */,
 				744251C71664EA39000D8F22 /* game_completed.png in Resources */,
+				744251CC1664F033000D8F22 /* main_menu_background.png in Resources */,
+				744251CF1664F0B6000D8F22 /* btn_start_normal.png in Resources */,
+				744251D01664F0B6000D8F22 /* btn_start_pressed.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1215,6 +1237,8 @@
 				744251B91664E2EF000D8F22 /* LevelWinScene.m in Sources */,
 				744251BC1664E2FF000D8F22 /* LevelLoseScene.m in Sources */,
 				744251BF1664E30B000D8F22 /* GameCompletedScene.m in Sources */,
+				744251CA1664EFBC000D8F22 /* MainMenuScene.m in Sources */,
+				744251D31664F321000D8F22 /* BaseScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

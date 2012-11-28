@@ -1,5 +1,5 @@
 //
-//  LevelWinScene.h
+//  MainMenuScene.h
 //  TheLostGhosts
 //
 //  Created by Igor Mandrigin on 11/27/12.
@@ -7,10 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BaseScene.h"
+#import "cocos2d.h"
 
-
-@interface LevelWinScene : BaseScene
-
+@interface MainMenuScene : CCScene
 
 @end
