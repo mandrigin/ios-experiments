@@ -28,6 +28,25 @@
             
         // add the label as a child to this Layer
         [self addChild: background];
+        
+        CCMenuItemImage *pauseButton = [CCMenuItemImage
+                                        itemFromNormalImage:@"img_pause_caption.png"
+                                        selectedImage:@"img_pause_caption.png"
+                                        
+                                        block:^(id sender) {
+                                            GamePauseLayer *gamePauseLayer = [GamePauseLayer node];
+                                            
+                                            [self addChild:gamePauseLayer z:50];
+                                            
+                                            [[CCDirector sharedDirector] resume];
+                                         
+                                        }];
+        CCMenu *hudMenu = [CCMenu menuWithItems:pauseButton, nil];
+        
+        hudMenu.position = ccp(size.width / 2, size.height/2.3);
+        
+        [self addChild: hudMenu z:10];
+
     
     }
     

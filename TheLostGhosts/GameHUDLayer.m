@@ -25,11 +25,13 @@
                                                 GamePauseLayer *gamePauseLayer = [GamePauseLayer node];
                                                 
                                                 [self addChild:gamePauseLayer z:50];
+                                                
+                                                [[CCDirector sharedDirector] pause];
 
                                             }];
         CCMenu *hudMenu = [CCMenu menuWithItems:pauseButton, nil];
 
-        hudMenu.position = ccp(size.width / 10, size.height/1.17);
+        hudMenu.position = ccp(size.width / 14, size.height/1.10);
 
         [self addChild: hudMenu];
     }

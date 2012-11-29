@@ -3,13 +3,13 @@
 //  TheLostGhosts
 //
 //  Created by Igor Mandrigin on 11/20/12.
-//  Copyright __MyCompanyName__ 2012. All rights reserved.
+//  Copyright FlexyMind 2012. All rights reserved.
 //
 
 #import "cocos2d.h"
 
 #import "AppDelegate.h"
-#import "SplashScreenScene.h"
+#import "MainMenuScene.h"
 
 @implementation AppController
 
@@ -73,7 +73,7 @@
 	[CCTexture2D PVRImagesHavePremultipliedAlpha:YES];
 
 	// and add the scene to the stack. The director will run it when it automatically when the view is displayed.
-	SplashScreenScene *splashScreenScene = [SplashScreenScene node];
+	MainMenuScene *splashScreenScene = [MainMenuScene node];
     [director_ pushScene: splashScreenScene];
 
 	

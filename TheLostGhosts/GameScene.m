@@ -23,12 +23,15 @@
         
         CGSize size = [[CCDirector sharedDirector] winSize];
         
-        int topMargin    = 200;
-        int bottomMargin = 50;
-        int leftMargin   = 30;
-        int rightMargin  = 30;
+        int topMargin    = 180;
+        int bottomMargin = 180;
+        int leftMargin   = 120;
+        int rightMargin  = 120;
         
         Level *currentLevel = [[Game sharedGame] createCurrentLevel];
+        
+        
+        
         GamePlayLayer *gamePlayLayer = [GamePlayLayer createWithHeight: (int)size.height - (topMargin + bottomMargin)
                                                                  width: (int)size.width - (leftMargin + rightMargin)
                                                               andLevel: currentLevel];

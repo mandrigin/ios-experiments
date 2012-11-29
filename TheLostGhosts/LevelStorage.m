@@ -27,7 +27,7 @@
 
 -(void)createLayouts {
     funTownLevelLayout = [LevelLayout createWithTopMargin:5.0f
-                                             bottomMargin:7.0f
+                                             bottomMargin:6.0f
                                          horizontalMargin:8.7f
                                                      rows:4
                                                   columns:5

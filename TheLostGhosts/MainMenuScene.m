@@ -8,6 +8,7 @@
 
 #import "MainMenuScene.h"
 #import "GameScene.h"
+#import "DefaulBackgroundLayer.h"
 #import "cocos2d.h"
 
 @implementation MainMenuScene
@@ -16,33 +17,42 @@
     self = [super init];
     
     if(self != nil) {
-        // ask director for the window size
-        CGSize size = [[CCDirector sharedDirector] winSize];
         
-        CCSprite *background = [CCSprite spriteWithFile:@"main_menu_background.png"];
+        DefaulBackgroundLayer *defaultBackgroundLayer = [DefaulBackgroundLayer node];
         
-        background.position = ccp(size.width/2, size.height/2);
-        
-        // add the label as a child to this Layer
-        [self addChild: background];
-        
-        CCMenuItemImage *pauseButton = [CCMenuItemImage
-                                        itemFromNormalImage:@"btn_start_normal.png"
-                                        selectedImage:@"btn_start_pressed.png"
-                                        
-                                        block:^(id sender) {
-                                            
-                                            [[CCDirector sharedDirector] replaceScene:[GameScene node]];
-                                            
-                                        }];
-        CCMenu *hudMenu = [CCMenu menuWithItems:pauseButton, nil];
-        
-        hudMenu.position = ccp(size.width / 2, size.height/2.3);
-        
-        [self addChild: hudMenu];        
+        [self addChild: defaultBackgroundLayer];
     }
     
     return self;
+}
+
+-(void)onEnter {
+    [super onEnter];
+    
+    CGSize size = [[CCDirector sharedDirector] winSize];
+    
+    CCMenuItemImage *pauseButton = [CCMenuItemImage
+                                    itemFromNormalImage:@"btn_start_normal.png"
+                                    selectedImage:@"btn_start_pressed.png"
+                                    
+                                    block:^(id sender) {
+                                        
+                                        [[CCDirector sharedDirector] replaceScene:[GameScene node]];
+                                        
+                                    }];
+    CCMenu *hudMenu = [CCMenu menuWithItems:pauseButton, nil];
+    
+    hudMenu.position = ccp(size.width / 2, size.height/2.3);
+    
+    [self addChild: hudMenu z:10];
+    
+    CCSprite *caption = [CCSprite spriteWithFile:@"caption.png"];
+	
+    caption.position = ccp(size.width/2, size.height/2);
+    
+	// add the label as a child to this Layer
+	[self addChild: caption z:5];
+
 }
 
 @end
