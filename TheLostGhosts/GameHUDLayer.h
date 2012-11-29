@@ -7,7 +7,12 @@
 //
 
 #import "CCLayer.h"
+#import "GameScene.h"
 
-@interface GameHUDLayer : CCLayer
+@interface GameHUDLayer : CCLayer {
+    GameScene *parent;
+}
+
+-(id)initWithParent:(GameScene *)parent;
 
 @end

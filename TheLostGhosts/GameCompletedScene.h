@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CCScene.h"
+#import "BaseScene.h"
 
-@interface GameCompletedScene : CCScene
+@interface GameCompletedScene : BaseScene
 
 @end

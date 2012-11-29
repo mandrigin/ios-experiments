@@ -7,6 +7,7 @@
 //
 
 #import "GameCompletedScene.h"
+#import "MainMenuScene.h"
 #import "cocos2d.h"
 
 @implementation GameCompletedScene
@@ -17,7 +18,9 @@
         // ask director for the window size
         CGSize size = [[CCDirector sharedDirector] winSize];
         
-        CCSprite *background = [CCSprite spriteWithFile:@"game_completed.png"];
+        CCSprite *background = [self createTouchableSprite:@"game_completed.png" withCallback:^{
+            [[CCDirector sharedDirector] replaceScene:[MainMenuScene node]];
+        }];
         
         background.position = ccp(size.width/2, size.height/2);
         

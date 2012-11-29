@@ -32,4 +32,8 @@
 
 -(bool)isCorrect;
 
+-(void)selectWindow;
+
+-(void)deselectWindow;
+
 @end

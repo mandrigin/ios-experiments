@@ -59,7 +59,7 @@
     }
 }
 
--(void)showResult {
+- (RoundResult)getRoundResult {
     RoundResult result = kRoundWin;
     for(GhostyWindow *gw in windows) {
         if(![gw isCorrect]) {
@@ -70,6 +70,11 @@
             }
         }
     }
+    return result;
+}
+
+-(void)showResult {
+    RoundResult result = [self getRoundResult];
     
     if(result == kRoundWin) {
         [self showYouWinMessage];
@@ -101,12 +106,24 @@
 }
 
 -(void)onWindowSelected:(GhostyWindow *)window {
+    if(state == kPreview) {
+        [self hideWindows];
+        self->state = kGame;
+        self->currentTime = 0;
+        [window selectWindow];
+    }
     if([window getState] == kBadMan) {
         [self showYouLoseMessage:kRoundLoseBadman];
     } else {
-        numberOfWindowsLeft--;
-        if(numberOfWindowsLeft == 0) {
-            [self showResult];
+        if(numberOfWindowsLeft > 0) {
+            numberOfWindowsLeft--;
+            if(numberOfWindowsLeft == 0) {
+                if([self getRoundResult] == kRoundWin) {
+                    [self showResult];
+                }
+            }
+        } else {
+            [window deselectWindow];
         }
     }
 }
@@ -176,8 +193,11 @@
                 float originalHeight = originalSize.height;
                 float newScaleX = (float)(colWidth) / originalWidth;
                 float newScaleY = (float)(rowHeigth) / originalHeight;
-                [windowSprite setScaleX:newScaleX];
-                [windowSprite setScaleY:newScaleY];
+                
+                float newScale = newScaleX < newScaleY ? newScaleX : newScaleY;
+                
+                [windowSprite setScaleX:newScale];
+                [windowSprite setScaleY:newScale];
                 
                 int offsetX = currentX + colWidth / 2;
                 int offsetY = currentY + rowHeigth / 2;

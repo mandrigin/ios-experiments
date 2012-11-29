@@ -12,8 +12,11 @@
 
 @implementation GameHUDLayer
 
--(id) init {
+-(id) initWithParent:(GameScene *)parent {
     self = [super init];
+    
+    self->parent = (GameScene *)parent;
+    
     if(self != nil) {
         CGSize size = [[CCDirector sharedDirector] winSize];
         
@@ -22,9 +25,8 @@
                                             selectedImage:@"btn_pause_pressed.png"
                                         
                                             block:^(id sender) {
-                                                GamePauseLayer *gamePauseLayer = [GamePauseLayer node];
-                                                
-                                                [self addChild:gamePauseLayer z:50];
+                                                GamePauseLayer *gamePauseLayer = [[GamePauseLayer alloc] initWithParent:self->parent];
+                                                [self->parent addChild:gamePauseLayer z:50];
                                                 
                                                 [[CCDirector sharedDirector] pause];
 

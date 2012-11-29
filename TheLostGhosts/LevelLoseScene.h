@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CCScene.h"
+#import "BaseScene.h"
 
 
-@interface LevelLoseScene : CCScene
+@interface LevelLoseScene : BaseScene
 
 @end

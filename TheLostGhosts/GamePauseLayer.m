@@ -11,8 +11,10 @@
 
 @implementation GamePauseLayer
 
--(id) init {
+-(id) initWithParent:(GameScene*)_parent {
     self = [super init];
+    
+    self->parent = _parent;
     
     if(self != nil) {
     
@@ -34,10 +36,7 @@
                                         selectedImage:@"img_pause_caption.png"
                                         
                                         block:^(id sender) {
-                                            GamePauseLayer *gamePauseLayer = [GamePauseLayer node];
-                                            
-                                            [self addChild:gamePauseLayer z:50];
-                                            
+                                            [parent removeChild:self cleanup:YES];
                                             [[CCDirector sharedDirector] resume];
                                          
                                         }];

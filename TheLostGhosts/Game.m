@@ -37,6 +37,9 @@ Game *_singletonInst;
 }
 
 -(Level *)createCurrentLevel {
+    //TODO: fix, this is only for WebReady DEMO!
+    self->_storage = [LevelStorage create];
+    //END OF FIX
     LevelFactory *factory = [[self->_storage getFunTownLevels] objectAtIndex:self->currentLevelIndex];
     return [factory createLevel];
 }

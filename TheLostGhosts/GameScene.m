@@ -27,8 +27,8 @@
         int bottomMargin = 180;
         int leftMargin   = 120;
         int rightMargin  = 120;
-        
         Level *currentLevel = [[Game sharedGame] createCurrentLevel];
+        
         
         
         
@@ -43,7 +43,7 @@
         
         [self addChild:gamePlayLayer z:5];
         
-        GameHUDLayer *gameHudLayer = [GameHUDLayer node];
+        GameHUDLayer *gameHudLayer = [[GameHUDLayer alloc] initWithParent:self];
         
         [self addChild:gameHudLayer z:10];
         

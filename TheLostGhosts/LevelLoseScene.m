@@ -7,6 +7,7 @@
 //
 
 #import "LevelLoseScene.h"
+#import "GameScene.h"
 #import "cocos2d.h"
 
 @implementation LevelLoseScene
@@ -18,7 +19,9 @@
         // ask director for the window size
         CGSize size = [[CCDirector sharedDirector] winSize];
         
-        CCSprite *background = [CCSprite spriteWithFile:@"level_lose_fun_town.png"];
+        CCSprite *background = [self createTouchableSprite:@"level_lose_fun_town.png" withCallback:^{
+            [[CCDirector sharedDirector] replaceScene:[GameScene node]];
+        }];
         
         background.position = ccp(size.width/2, size.height/2);
         
