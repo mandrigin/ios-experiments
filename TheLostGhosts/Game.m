@@ -27,11 +27,16 @@ Game *_singletonInst;
 
 @synthesize storage = _storage;
 
+-(Graphics *)getGraphics {
+    return self->_graphics;
+}
+
 -(id) init {
     self = [super init];
     if(self != nil) {
         self->_storage = [LevelStorage create];
         self->currentLevelIndex = 0;
+        self->_graphics = [[Graphics alloc] init];
     }
     return self;
 }
@@ -54,6 +59,7 @@ Game *_singletonInst;
 
 -(void) dealloc {
     [_storage release];
+    [_graphics release];
     [super dealloc];
 }
 

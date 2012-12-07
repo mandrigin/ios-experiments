@@ -9,6 +9,7 @@
 #import "GameHUDLayer.h"
 #import "GamePauseLayer.h"
 #import "cocos2d.h"
+#import "Game.h"
 
 @implementation GameHUDLayer
 
@@ -25,9 +26,8 @@
                                             selectedImage:@"btn_pause_pressed.png"
                                         
                                             block:^(id sender) {
-                                                GamePauseLayer *gamePauseLayer = [[GamePauseLayer alloc] initWithParent:self->parent];
-                                                [self->parent addChild:gamePauseLayer z:50];
                                                 
+                                                [[[Game sharedGame] getGraphics] showPauseOverlay];
                                                 [[CCDirector sharedDirector] pause];
 
                                             }];

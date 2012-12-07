@@ -8,6 +8,7 @@
 
 #import "GamePauseLayer.h"
 #import "cocos2d.h"
+#import "Game.h"
 
 @implementation GamePauseLayer
 
@@ -36,7 +37,8 @@
                                         selectedImage:@"img_pause_caption.png"
                                         
                                         block:^(id sender) {
-                                            [parent removeChild:self cleanup:YES];
+                                            
+                                            [[[Game sharedGame] getGraphics] hidePauseOverlay];
                                             [[CCDirector sharedDirector] resume];
                                          
                                         }];

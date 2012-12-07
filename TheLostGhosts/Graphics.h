@@ -7,12 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "cocos2d.h"
 
 @interface Graphics : NSObject {
-    
+    CCScene* rootScene;
+    CCLayer* overlayLayer;
 }
 
-+(void)showGameScene;
+-(void)showPauseOverlay;
+-(void)hidePauseOverlay;
 
+-(void)showGameScene;
+-(void)hideCurrentScene;
 
 @end

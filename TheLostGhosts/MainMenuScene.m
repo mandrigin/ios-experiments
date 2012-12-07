@@ -10,6 +10,7 @@
 #import "GameScene.h"
 #import "DefaulBackgroundLayer.h"
 #import "cocos2d.h"
+#import "Game.h"
 
 @implementation MainMenuScene
 
@@ -37,9 +38,10 @@
                                     
                                     block:^(id sender) {
                                         
-                                        [[CCDirector sharedDirector] replaceScene:[GameScene node]];
+                                        [[[Game sharedGame] getGraphics] showGameScene];
                                         
                                     }];
+    
     CCMenu *hudMenu = [CCMenu menuWithItems:pauseButton, nil];
     
     hudMenu.position = ccp(size.width / 2, size.height/2.3);
