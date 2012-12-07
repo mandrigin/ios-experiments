@@ -153,8 +153,6 @@
 		74D35E8F165BB2C60040F054 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D35E8E165BB2C60040F054 /* main.m */; };
 		74D35E92165BB2C60040F054 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D35E91165BB2C60040F054 /* AppDelegate.m */; };
 		74D35E95165BB2C60040F054 /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D35E94165BB2C60040F054 /* HelloWorldLayer.m */; };
-		74D35E98165BB2C60040F054 /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D35E97165BB2C60040F054 /* IntroLayer.m */; };
-		74D35EA1165BB4DA0040F054 /* SplashScreenScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D35EA0165BB4DA0040F054 /* SplashScreenScene.m */; };
 		74D35EA4165BB7780040F054 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D35EA3165BB7780040F054 /* GameScene.m */; };
 		74D35EA7165BB7EF0040F054 /* GameBackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D35EA6165BB7EF0040F054 /* GameBackgroundLayer.m */; };
 		74D35EAB165BBB3B0040F054 /* splash_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 74D35EAA165BBB3B0040F054 /* splash_bg.png */; };
@@ -473,10 +471,6 @@
 		74D35E91165BB2C60040F054 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		74D35E93165BB2C60040F054 /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
 		74D35E94165BB2C60040F054 /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
-		74D35E96165BB2C60040F054 /* IntroLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
-		74D35E97165BB2C60040F054 /* IntroLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
-		74D35E9F165BB4DA0040F054 /* SplashScreenScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashScreenScene.h; sourceTree = "<group>"; };
-		74D35EA0165BB4DA0040F054 /* SplashScreenScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashScreenScene.m; sourceTree = "<group>"; };
 		74D35EA2165BB7770040F054 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
 		74D35EA3165BB7780040F054 /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
 		74D35EA5165BB7EF0040F054 /* GameBackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameBackgroundLayer.h; sourceTree = "<group>"; };
@@ -998,10 +992,6 @@
 				744251BB1664E2FF000D8F22 /* LevelLoseScene.m */,
 				744251BD1664E30B000D8F22 /* GameCompletedScene.h */,
 				744251BE1664E30B000D8F22 /* GameCompletedScene.m */,
-				74D35E96165BB2C60040F054 /* IntroLayer.h */,
-				74D35E97165BB2C60040F054 /* IntroLayer.m */,
-				74D35E9F165BB4DA0040F054 /* SplashScreenScene.h */,
-				74D35EA0165BB4DA0040F054 /* SplashScreenScene.m */,
 				74D35EA2165BB7770040F054 /* GameScene.h */,
 				74D35EA3165BB7780040F054 /* GameScene.m */,
 				74D35EA5165BB7EF0040F054 /* GameBackgroundLayer.h */,
@@ -1050,7 +1040,6 @@
 				74D35CFE165BB2C40040F054 /* Sources */,
 				74D35CFF165BB2C40040F054 /* Frameworks */,
 				74D35D00165BB2C40040F054 /* Resources */,
-				50524F424C454D533F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1133,9 +1122,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-
-
 
 /* Begin PBXSourcesBuildPhase section */
 		74D35CFE165BB2C40040F054 /* Sources */ = {
@@ -1245,8 +1231,6 @@
 				74D35E8F165BB2C60040F054 /* main.m in Sources */,
 				74D35E92165BB2C60040F054 /* AppDelegate.m in Sources */,
 				74D35E95165BB2C60040F054 /* HelloWorldLayer.m in Sources */,
-				74D35E98165BB2C60040F054 /* IntroLayer.m in Sources */,
-				74D35EA1165BB4DA0040F054 /* SplashScreenScene.m in Sources */,
 				74D35EA4165BB7780040F054 /* GameScene.m in Sources */,
 				74D35EA7165BB7EF0040F054 /* GameBackgroundLayer.m in Sources */,
 				74D35EAE165BBC070040F054 /* GameHUDLayer.m in Sources */,

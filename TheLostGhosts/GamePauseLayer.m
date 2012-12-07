@@ -12,10 +12,8 @@
 
 @implementation GamePauseLayer
 
--(id) initWithParent:(GameScene*)_parent {
+-(id) init {
     self = [super init];
-    
-    self->parent = _parent;
     
     if(self != nil) {
     

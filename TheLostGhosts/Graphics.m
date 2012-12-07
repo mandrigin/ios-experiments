@@ -9,6 +9,7 @@
 #import "Graphics.h"
 #import "GamePauseLayer.h"
 #import "GameScene.h"
+#import "MainMenuScene.h"
 
 @implementation Graphics
 
@@ -34,11 +35,19 @@
     [self replaceScene:[[GameScene alloc] init]];
 }
 
+-(void)showMainMenuScene {
+    [self replaceScene:[[MainMenuScene alloc] init]];
+}
+
 
 -(void) replaceScene:(CCScene*)scene {
     [self hideCurrentScene];
     
-    [[CCDirector sharedDirector] replaceScene:scene];
+    if([[CCDirector sharedDirector] runningScene] != nil) {
+        [[CCDirector sharedDirector] replaceScene:scene];
+    } else {
+        [[CCDirector sharedDirector] pushScene:scene];
+    }
     
     rootScene = scene;
 }

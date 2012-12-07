@@ -9,10 +9,6 @@
 #import "CCLayer.h"
 #import "GameScene.h"
 
-@interface GamePauseLayer : CCLayer {
-    GameScene *parent;
-}
-
--(id)initWithParent:(GameScene *)parent;
+@interface GamePauseLayer : CCLayer
 
 @end

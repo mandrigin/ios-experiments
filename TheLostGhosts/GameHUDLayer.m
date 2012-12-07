@@ -13,10 +13,8 @@
 
 @implementation GameHUDLayer
 
--(id) initWithParent:(GameScene *)parent {
+-(id) init {
     self = [super init];
-    
-    self->parent = (GameScene *)parent;
     
     if(self != nil) {
         CGSize size = [[CCDirector sharedDirector] winSize];

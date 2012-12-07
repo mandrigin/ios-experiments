@@ -43,7 +43,7 @@
         
         [self addChild:gamePlayLayer z:5];
         
-        GameHUDLayer *gameHudLayer = [[GameHUDLayer alloc] initWithParent:self];
+        GameHUDLayer *gameHudLayer = [[GameHUDLayer alloc] init];
         
         [self addChild:gameHudLayer z:10];
         

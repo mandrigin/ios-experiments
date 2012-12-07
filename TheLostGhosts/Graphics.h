@@ -18,6 +18,8 @@
 -(void)hidePauseOverlay;
 
 -(void)showGameScene;
+-(void)showMainMenuScene;
+
 -(void)hideCurrentScene;
 
 @end
