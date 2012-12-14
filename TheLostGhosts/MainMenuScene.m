@@ -49,7 +49,8 @@
     
     CCSprite *caption = [CCSprite spriteWithFile:@"caption.png"];
 	
-    caption.position = ccp(size.width/2, size.height/2);
+    caption.position = ccp( size.width * CAPTION_X_OFFSET_FACTOR
+                          , size.height * CAPTION_Y_OFFSET_FACTOR);
     
 	// add the label as a child to this Layer
 	[self addChild: caption z:5];
