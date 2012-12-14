@@ -7,7 +7,11 @@
 //
 
 #import "BaseScene.h"
+#import "cocos2d.h"
 
-@interface LevelChooseScene : BaseScene
+@interface LevelChooseScene : BaseScene {
+    CCMenuItemImage* btnPrevWorld;
+    CCMenuItemImage* btnNextWorld;
+}
 
 @end

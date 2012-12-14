@@ -11,6 +11,8 @@
 #import "cocos2d.h"
 #import "Tags.h"
 #import "LevelChooseSceneLayout.h"
+#import "Game.h"
+#import "World.h"
 
 @implementation LevelChooseScene
 
@@ -21,15 +23,15 @@
 -(void)onEnter {
     [super onEnter];
     
-    CCMenuItemImage* nextWorld = [self createButtonFromNormalImage:@"btn_next_world_normal.png"
-                                                     selectedImage:@"btn_next_world_pressed.png"
-                                                            andTag:LEVCHOOSE_NEXT_WORLD_BUTTON];
+    btnNextWorld = [self createButtonFromNormalImage:@"btn_next_world_normal.png"
+                                       selectedImage:@"btn_next_world_pressed.png"
+                                              andTag:LEVCHOOSE_NEXT_WORLD_BUTTON];
     
-    CCMenuItemImage* prevWorld = [self createButtonFromNormalImage:@"btn_prev_world_normal.png"
-                                                     selectedImage:@"btn_prev_world_pressed.png"
-                                                            andTag:LEVCHOOSE_PREV_WORLD_BUTTON];
+    btnPrevWorld = [self createButtonFromNormalImage:@"btn_prev_world_normal.png"
+                                       selectedImage:@"btn_prev_world_pressed.png"
+                                              andTag:LEVCHOOSE_PREV_WORLD_BUTTON];
     
-    CCMenu *worldChooseMenu = [CCMenu menuWithItems:prevWorld, nextWorld, nil];
+    CCMenu *worldChooseMenu = [CCMenu menuWithItems:btnPrevWorld, btnNextWorld, nil];
     
     [worldChooseMenu alignItemsHorizontallyWithPadding:size.width * WORLDCHOOSE_MENU_PADDING_FACTOR];
     
@@ -39,6 +41,22 @@
 }
 
 -(void)showCurrentWorld {
+    World* currentWorld = [[Game sharedGame] getCurrentWorld];
+    
+    btnNextWorld.isEnabled = [[Game sharedGame] hasNextWorld];
+    btnPrevWorld.isEnabled = [[Game sharedGame] hasPrevWorld];
+
+    [self showCaption:[currentWorld caption]];
+    
+    [self showLevels:[currentWorld levels]];
+}
+
+-(void)showCaption:(NSString *)caption {
     
 }
+
+-(void)showLevels:(id)levels {
+    
+}
+
 @end

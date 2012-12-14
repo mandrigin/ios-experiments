@@ -13,6 +13,7 @@
 #import "Level.h"
 #import "Graphics.h"
 #import "Sounds.h"
+#import "World.h"
 
 @interface Game : NSObject {
     
@@ -43,5 +44,15 @@
 -(bool)gotoNextLevel;
 
 -(bool)isLastLevel;
+
+-(World *)getCurrentWorld;
+
+-(bool)hasNextWorld;
+
+-(bool)hasPrevWorld;
+
+-(void)gotoNextWorld;
+
+-(void)gotoPreviousWorld;
 
 @end
