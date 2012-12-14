@@ -9,7 +9,9 @@
 #import "CCScene.h"
 #import "CCLayer.h"
 
-@interface BaseScene : CCScene
+@interface BaseScene : CCScene {
+    CGSize size;
+}
 
 -(id) createTouchableSprite:(NSString*)image
                       withTag:(int)tag;

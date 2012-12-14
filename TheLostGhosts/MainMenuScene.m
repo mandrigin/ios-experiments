@@ -24,9 +24,6 @@
 -(void)onEnter {
     [super onEnter];
     
-    CGSize size = [[CCDirector sharedDirector] winSize];
-    
-    
     CCMenuItemImage *startButton = [self createButtonFromNormalImage:@"btn_start_normal.png"
                                                        selectedImage:@"btn_start_normal.png"
                                                               andTag:MAINSCENE_START_BUTTON ];

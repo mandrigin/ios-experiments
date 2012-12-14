@@ -9,3 +9,6 @@
 #import <Foundation/Foundation.h>
 
 #define MAINSCENE_START_BUTTON 1
+
+#define LEVCHOOSE_NEXT_WORLD_BUTTON 2
+#define LEVCHOOSE_PREV_WORLD_BUTTON 3

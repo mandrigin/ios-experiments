@@ -16,11 +16,14 @@
     self = [super init];
     
     if(self != nil) {
-                
         [self addChild: layer];
     }
     
     return self;
+}
+
+-(void)onEnter {
+    size = [[CCDirector sharedDirector] winSize];
 }
 
 -(id) createButtonFromNormalImage:(NSString *)normalImage
