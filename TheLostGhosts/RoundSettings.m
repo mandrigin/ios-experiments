@@ -6,9 +6,9 @@
 //
 //
 
-#import "LevelSettings.h"
+#import "RoundSettings.h"
 
-@implementation LevelSettings
+@implementation RoundSettings
 
 -(id)initWithLayout:(LevelLayout *)layout {
     self = [super init];
@@ -28,7 +28,7 @@
            previewTime:(long)previewTime
              levelTime:(long)levelTime {
     
-    LevelSettings *settings = [[[LevelSettings alloc] initWithLayout:layout] autorelease];
+    RoundSettings *settings = [[[RoundSettings alloc] initWithLayout:layout] autorelease];
     
     [settings setNumOfGhosts:numOfGhosts];
     [settings setNumOfBadMans:numOfBadmans];
@@ -46,7 +46,7 @@
                    previewTime:(long)previewTime
                      levelTime:(long)levelTime {
     
-    LevelSettings *settings = [[[LevelSettings alloc] initWithLayout:layout] autorelease];
+    RoundSettings *settings = [[[RoundSettings alloc] initWithLayout:layout] autorelease];
     
     [settings setNumOfGhosts:numOfGhosts];
     [settings setNumOfBadMans:numOfBadmans];

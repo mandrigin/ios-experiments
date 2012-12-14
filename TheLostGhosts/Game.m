@@ -7,7 +7,7 @@
 //
 
 #import "Game.h"
-#import "LevelFactory.h"
+#import "RoundFactory.h"
 
 @implementation Game
 
@@ -44,8 +44,8 @@ Game *_singletonInst;
     return self;
 }
 
--(Level *)createCurrentLevel {
-    LevelFactory *factory = [[self->_storage getFunTownLevels] objectAtIndex:self->currentLevelIndex];
+-(Round *)createCurrentLevel {
+    RoundFactory *factory = [[self->_storage getFunTownLevels] objectAtIndex:self->currentLevelIndex];
     return [factory createLevel];
 }
 

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "LevelLayout.h"
 
-@interface LevelSettings : NSObject{
+@interface RoundSettings : NSObject{
     LevelLayout *levelLayout;
 }
 

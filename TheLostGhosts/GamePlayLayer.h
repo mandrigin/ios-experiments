@@ -8,7 +8,7 @@
 
 #import "cocos2d.h"
 #import "LevelStorage.h"
-#import "Level.h"
+#import "Round.h"
 
 typedef enum {
       kPreview
@@ -31,7 +31,7 @@ typedef enum {
     GameState state;
 }
 
-+(id) createWithHeight:(int)height width:(int)width andLevel:(Level *)level;
++(id) createWithHeight:(int)height width:(int)width andLevel:(Round *)level;
 
 -(void)start;
 

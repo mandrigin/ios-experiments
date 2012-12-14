@@ -7,8 +7,8 @@
 //
 
 #import "LevelStorage.h"
-#import "LevelFactory.h"
-#import "LevelSettings.h"
+#import "RoundFactory.h"
+#import "RoundSettings.h"
 
 @implementation LevelStorage
 
@@ -59,7 +59,7 @@
       previewTime:(int) preview
         levelTime:(int)levelTime {
     
-    [array addObject:[LevelFactory createWithSettings:[LevelSettings createWithLayout:layout
+    [array addObject:[RoundFactory createWithSettings:[RoundSettings createWithLayout:layout
                                                                                ghosts:ghosts
                                                                               badMans:badMans
                                                                           previewTime:preview

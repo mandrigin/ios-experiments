@@ -27,7 +27,7 @@
         int bottomMargin = 180;
         int leftMargin   = 120;
         int rightMargin  = 120;
-        Level *currentLevel = [[Game sharedGame] createCurrentLevel];
+        Round *currentLevel = [[Game sharedGame] createCurrentLevel];
         
         
         

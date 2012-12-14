@@ -181,9 +181,9 @@
 		74D35ECF165CB6010040F054 /* wnd_fun_town_fail_badman.png in Resources */ = {isa = PBXBuildFile; fileRef = 74D35EC9165CB6010040F054 /* wnd_fun_town_fail_badman.png */; };
 		74D35ED3165F53FE0040F054 /* LevelLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D35ED2165F53FE0040F054 /* LevelLayout.m */; };
 		74D35ED6165F6B8B0040F054 /* LevelStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D35ED5165F6B8B0040F054 /* LevelStorage.m */; };
-		74D35ED9165F76890040F054 /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D35ED8165F76890040F054 /* Level.m */; };
-		74D35EDC165F76D40040F054 /* LevelFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D35EDB165F76D40040F054 /* LevelFactory.m */; };
-		74D35EDF165F7FC50040F054 /* LevelSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D35EDE165F7FC40040F054 /* LevelSettings.m */; };
+		74D35ED9165F76890040F054 /* Round.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D35ED8165F76890040F054 /* Round.m */; };
+		74D35EDC165F76D40040F054 /* RoundFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D35EDB165F76D40040F054 /* RoundFactory.m */; };
+		74D35EDF165F7FC50040F054 /* RoundSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D35EDE165F7FC40040F054 /* RoundSettings.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -521,12 +521,12 @@
 		74D35ED2165F53FE0040F054 /* LevelLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelLayout.m; sourceTree = "<group>"; };
 		74D35ED4165F6B8B0040F054 /* LevelStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelStorage.h; sourceTree = "<group>"; };
 		74D35ED5165F6B8B0040F054 /* LevelStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelStorage.m; sourceTree = "<group>"; };
-		74D35ED7165F76890040F054 /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
-		74D35ED8165F76890040F054 /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level.m; sourceTree = "<group>"; };
-		74D35EDA165F76D40040F054 /* LevelFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelFactory.h; sourceTree = "<group>"; };
-		74D35EDB165F76D40040F054 /* LevelFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelFactory.m; sourceTree = "<group>"; };
-		74D35EDD165F7FC40040F054 /* LevelSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelSettings.h; sourceTree = "<group>"; };
-		74D35EDE165F7FC40040F054 /* LevelSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelSettings.m; sourceTree = "<group>"; };
+		74D35ED7165F76890040F054 /* Round.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Round.h; sourceTree = "<group>"; };
+		74D35ED8165F76890040F054 /* Round.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Round.m; sourceTree = "<group>"; };
+		74D35EDA165F76D40040F054 /* RoundFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundFactory.h; sourceTree = "<group>"; };
+		74D35EDB165F76D40040F054 /* RoundFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundFactory.m; sourceTree = "<group>"; };
+		74D35EDD165F7FC40040F054 /* RoundSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundSettings.h; sourceTree = "<group>"; };
+		74D35EDE165F7FC40040F054 /* RoundSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundSettings.m; sourceTree = "<group>"; };
 		74D35EE0165F83CC0040F054 /* GhostyWindowState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GhostyWindowState.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1060,12 +1060,12 @@
 				74D35ED2165F53FE0040F054 /* LevelLayout.m */,
 				74D35ED4165F6B8B0040F054 /* LevelStorage.h */,
 				74D35ED5165F6B8B0040F054 /* LevelStorage.m */,
-				74D35ED7165F76890040F054 /* Level.h */,
-				74D35ED8165F76890040F054 /* Level.m */,
-				74D35EDA165F76D40040F054 /* LevelFactory.h */,
-				74D35EDB165F76D40040F054 /* LevelFactory.m */,
-				74D35EDD165F7FC40040F054 /* LevelSettings.h */,
-				74D35EDE165F7FC40040F054 /* LevelSettings.m */,
+				74D35ED7165F76890040F054 /* Round.h */,
+				74D35ED8165F76890040F054 /* Round.m */,
+				74D35EDA165F76D40040F054 /* RoundFactory.h */,
+				74D35EDB165F76D40040F054 /* RoundFactory.m */,
+				74D35EDD165F7FC40040F054 /* RoundSettings.h */,
+				74D35EDE165F7FC40040F054 /* RoundSettings.m */,
 				74D35EE0165F83CC0040F054 /* GhostyWindowState.h */,
 				7463C488167B673900647996 /* World.h */,
 				7463C489167B673900647996 /* World.m */,
@@ -1285,9 +1285,9 @@
 				74D35EBF165BCEEC0040F054 /* GhostyWindow.m in Sources */,
 				74D35ED3165F53FE0040F054 /* LevelLayout.m in Sources */,
 				74D35ED6165F6B8B0040F054 /* LevelStorage.m in Sources */,
-				74D35ED9165F76890040F054 /* Level.m in Sources */,
-				74D35EDC165F76D40040F054 /* LevelFactory.m in Sources */,
-				74D35EDF165F7FC50040F054 /* LevelSettings.m in Sources */,
+				74D35ED9165F76890040F054 /* Round.m in Sources */,
+				74D35EDC165F76D40040F054 /* RoundFactory.m in Sources */,
+				74D35EDF165F7FC50040F054 /* RoundSettings.m in Sources */,
 				744251B01664D546000D8F22 /* Graphics.m in Sources */,
 				744251B31664D5D1000D8F22 /* Game.m in Sources */,
 				744251B61664D92B000D8F22 /* Events.m in Sources */,

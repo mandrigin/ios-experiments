@@ -7,16 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "LevelSettings.h"
+#import "RoundSettings.h"
 
-@interface Level : NSObject {
-    LevelSettings* _settings;
+@interface Round : NSObject {
+    RoundSettings* _settings;
     NSArray*       _playground;
 }
 
--(id) initWithSettings:(LevelSettings *)factory;
+-(id) initWithSettings:(RoundSettings *)factory;
 
--(LevelSettings *)getSettings;
+-(RoundSettings *)getSettings;
 
 -(NSArray *)getPlayground;
 

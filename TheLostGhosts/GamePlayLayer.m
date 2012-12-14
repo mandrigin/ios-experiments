@@ -11,8 +11,8 @@
 #import "cocos2d.h"
 #import "GhostyWindowState.h"
 #import "LevelStorage.h"
-#import "Level.h"
-#import "LevelFactory.h"
+#import "Round.h"
+#import "RoundFactory.h"
 #import "Game.h"
 #import "GameCompletedScene.h"
 #import "LevelWinScene.h"
@@ -21,7 +21,7 @@
 
 @implementation GamePlayLayer
 
-+(id) createWithHeight:(int)height width:(int)width andLevel:(Level *)level {
++(id) createWithHeight:(int)height width:(int)width andLevel:(Round *)level {
     return [[[self alloc] initWithHeight:height width:width andLevel:level] autorelease];
 }
 
@@ -137,10 +137,10 @@
     [super dealloc];
 }
 
--(id) initWithHeight:(int)height width:(int)width andLevel:(Level*)currentLevel {
+-(id) initWithHeight:(int)height width:(int)width andLevel:(Round*)currentLevel {
     self = [super init];
     
-    LevelSettings *settings = [currentLevel getSettings];
+    RoundSettings *settings = [currentLevel getSettings];
     
     self->numberOfWindowsLeft = [settings numOfGhosts];
     

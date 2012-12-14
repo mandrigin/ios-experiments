@@ -6,12 +6,12 @@
 //
 //
 
-#import "Level.h"
+#import "Round.h"
 #import "GhostyWindowState.h"
 
-@implementation Level
+@implementation Round
 
--(id) initWithSettings:(LevelSettings *)settings {
+-(id) initWithSettings:(RoundSettings *)settings {
     self = [super init];
     
     if(self != nil) {
@@ -22,7 +22,7 @@
     return self;
 }
 
--(NSArray *)createPlaygroundFromSettings:(LevelSettings *)settting {
+-(NSArray *)createPlaygroundFromSettings:(RoundSettings *)settting {
     NSMutableArray* result = [[NSMutableArray alloc] init];
     
     LevelLayout *layout = [settting getLayout];
@@ -68,7 +68,7 @@
     return self->_playground;
 }
 
--(LevelSettings *)getSettings {
+-(RoundSettings *)getSettings {
     return self->_settings;
 }
 
