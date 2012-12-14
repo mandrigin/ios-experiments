@@ -18,30 +18,38 @@
 @implementation MainMenuScene
 
 -(id)init {
-    return [super initWithBackground:[DefaulBackgroundLayer node]];
+    self = [super init];
+    
+    if(self != nil) {
+        [self addChild: [DefaulBackgroundLayer node]];
+    }
+    
+    return self;
 }
 
 -(void)onEnter {
     [super onEnter];
     
+    CCSprite *caption = [self createTouchableSprite:@"caption.png" withTag:MAINSCENE_START_BUTTON];
+    //[CCSprite spriteWithFile:@"caption.png"];
+	
+    caption.position = ccp( size.width * CAPTION_X_OFFSET_FACTOR
+                           , size.height * CAPTION_Y_OFFSET_FACTOR);
+    
+	[self addChild: caption z:5];
+    
     CCMenuItemImage *startButton = [self createButtonFromNormalImage:@"btn_start_normal.png"
-                                                       selectedImage:@"btn_start_normal.png"
+                                                       selectedImage:@"btn_start_pressed.png"
                                                               andTag:MAINSCENE_START_BUTTON ];
     
-    CCMenu *hudMenu = [CCMenu menuWithItems:startButton, nil];
+    CCMenu *hudMenu = [CCMenu menuWithItems:nil];
+    
+    [hudMenu addChild:startButton];
     
     hudMenu.position = ccp( size.width * START_X_OFFSET_FACTOR
                           , size.height * START_Y_OFFSET_FACTOR);
     
     [self addChild: hudMenu z:10];
-    
-    CCSprite *caption = [CCSprite spriteWithFile:@"caption.png"];
-	
-    caption.position = ccp( size.width * CAPTION_X_OFFSET_FACTOR
-                          , size.height * CAPTION_Y_OFFSET_FACTOR);
-    
-	// add the label as a child to this Layer
-	[self addChild: caption z:5];
 }
 
 @end

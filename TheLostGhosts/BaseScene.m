@@ -23,6 +23,8 @@
 }
 
 -(void)onEnter {
+    [super onEnter];
+    
     size = [[CCDirector sharedDirector] winSize];
 }
 
@@ -30,11 +32,10 @@
                     selectedImage:(NSString *)selectedImage
                            andTag:(int)tag {
  
-    return [CCMenuItemImage itemFromNormalImage:@"btn_start_normal.png"
-                                  selectedImage:@"btn_start_pressed.png"     
+    return [CCMenuItemImage itemFromNormalImage:normalImage
+                                  selectedImage:selectedImage
                                           block:^(id sender) {
                                               [Events onClickTaggedItem:tag];
-         
                                           }];
 }
 

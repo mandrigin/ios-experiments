@@ -10,6 +10,7 @@
 #import "GamePauseLayer.h"
 #import "GameScene.h"
 #import "MainMenuScene.h"
+#import "LevelChooseScene.h"
 
 @implementation Graphics
 
@@ -31,6 +32,10 @@
     }
 }
 
+-(void) showLevelChooseScene {
+    [self replaceScene:[[LevelChooseScene alloc] init]];
+}
+
 -(void) showGameScene {
     [self replaceScene:[[GameScene alloc] init]];
 }
@@ -45,6 +50,7 @@
     
     if([[CCDirector sharedDirector] runningScene] != nil) {
         [[CCDirector sharedDirector] replaceScene:scene];
+        
     } else {
         [[CCDirector sharedDirector] pushScene:scene];
     }

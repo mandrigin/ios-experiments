@@ -16,8 +16,6 @@
 -(id) init {
     self = [super init];
     if(self != nil) {
-        // ask director for the window size
-        CGSize size = [[CCDirector sharedDirector] winSize];
         
         CCSprite *background = [self createTouchableSprite:@"level_lose_fun_town.png" withCallback:^{
             [[CCDirector sharedDirector] replaceScene:[GameScene node]];
