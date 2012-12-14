@@ -8,18 +8,27 @@
 
 #import "BaseScene.h"
 #import "cocos2d.h"
+#import "Events.h"
 
 @implementation BaseScene
 
+-(id) createButtonFromNormalImage:(NSString *)normalImage
+                    selectedImage:(NSString *)selectedImage
+                           andTag:(int)tag {
+ 
+    return [CCMenuItemImage itemFromNormalImage:@"btn_start_normal.png"
+                                  selectedImage:@"btn_start_pressed.png"     
+                                          block:^(id sender) {
+                                              [Events onClickTaggedItem:tag];
+         
+                                          }];
+}
+
+
 
 -(id) createTouchableSprite:(NSString*)image
-               withCallback:(void(^)()) callback {
-    CCMenuItemImage *pauseButton = [CCMenuItemImage itemFromNormalImage:image
-                                                          selectedImage:image
-                                                                  block:^(id sender) { callback(); }];
-    
-    CCMenu *hudMenu = [CCMenu menuWithItems:pauseButton, nil];
-    return hudMenu;
+               withTag:(int)tag {
+    return [self createButtonFromNormalImage:image selectedImage:image andTag:tag];
 }
 
 

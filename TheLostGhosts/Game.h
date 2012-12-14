@@ -24,11 +24,15 @@
     
 }
 
-@property (readonly) LevelStorage *storage;
-
 +(Game *) sharedGame;
 
 -(Graphics *)getGraphics;
+
+-(Sounds *)getSounds;
+
+-(void)load;
+
+-(void)save;
 
 -(bool)hasNextLevel;
 
@@ -39,7 +43,5 @@
 -(bool)gotoNextLevel;
 
 -(bool)isLastLevel;
-
--(bool)loadLevelToTheGameScene:(Level *)level;
 
 @end

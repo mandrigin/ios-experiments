@@ -11,6 +11,10 @@
 @interface BaseScene : CCScene
 
 -(id) createTouchableSprite:(NSString*)image
-                      withCallback:(void(^)()) callback;
+                      withTag:(int)tag;
+
+-(id) createButtonFromNormalImage:(NSString *)normalImage
+                    selectedImage:(NSString *)selectedImage
+                           andTag:(int)tag;
 
 @end

@@ -11,6 +11,9 @@
 #import "DefaulBackgroundLayer.h"
 #import "cocos2d.h"
 #import "Game.h"
+#import "Events.h"
+#import "Tags.h"
+#import "MainSceneLayout.h"
 
 @implementation MainMenuScene
 
@@ -32,19 +35,15 @@
     
     CGSize size = [[CCDirector sharedDirector] winSize];
     
-    CCMenuItemImage *pauseButton = [CCMenuItemImage
-                                    itemFromNormalImage:@"btn_start_normal.png"
-                                    selectedImage:@"btn_start_pressed.png"
-                                    
-                                    block:^(id sender) {
-                                        
-                                        [[[Game sharedGame] getGraphics] showGameScene];
-                                        
-                                    }];
     
-    CCMenu *hudMenu = [CCMenu menuWithItems:pauseButton, nil];
+    CCMenuItemImage *startButton = [self createButtonFromNormalImage:@"btn_start_normal.png"
+                                                       selectedImage:@"btn_start_normal.png"
+                                                              andTag:MAINSCENE_START_BUTTON ];
     
-    hudMenu.position = ccp(size.width / 2, size.height/2.3);
+    CCMenu *hudMenu = [CCMenu menuWithItems:startButton, nil];
+    
+    hudMenu.position = ccp( size.width * START_X_OFFSET_FACTOR
+                          , size.height * START_Y_OFFSET_FACTOR);
     
     [self addChild: hudMenu z:10];
     
@@ -54,7 +53,6 @@
     
 	// add the label as a child to this Layer
 	[self addChild: caption z:5];
-
 }
 
 @end

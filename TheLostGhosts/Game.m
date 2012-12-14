@@ -25,10 +25,12 @@ Game *_singletonInst;
     return nil;
 }
 
-@synthesize storage = _storage;
-
 -(Graphics *)getGraphics {
     return self->_graphics;
+}
+
+-(Sounds *)getSounds {
+    return self->_sounds;
 }
 
 -(id) init {
@@ -37,14 +39,12 @@ Game *_singletonInst;
         self->_storage = [LevelStorage create];
         self->currentLevelIndex = 0;
         self->_graphics = [[Graphics alloc] init];
+        self->_sounds = [[Sounds alloc] init];
     }
     return self;
 }
 
 -(Level *)createCurrentLevel {
-    //TODO: fix, this is only for WebReady DEMO!
-    self->_storage = [LevelStorage create];
-    //END OF FIX
     LevelFactory *factory = [[self->_storage getFunTownLevels] objectAtIndex:self->currentLevelIndex];
     return [factory createLevel];
 }
@@ -60,6 +60,7 @@ Game *_singletonInst;
 -(void) dealloc {
     [_storage release];
     [_graphics release];
+    [_sounds release];
     [super dealloc];
 }
 
