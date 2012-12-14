@@ -7,7 +7,12 @@
 //
 
 #import "LevelChooseScene.h"
+#import "DefaulBackgroundLayer.h"
 
 @implementation LevelChooseScene
+
+-(id)init {
+    return [super initWithBackground:[DefaulBackgroundLayer node]];
+}
 
 @end

@@ -12,6 +12,17 @@
 
 @implementation BaseScene
 
+-(id)initWithBackground:(CCLayer *)layer {
+    self = [super init];
+    
+    if(self != nil) {
+                
+        [self addChild: layer];
+    }
+    
+    return self;
+}
+
 -(id) createButtonFromNormalImage:(NSString *)normalImage
                     selectedImage:(NSString *)selectedImage
                            andTag:(int)tag {

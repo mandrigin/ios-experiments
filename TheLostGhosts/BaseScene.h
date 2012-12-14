@@ -7,6 +7,7 @@
 //
 
 #import "CCScene.h"
+#import "CCLayer.h"
 
 @interface BaseScene : CCScene
 
@@ -16,5 +17,7 @@
 -(id) createButtonFromNormalImage:(NSString *)normalImage
                     selectedImage:(NSString *)selectedImage
                            andTag:(int)tag;
+
+-(id)initWithBackground:(CCLayer *)layer;
 
 @end
