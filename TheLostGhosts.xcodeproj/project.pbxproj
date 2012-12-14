@@ -231,6 +231,7 @@
 		7463C47E167B554C00647996 /* btn_prev_world_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_prev_world_pressed.png; sourceTree = "<group>"; };
 		7463C483167B563500647996 /* default_bg_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_bg_back.png; sourceTree = "<group>"; };
 		7463C485167B56F000647996 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		7463C487167B62CE00647996 /* LevelChooseSceneLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LevelChooseSceneLayout.h; sourceTree = "<group>"; };
 		74D35D02165BB2C40040F054 /* TheLostGhosts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheLostGhosts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D35D06165BB2C40040F054 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		74D35D08165BB2C40040F054 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -568,6 +569,7 @@
 			isa = PBXGroup;
 			children = (
 				7463C475167B502000647996 /* MainSceneLayout.h */,
+				7463C487167B62CE00647996 /* LevelChooseSceneLayout.h */,
 			);
 			name = Layouts;
 			sourceTree = "<group>";

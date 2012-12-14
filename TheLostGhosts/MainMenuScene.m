@@ -36,9 +36,7 @@
                                                        selectedImage:@"btn_start_pressed.png"
                                                               andTag:MAINSCENE_START_BUTTON ];
     
-    CCMenu *hudMenu = [CCMenu menuWithItems:nil];
-    
-    [hudMenu addChild:startButton];
+    CCMenu *hudMenu = [CCMenu menuWithItems:startButton, nil];
     
     hudMenu.position = ccp( size.width * START_X_OFFSET_FACTOR
                           , size.height * START_Y_OFFSET_FACTOR);

@@ -10,6 +10,7 @@
 #import "DefaulBackgroundLayer.h"
 #import "cocos2d.h"
 #import "Tags.h"
+#import "LevelChooseSceneLayout.h"
 
 @implementation LevelChooseScene
 
@@ -27,5 +28,17 @@
     CCMenuItemImage* prevWorld = [self createButtonFromNormalImage:@"btn_prev_world_normal.png"
                                                      selectedImage:@"btn_prev_world_pressed.png"
                                                             andTag:LEVCHOOSE_PREV_WORLD_BUTTON];
+    
+    CCMenu *worldChooseMenu = [CCMenu menuWithItems:prevWorld, nextWorld, nil];
+    
+    [worldChooseMenu alignItemsHorizontallyWithPadding:size.width * WORLDCHOOSE_MENU_PADDING_FACTOR];
+    
+    worldChooseMenu.position = ccp(size.width * WORLDCHOOSE_X_OFFSET_FACTOR, size.height * WORLDCHOOSE_Y_OFFSET_FACTOR);
+    
+    [self addChild:worldChooseMenu];
+}
+
+-(void)showCurrentWorld {
+    
 }
 @end
