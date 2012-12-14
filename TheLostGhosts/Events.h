@@ -10,4 +10,6 @@
 
 @interface Events : NSObject
 
++(void)onClickTaggedItem:(int)tag;
+
 @end

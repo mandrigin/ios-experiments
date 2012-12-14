@@ -2,6 +2,8 @@
 //  Game.h
 //  TheLostGhosts
 //
+//  Contains the game files
+//
 //  Created by Igor Mandrigin on 11/27/12.
 //
 //
@@ -10,23 +12,34 @@
 #import "LevelStorage.h"
 #import "Level.h"
 #import "Graphics.h"
+#import "Sounds.h"
 
 @interface Game : NSObject {
+    
     int currentLevelIndex;
     
-    Graphics* _graphics;
+    Graphics     * _graphics;
+    Sounds       * _sounds;
+    LevelStorage * _storage;
+    
 }
 
 @property (readonly) LevelStorage *storage;
 
 +(Game *) sharedGame;
 
--(Level *)createCurrentLevel;
-
 -(Graphics *)getGraphics;
+
+-(bool)hasNextLevel;
+
+-(bool)hasNextRound;
+
+-(bool)gotoNextRound;
+
+-(bool)gotoNextLevel;
 
 -(bool)isLastLevel;
 
--(void)incrementLevel;
+-(bool)loadLevelToTheGameScene:(Level *)level;
 
 @end
