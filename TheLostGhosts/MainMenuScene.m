@@ -18,13 +18,7 @@
 @implementation MainMenuScene
 
 -(id)init {
-    self = [super init];
-    
-    if(self != nil) {
-        [self addChild: [DefaulBackgroundLayer node]];
-    }
-    
-    return self;
+    return [super initWithBackground:[DefaulBackgroundLayer node]];
 }
 
 -(void)onEnter {
