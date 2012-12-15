@@ -12,4 +12,7 @@
 
 +(void)onClickTaggedItem:(int)tag;
 
++(void)onClickTaggedItem:(int)tag withIntData:(int)data;
+
+
 @end

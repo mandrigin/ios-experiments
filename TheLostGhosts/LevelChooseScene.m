@@ -61,9 +61,14 @@
     CCMenu* oldLevels = menuLevels;
     
     CCMenu* menu = [CCMenu menuWithItems:nil];
-        
+    int levelIndex = 0;
     for (Level *level in levelsArray) {
-        [menu addChild:[self createTouchableSprite:[level icon] withTag:LEVCHOOSE_LEVEL_ICON]];
+        [menu addChild:[self createButtonFromNormalImage:[level icon]
+                                           selectedImage:[level icon]
+                                                     tag:LEVCHOOSE_LEVEL_ICON
+                                              andIntData:levelIndex]];
+        
+        levelIndex++;
     }
     
     NSNumber* numOfCols = [NSNumber numberWithInt:4];

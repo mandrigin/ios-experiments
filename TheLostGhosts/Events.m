@@ -22,4 +22,14 @@
             break;
     }
 }
+
++(void)onClickTaggedItem:(int)tag withIntData:(int)data {
+    switch (tag) {
+        case LEVCHOOSE_LEVEL_ICON:
+            [[[Game sharedGame] getCurrentWorld] setLevelNumber:data];
+            break;
+        default:
+            break;
+    }
+}
 @end

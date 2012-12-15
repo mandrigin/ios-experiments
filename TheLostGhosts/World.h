@@ -14,4 +14,6 @@
 
 @property(readonly, nonatomic, retain) NSArray* levels;
 
+-(void)setLevelNumber:(int)levelNumber;
+
 @end

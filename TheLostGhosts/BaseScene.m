@@ -28,16 +28,41 @@
     size = [[CCDirector sharedDirector] winSize];
 }
 
+-(id) createButton:(NSString *)normalImage
+     selectedImage:(NSString *)selectedImage
+             block:(void(^)()) callback {
+    
+    return [CCMenuItemImage itemFromNormalImage:normalImage
+                           selectedImage:selectedImage
+                                          block:^(id sender) {
+                                              callback();
+                                          }];
+    
+}
+
+-(id) createButtonFromNormalImage:(NSString *)normalImage
+                    selectedImage:(NSString *)selectedImage
+                              tag:(int)tag
+                       andIntData:(int)data {
+    return [self createButton:normalImage
+                selectedImage:selectedImage
+                        block:^{
+                            [Events onClickTaggedItem:tag withIntData:data];
+                        }];
+}
+
 -(id) createButtonFromNormalImage:(NSString *)normalImage
                     selectedImage:(NSString *)selectedImage
                            andTag:(int)tag {
- 
-    return [CCMenuItemImage itemFromNormalImage:normalImage
-                                  selectedImage:selectedImage
-                                          block:^(id sender) {
-                                              [Events onClickTaggedItem:tag];
-                                          }];
+    
+    return [self createButton:normalImage
+                selectedImage:selectedImage
+                        block:^{
+                            [Events onClickTaggedItem:tag];
+                        }];
 }
+
+
 
 
 
