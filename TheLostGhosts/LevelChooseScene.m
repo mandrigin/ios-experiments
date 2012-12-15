@@ -13,6 +13,7 @@
 #import "LevelChooseSceneLayout.h"
 #import "Game.h"
 #import "World.h"
+#import "Level.h"
 
 @implementation LevelChooseScene
 
@@ -55,8 +56,19 @@
     
 }
 
--(void)showLevels:(id)levels {
+-(void)showLevels:(NSArray *)levelsArray {
     
+    CCMenu* oldLevels = menuLevels;
+    
+    CCMenu* menu = [CCMenu menuWithItems:nil];
+        
+    for (Level *level in levelsArray) {
+        [menu addChild:[self createTouchableSprite:[level icon] withTag:LEVCHOOSE_LEVEL_ICON]];
+    }
+    
+    NSNumber* numOfCols = [NSNumber numberWithInt:4];
+    
+    [menu alignItemsInRows: numOfCols, numOfCols, numOfCols, numOfCols, nil];
 }
 
 @end

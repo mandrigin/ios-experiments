@@ -39,6 +39,7 @@
 		7463C484167B563500647996 /* default_bg_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 7463C483167B563500647996 /* default_bg_back.png */; };
 		7463C486167B56F000647996 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 7463C485167B56F000647996 /* Default-Landscape~ipad.png */; };
 		7463C48A167B673900647996 /* World.m in Sources */ = {isa = PBXBuildFile; fileRef = 7463C489167B673900647996 /* World.m */; };
+		7463C48D167B73DA00647996 /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 7463C48C167B73D900647996 /* Level.m */; };
 		74D35D07165BB2C40040F054 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74D35D06165BB2C40040F054 /* QuartzCore.framework */; };
 		74D35D09165BB2C40040F054 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74D35D08165BB2C40040F054 /* OpenGLES.framework */; };
 		74D35D0B165BB2C40040F054 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74D35D0A165BB2C40040F054 /* OpenAL.framework */; };
@@ -235,6 +236,8 @@
 		7463C487167B62CE00647996 /* LevelChooseSceneLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LevelChooseSceneLayout.h; sourceTree = "<group>"; };
 		7463C488167B673900647996 /* World.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = World.h; sourceTree = "<group>"; };
 		7463C489167B673900647996 /* World.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = World.m; sourceTree = "<group>"; };
+		7463C48B167B73D900647996 /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
+		7463C48C167B73D900647996 /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level.m; sourceTree = "<group>"; };
 		74D35D02165BB2C40040F054 /* TheLostGhosts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheLostGhosts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D35D06165BB2C40040F054 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		74D35D08165BB2C40040F054 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1069,6 +1072,8 @@
 				74D35EE0165F83CC0040F054 /* GhostyWindowState.h */,
 				7463C488167B673900647996 /* World.h */,
 				7463C489167B673900647996 /* World.m */,
+				7463C48B167B73D900647996 /* Level.h */,
+				7463C48C167B73D900647996 /* Level.m */,
 			);
 			name = Levels;
 			sourceTree = "<group>";
@@ -1301,6 +1306,7 @@
 				7463C46D167B47AD00647996 /* DataStorage.m in Sources */,
 				7463C47A167B51CC00647996 /* LevelChooseScene.m in Sources */,
 				7463C48A167B673900647996 /* World.m in Sources */,
+				7463C48D167B73DA00647996 /* Level.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

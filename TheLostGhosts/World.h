@@ -12,4 +12,6 @@
 
 @property(readonly, nonatomic, retain) NSString* caption;
 
+@property(readonly, nonatomic, retain) NSArray* levels;
+
 @end

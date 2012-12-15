@@ -12,6 +12,7 @@
 @interface LevelChooseScene : BaseScene {
     CCMenuItemImage* btnPrevWorld;
     CCMenuItemImage* btnNextWorld;
+    CCMenu* menuLevels;
 }
 
 @end
