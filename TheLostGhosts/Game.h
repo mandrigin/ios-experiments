@@ -35,16 +35,6 @@
 
 -(void)save;
 
--(bool)hasNextLevel;
-
--(bool)hasNextRound;
-
--(bool)gotoNextRound;
-
--(bool)gotoNextLevel;
-
--(bool)isLastLevel;
-
 -(World *)getCurrentWorld;
 
 -(bool)hasNextWorld;

@@ -27,6 +27,7 @@
     switch (tag) {
         case LEVCHOOSE_LEVEL_ICON:
             [[[Game sharedGame] getCurrentWorld] setLevelNumber:data];
+            [[[Game sharedGame] getGraphics] showGameScene];
             break;
         default:
             break;

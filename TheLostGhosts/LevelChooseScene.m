@@ -49,7 +49,7 @@
 
     [self showCaption:[currentWorld caption]];
     
-    [self showLevels:[currentWorld levels]];
+    [self showLevels:[currentWorld getLevels]];
 }
 
 -(void)showCaption:(NSString *)caption {
@@ -58,13 +58,11 @@
 
 -(void)showLevels:(NSArray *)levelsArray {
     
-    CCMenu* oldLevels = menuLevels;
-    
     CCMenu* menu = [CCMenu menuWithItems:nil];
     int levelIndex = 0;
     for (Level *level in levelsArray) {
-        [menu addChild:[self createButtonFromNormalImage:[level icon]
-                                           selectedImage:[level icon]
+        [menu addChild:[self createButtonFromNormalImage:[level getLevelIcon]
+                                           selectedImage:[level getLevelIcon]
                                                      tag:LEVCHOOSE_LEVEL_ICON
                                               andIntData:levelIndex]];
         

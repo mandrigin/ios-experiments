@@ -7,13 +7,26 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Level.h"
 
-@interface World : NSObject
+@interface World : NSObject {
+    
+    int _levelNumber;
+    NSMutableArray *_levels;
+}
 
 @property(readonly, nonatomic, retain) NSString* caption;
 
-@property(readonly, nonatomic, retain) NSArray* levels;
+-(NSArray *) getLevels;
 
--(void)setLevelNumber:(int)levelNumber;
+-(void) setLevelNumber:(int)levelNumber;
+
+-(bool) hasMoreLevels;
+
+-(Level *) getCurrentLevel;
+
+-(void) gotoNextLevel;
+
+-(void) addLevel:(Level *)level;
 
 @end
