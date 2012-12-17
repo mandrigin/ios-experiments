@@ -185,6 +185,7 @@
 		74D35ED9165F76890040F054 /* Round.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D35ED8165F76890040F054 /* Round.m */; };
 		74D35EDC165F76D40040F054 /* RoundFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D35EDB165F76D40040F054 /* RoundFactory.m */; };
 		74D35EDF165F7FC50040F054 /* RoundSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D35EDE165F7FC40040F054 /* RoundSettings.m */; };
+		74DE5654167F16310068C990 /* Logger.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DE5653167F16310068C990 /* Logger.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -531,6 +532,8 @@
 		74D35EDD165F7FC40040F054 /* RoundSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundSettings.h; sourceTree = "<group>"; };
 		74D35EDE165F7FC40040F054 /* RoundSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundSettings.m; sourceTree = "<group>"; };
 		74D35EE0165F83CC0040F054 /* GhostyWindowState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GhostyWindowState.h; sourceTree = "<group>"; };
+		74DE5652167F16310068C990 /* Logger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Logger.h; sourceTree = "<group>"; };
+		74DE5653167F16310068C990 /* Logger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Logger.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -617,6 +620,7 @@
 		74D35D18165BB2C40040F054 /* TheLostGhosts */ = {
 			isa = PBXGroup;
 			children = (
+				74DE5651167F16210068C990 /* Common */,
 				744251AC1664D522000D8F22 /* Game */,
 				74D35ED0165F53E30040F054 /* Levels */,
 				74D35E9E165BB4B80040F054 /* Scenes */,
@@ -1078,6 +1082,15 @@
 			name = Levels;
 			sourceTree = "<group>";
 		};
+		74DE5651167F16210068C990 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				74DE5652167F16310068C990 /* Logger.h */,
+				74DE5653167F16310068C990 /* Logger.m */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1307,6 +1320,7 @@
 				7463C47A167B51CC00647996 /* LevelChooseScene.m in Sources */,
 				7463C48A167B673900647996 /* World.m in Sources */,
 				7463C48D167B73DA00647996 /* Level.m in Sources */,
+				74DE5654167F16310068C990 /* Logger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

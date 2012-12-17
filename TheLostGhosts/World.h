@@ -24,18 +24,24 @@ typedef enum {
 
 }
 
-@property(readonly, nonatomic, retain) NSString* caption;
+-(void) loadFromStorage:(id)storage;
+
+-(void) saveToStorage:(id)storage;
 
 -(NSArray *) getLevels;
 
--(void) setLevelNumber:(int)levelNumber;
-
--(bool) hasMoreLevels;
-
 -(Level *) getCurrentLevel;
+
+-(bool) hasNextLevel;
 
 -(void) gotoNextLevel;
 
+-(void) setCurrentLevelByNumber:(int)levelNumber;
+
 -(void) addLevel:(Level *)level;
+
+-(NSString *) getBackground;
+
+-(NSString *) getCaption;
 
 @end

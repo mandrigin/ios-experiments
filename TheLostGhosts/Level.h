@@ -17,14 +17,12 @@ typedef enum {
 
 
 @interface Level : NSObject {
-    WorldSkin   * _layout;
-    int             _levelNumber;
+    WorldSkin   *   _skin;
+    int             _number;
     LevelState      _state;
     NSMutableArray* _roundFactories;
     int             _currentRoundNumber;
 }
-
-+(id) createWithLayout:(WorldSkin *)layout andNumber:(int)number;
 
 -(NSArray *) getRounds;
 
@@ -49,5 +47,11 @@ typedef enum {
 -(void) markEnabled;
 
 -(NSString *) getIcon;
+
+-(void) setSkin:(WorldSkin *)skin;
+
+-(void) setNumber:(int) number;
+
+-(bool) addedToSomeWorld;
 
 @end

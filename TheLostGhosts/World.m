@@ -7,16 +7,28 @@
 //
 
 #import "World.h"
+#import "Logger.h"
 
 @implementation World
 
--(id)init {
+-(id)initWithSkin:(WorldSkin *)skin {
     self = [super init];
+    
     if(self != nil) {
-        _levelNumber = 0;
+        _currentLevelNumber = 0;
         _levels = [NSMutableArray array];
+        _skin = skin;
     }
+    
     return self;
+}
+
+-(void) loadFromStorage:(id)storage {
+    
+}
+
+-(void) saveToStorage:(id)storage {
+    
 }
 
 -(NSArray *)getLevels {
@@ -24,23 +36,48 @@
 }
 
 -(Level *) getCurrentLevel {
-    return [_levels objectAtIndex:_levelNumber];
-}
-
--(void) addLevel:(Level *)level {
-    [_levels addObject:level];
+    return [_levels objectAtIndex:_currentLevelNumber];
 }
 
 -(bool) hasMoreLevels {
-    return [_levels count] > _levelNumber + 1;
+    return [_levels count] > _currentLevelNumber + 1;
 }
 
 -(void) gotoNextLevel {
-    _levelNumber++;
+    _currentLevelNumber++;
 }
 
--(void) setLevelNumber:(int)levelNumber {
-    _levelNumber = levelNumber;
+-(void) setCurrentLevelByNumber:(int)levelNumber {
+    _currentLevelNumber = levelNumber;
+}
+
+-(void) addLevel:(Level *)level {
+    if(![level addedToSomeWorld]) {
+        [level setSkin:_skin];
+        [level setNumber:[_levels count]];
+        [_levels addObject:level];
+    } else {
+        [Logger logErrorWithMessage:@"Level is already added to another world! Skipping!"];
+    }
+}
+
+-(NSString *) getBackground {
+    return [_skin levelChooseSceneBg];
+}
+
+-(NSString *) getCaption {
+    return [_skin worldCaption];
+}
+
+-(void) dealloc {
+    
+    for (id level in _levels) {
+        [level release];
+    }
+    
+    [_levels release];
+    
+    [super dealloc];
 }
 
 @end

@@ -10,16 +10,11 @@
 
 @implementation Level
 
-+(id) createWithLayout:(WorldSkin *)layout andNumber:(int)number {
-    return [[Level alloc] initWithLayout:layout andNumber:number];
-}
-
--(id)initWithLayout:(WorldSkin *)layout andNumber:(int)number {
+-(id)init {
     self = [super init];
     if (self != nil) {
-        _layout = layout;
-        _levelNumber = number;
         _roundFactories = [NSMutableArray array];
+        _skin = nil;
     }
     return self;
 }
@@ -34,7 +29,7 @@
                                                   previewTime:previewTime
                                                     levelTime:levelTime
                                                      training:training
-                                                    andLayout:_layout]];
+                                                    andLayout:_skin]];
 }
 
 
@@ -51,11 +46,11 @@
 }
 
 -(void) loadFromStorage:(id)storage {
-    [storage saveLevelState:_state forLevelNumber:_levelNumber];
+    [storage saveLevelState:_state forLevelNumber:_number];
 }
 
 -(void) saveToStorage:(id)storage {
-    [self setState:(LevelState)[storage loadLevelState:_levelNumber]];
+    [self setState:(LevelState)[storage loadLevelState:_number]];
 }
 
 -(void)markPassed {
@@ -70,30 +65,35 @@
     
     switch (_state) {
         case LOCKED:
-            return [_layout lockedLevelIcon];
+            return [_skin lockedLevelIcon];
             
         case PASSED:
-            return [_layout passedLevelIcon];
+            return [_skin passedLevelIcon];
             
         case ENABLED:
-            return [_layout enabledLevelIcon];
+            return [_skin enabledLevelIcon];
         
         default:
-            return [_layout enabledLevelIcon];
+            return [_skin enabledLevelIcon];
     }
 }
 
+-(void) setSkin:(WorldSkin *)skin {
+    _skin = skin;
+}
+
+-(void) setNumber:(int)number {
+    _number = number;
+}
+
+-(bool) addedToSomeWorld {
+    return _skin != nil;
+}
 
 //PRIVATE
 -(void) setState:(LevelState)newState {
     _state = newState;
 }
-
-
-
-
-
-
 
 
 -(void)dealloc {
@@ -106,7 +106,5 @@
     
     [super dealloc];
 }
-
-
 
 @end
