@@ -36,6 +36,17 @@
 
 @property(readonly, nonatomic, retain) NSString *windowNormal;
 
+@property(readonly, nonatomic, retain) NSString *lockedLevelIcon;
+
+@property(readonly, nonatomic, retain) NSString *passedLevelIcon;
+
+@property(readonly, nonatomic, retain) NSString *enabledLevelIcon;
+
+@property(readonly, nonatomic, retain) NSString *worldCaption;
+
+@property(readonly, nonatomic, retain) NSString *levelChooseSceneBg;
+
+
 +(id)createWithTopMargin:(float)topM
             bottomMargin:(float)bottomM
         horizontalMargin:(float)horizontalM
@@ -48,7 +59,11 @@
       windowPreviewGhost:(NSString *)wPreviewGhost
      windowPreviewBadman:(NSString *)wPreviewBadMan
           windowSelected:(NSString *)wSelected
-            windowNormal:(NSString *)wNormal;
-
+            windowNormal:(NSString *)wNormal
+         lockedLevelIcon:(NSString *)lockedLevelIcon
+         passedLevelIcon:(NSString *)passedLevelIcon
+        enabledLevelIcon:(NSString *)enabeledLevelIcon
+            worldCaption:(NSString *)worldCaption
+      levelChooseSceneBg:(NSString *)levelChooseSceneBg;
 
 @end

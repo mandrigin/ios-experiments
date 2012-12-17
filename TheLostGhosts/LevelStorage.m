@@ -19,14 +19,55 @@
 -(id)init {
     self = [super init];
     if(self != nil) {
-        [self createLayouts];
+        
+        _currentWorldNumber = 0;
+        
+        [self createSkins];
         [self createLevels];
     }
     return self;
 }
 
--(void)createLayouts {
-    funTownLevelLayout = [WorldSkin createWithTopMargin:5.0f
+-(void) loadFromStorage:(id)dataStorage {
+    
+}
+
+-(void) saveToStorage:(id)dataStorage {
+    
+}
+
+-(NSArray *)getWorlds {
+    return _worlds;
+}
+
+-(bool) hasNextWorld {
+    return [_worlds count] > _currentWorldNumber + 1;
+}
+
+-(bool) hasPrevWorld {
+    return _currentWorldNumber > 0;
+}
+
+-(void) gotoNextWorld {
+    _currentWorldNumber++;
+}
+
+-(void) gotoPrevWorld {
+    _currentWorldNumber--;
+}
+
+-(void) setCurrentWorldByNumber:(int)number {
+    _currentWorldNumber = number;
+}
+
+-(World *) getCurrentWorld {
+    return [_worlds objectAtIndex:_currentWorldNumber];
+}
+
+//PRIVATE METHODS
+
+-(void)createSkins {
+    _funTownSkin = [WorldSkin createWithTopMargin:5.0f
                                              bottomMargin:6.0f
                                          horizontalMargin:8.7f
                                                      rows:4
@@ -45,34 +86,8 @@
     [self createFunTown];
 }
 
--(void)createFunTown {
-    funTownLevels = [[NSMutableArray alloc] init];
-    [self addLevelTo:funTownLevels layout:funTownLevelLayout ghosts:4 badMans:2 previewTime:2 levelTime:5];
-    //[self addLevelTo:funTownLevels layout:funTownLevelLayout ghosts:5 badMans:2 previewTime:2 levelTime:5];
-
-}
-
--(void)addLevelTo:(NSMutableArray*)array
-           layout:(WorldSkin *)layout
-           ghosts:(int)ghosts
-          badMans:(int)badMans
-      previewTime:(int) preview
-        levelTime:(int)levelTime {
-    
-    [array addObject:[RoundFactory createWithSettings:[RoundSettings createWithLayout:layout
-                                                                               ghosts:ghosts
-                                                                              badMans:badMans
-                                                                          previewTime:preview
-                                                                            levelTime:levelTime]]];
-}
-
--(NSMutableArray *) getFunTownLevels {
-    return self->funTownLevels;
-}
-
 -(void)dealloc {
-    [funTownLevelLayout release];
-    [funTownLevels release];
+    [_funTownSkin release];
     [super dealloc];
     
 }

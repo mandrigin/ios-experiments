@@ -8,14 +8,34 @@
 
 #import <Foundation/Foundation.h>
 #import "WorldSkin.h"
+#import "World.h"
 
 @interface LevelStorage : NSObject {
-    WorldSkin    *funTownLevelLayout;
-    NSMutableArray *funTownLevels;
+    NSMutableArray * _worlds;
+    
+    int _currentWorldNumber;
+    
+    WorldSkin *      _funTownSkin;
 }
 
-+(id) create;
+-(void) loadFromStorage:(id)dataStorage;
 
--(NSMutableArray *)getFunTownLevels;
+-(void) saveToStorage:(id)dataStorage;
+
+-(NSArray *)getWorlds;
+
+-(bool) hasNextWorld;
+
+-(bool) hasPrevWorld;
+
+-(void) gotoNextWorld;
+
+-(void) gotoPrevWorld;
+
+-(void) setCurrentWorldByNumber:(int)number;
+
+-(World *) getCurrentWorld;
+
++(id) create;
 
 @end
