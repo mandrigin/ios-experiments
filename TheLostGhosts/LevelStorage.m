@@ -68,18 +68,18 @@
 
 -(void)createSkins {
     _funTownSkin = [WorldSkin createWithTopMargin:5.0f
-                                             bottomMargin:6.0f
-                                         horizontalMargin:8.7f
-                                                     rows:4
-                                                  columns:5
-                                            windowCorrect:@"wnd_fun_town_correct.png"
-                                          windowFailEmpty:@"wnd_fun_town_fail_empty.png"
-                                          windowFailGhost:@"wnd_fun_town_fail_ghost.png"
-                                         windowFailBadman:@"wnd_fun_town_fail_badman.png"
-                                       windowPreviewGhost:@"wnd_fun_town_preview_ghost.png"
-                                      windowPreviewBadman:@"wnd_fun_town_preview_badman.png"
-                                           windowSelected:@"wnd_fun_town_selected.png"
-                                             windowNormal:@"wnd_fun_town_normal.png" ];
+                                     bottomMargin:6.0f
+                                 horizontalMargin:8.7f
+                                             rows:4
+                                          columns:5
+                                    windowCorrect:@"wnd_fun_town_correct.png"
+                                  windowFailEmpty:@"wnd_fun_town_fail_empty.png"
+                                  windowFailGhost:@"wnd_fun_town_fail_ghost.png"
+                                 windowFailBadman:@"wnd_fun_town_fail_badman.png"
+                               windowPreviewGhost:@"wnd_fun_town_preview_ghost.png"
+                              windowPreviewBadman:@"wnd_fun_town_preview_badman.png"
+                                   windowSelected:@"wnd_fun_town_selected.png"
+                                     windowNormal:@"wnd_fun_town_normal.png" ];
 }
 
 -(void)createLevels {
