@@ -16,7 +16,7 @@
     
     if(self != nil) {
         self->_settings = settings;
-        self->_playground = [self createPlaygroundFromSettings:settings];
+        self->_playground = [self createPlaygroundFromSettings:self->_settings];
     }
     
     return self;

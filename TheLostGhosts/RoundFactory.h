@@ -7,16 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "LevelLayout.h"
 #import "RoundSettings.h"
 #import "Round.h"
 
 @interface RoundFactory : NSObject {
-    RoundSettings *_settings;
+    RoundSettings * _settings;
 }
 
-+(id)createWithSettings:(RoundSettings *)settings;
++(id)createWithGhosts:(int)numOfGhosts
+              badMans:(int)numOfBadmans
+          previewTime:(long)previewTime
+            levelTime:(long)levelTime
+             training:(bool)training
+            andLayout:(LevelLayout *)layout;
 
--(Round *) createLevel;
+-(Round *) createRound;
 
 @end

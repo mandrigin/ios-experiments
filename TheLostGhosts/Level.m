@@ -7,69 +7,104 @@
 //
 
 #import "Level.h"
-#import "LevelLayout.h"
-#import "RoundFactory.h"
 
 @implementation Level
 
-+(id) createWithSettings:(RoundSettings *)settings {
-    return [[Level alloc] initWithSettings:settings];
++(id) createWithLayout:(LevelLayout *)layout andNumber:(int)number {
+    return [[Level alloc] initWithLayout:layout andNumber:number];
 }
 
--(id)initWithSettings:(RoundSettings *)settings {
+-(id)initWithLayout:(LevelLayout *)layout andNumber:(int)number {
     self = [super init];
     if (self != nil) {
-        _settings = settings;
+        _layout = layout;
+        _levelNumber = number;
         _roundFactories = [NSMutableArray array];
     }
     return self;
 }
 
--(RoundSettings *)getSettings {
-    return _settings;
+-(void) addRoundWithGhosts:(int)numOfGhosts
+                   badMans:(int)numOfBadmans
+               previewTime:(long)previewTime
+                 levelTime:(long)levelTime
+                  training:(bool)training {
+    [_roundFactories addObject:[RoundFactory createWithGhosts:numOfGhosts
+                                                      badMans:numOfBadmans
+                                                  previewTime:previewTime
+                                                    levelTime:levelTime
+                                                     training:training
+                                                    andLayout:_layout]];
 }
 
+
+-(RoundFactory *)getCurrentRound {
+    return [_roundFactories objectAtIndex:_currentRoundNumber];
+}
+
+-(bool) hasMoreRounds {
+    return [_roundFactories count] > (_currentRoundNumber + 1);
+}
+
+-(void) gotoNextRound {
+    _currentRoundNumber++;
+}
+
+-(void) loadFromStorage:(id)storage {
+    [storage saveLevelState:_state forLevelNumber:_levelNumber];
+}
+
+-(void) saveToStorage:(id)storage {
+    [self setState:(LevelState)[storage loadLevelState:_levelNumber]];
+}
+
+-(void)markPassed {
+    [self setState:PASSED];
+}
+
+-(void)markEnabled {
+    [self setState:ENABLED];
+}
+
+-(NSString*) getIcon {
+    
+    switch (_state) {
+        case LOCKED:
+            return [_layout lockedLevelIcon];
+            
+        case PASSED:
+            return [_layout passedLevelIcon];
+            
+        case ENABLED:
+            return [_layout enabledLevelIcon];
+        
+        default:
+            return [_layout enabledLevelIcon];
+    }
+}
+
+
+//PRIVATE
 -(void) setState:(LevelState)newState {
     _state = newState;
 }
 
--(void) addRoundFactory {
-    [_roundFactories addObject:[RoundFactory createWithSettings:[self getSettings]]];
-}
 
--(RoundFactory *)getCurrentRoundFactory {
-    return [_roundFactories objectAtIndex:_currentRound];
-}
 
--(bool) hasMoreRounds {
-    return [_roundFactories count] > (_currentRound + 1);
-}
 
--(void) gotoNextRound {
-    _currentRound++;
-}
 
--(NSString*) getLevelIcon {
+
+
+
+-(void)dealloc {
     
-    //TODO: fill this method
-    
-    switch (_state) {
-        case LOCKED:
-            break;
-        
-        case PASSED:
-            
-            break;
-            
-            
-        case ENABLED:
-            
-            
-            break;
-            
-        default:
-            break;
+    for(id factory in _roundFactories) {
+        [factory release];
     }
+    
+    [_roundFactories release];
+    
+    [super dealloc];
 }
 
 

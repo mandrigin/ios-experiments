@@ -6,7 +6,6 @@
 //
 //
 
-#import "RoundSettings.h"
 #import "RoundFactory.h"
 #import <Foundation/Foundation.h>
 
@@ -18,24 +17,37 @@ typedef enum {
 
 
 @interface Level : NSObject {
+    LevelLayout   * _layout;
+    int             _levelNumber;
     LevelState      _state;
-    RoundSettings * _settings;
     NSMutableArray* _roundFactories;
-    int             _currentRound;
+    int             _currentRoundNumber;
 }
 
-+(id) createWithSettings:(RoundSettings *)settings;
++(id) createWithLayout:(LevelLayout *)layout andNumber:(int)number;
 
--(NSString *) getLevelIcon;
+-(NSArray *) getRounds;
 
--(void) setState:(LevelState)newState;
+-(void) addRoundWithGhosts:(int)numOfGhosts
+                   badMans:(int)numOfBadmans
+               previewTime:(long)previewTime
+                 levelTime:(long)levelTime
+                  training:(bool)training;
 
--(void) addRoundFactory;
+-(RoundFactory *) getCurrentRound;
 
--(RoundFactory *) getCurrentRoundFactory;
-
--(bool) hasMoreRounds;
+-(bool) hasNextRound;
 
 -(void) gotoNextRound;
+
+-(void) loadFromStorage:(id)storage;
+
+-(void) saveToStorage:(id)storage;
+
+-(void) markPassed;
+
+-(void) markEnabled;
+
+-(NSString *) getIcon;
 
 @end

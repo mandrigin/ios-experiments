@@ -7,27 +7,53 @@
 //
 
 #import "RoundFactory.h"
-#import "Round.h"
 
 @implementation RoundFactory
 
--(id)initWithSettings:(RoundSettings *)settings {
+-(id)initWithGhosts:(int)numOfGhosts
+            badMans:(int)numOfBadmans
+        previewTime:(long)previewTime
+          levelTime:(long)levelTime
+           training:(bool)training
+          andLayout:(LevelLayout *) layout {
+    
     self = [super init];
     
     if(self != nil) {
-        self->_settings = settings;
+        self->_settings = [RoundSettings createWithLayout:layout
+                                                   ghosts:numOfGhosts
+                                                  badMans:numOfBadmans
+                                              previewTime:previewTime
+                                                levelTime:levelTime
+                                                 training:training];
     }
     
     return self;
 }
 
-+(id)createWithSettings:(RoundSettings *)settings {
-    return [[[RoundFactory alloc] initWithSettings:settings] autorelease];
++(id)createWithGhosts:(int)numOfGhosts
+              badMans:(int)numOfBadmans
+          previewTime:(long)previewTime
+            levelTime:(long)levelTime
+             training:(bool)training
+            andLayout:(LevelLayout *)layout {
+    return [[RoundFactory alloc] initWithGhosts:numOfGhosts
+                                        badMans:numOfBadmans
+                                    previewTime:previewTime
+                                      levelTime:levelTime
+                                       training:training
+                                      andLayout:layout];
 }
 
--(Round *) createLevel {
+-(Round *) createRound {
     RoundSettings *settings = self->_settings;
     return [[Round alloc] initWithSettings:settings];
+}
+
+
+-(void)dealloc {
+    [_settings release];
+    [super dealloc];
 }
 
 @end

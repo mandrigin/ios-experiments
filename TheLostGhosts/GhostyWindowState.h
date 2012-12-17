@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 typedef enum {
-    kEmpty = 0
+      kEmpty = 0
     , kGhost
     , kBadMan
 } GhostyWindowState;

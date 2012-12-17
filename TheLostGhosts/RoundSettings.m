@@ -26,7 +26,8 @@
                 ghosts:(int)numOfGhosts
                badMans:(int)numOfBadmans
            previewTime:(long)previewTime
-             levelTime:(long)levelTime {
+             levelTime:(long)levelTime
+              training:(bool)training {
     
     RoundSettings *settings = [[[RoundSettings alloc] initWithLayout:layout] autorelease];
     
@@ -35,28 +36,9 @@
     [settings setPreviewTime:previewTime];
     [settings setLevelTime:levelTime];
     
-    settings.training = false;
+    settings.training = training;
     
     return settings;
 }
-
-+(id) createTrainingWithLayout:(LevelLayout *)layout
-                        ghosts:(int)numOfGhosts
-                       badMans:(int)numOfBadmans
-                   previewTime:(long)previewTime
-                     levelTime:(long)levelTime {
-    
-    RoundSettings *settings = [[[RoundSettings alloc] initWithLayout:layout] autorelease];
-    
-    [settings setNumOfGhosts:numOfGhosts];
-    [settings setNumOfBadMans:numOfBadmans];
-    [settings setPreviewTime:previewTime];
-    [settings setLevelTime:levelTime];
-    
-    settings.training = true;
-    
-    return settings;
-}
-
 
 @end

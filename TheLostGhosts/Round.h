@@ -14,10 +14,10 @@
     NSArray*       _playground;
 }
 
--(id) initWithSettings:(RoundSettings *)factory;
+-(id) initWithSettings:(RoundSettings *)settings;
 
--(RoundSettings *)getSettings;
+-(RoundSettings *) getSettings;
 
--(NSArray *)getPlayground;
+-(NSArray *) getPlayground;
 
 @end

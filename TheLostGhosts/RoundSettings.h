@@ -30,13 +30,7 @@
                 ghosts:(int)numOfGhosts
                badMans:(int)numOfBadmans
            previewTime:(long)previewTime
-             levelTime:(long)levelTime;
-
-+(id) createTrainingWithLayout:(LevelLayout*)layout
-                        ghosts:(int)numOfGhosts
-                       badMans:(int)numOfBadmans
-                   previewTime:(long)previewTime
-                     levelTime:(long)levelTime;
-
+             levelTime:(long)levelTime
+              training:(bool)training;
 
 @end
