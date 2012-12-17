@@ -10,11 +10,11 @@
 
 @implementation Level
 
-+(id) createWithLayout:(LevelLayout *)layout andNumber:(int)number {
++(id) createWithLayout:(WorldSkin *)layout andNumber:(int)number {
     return [[Level alloc] initWithLayout:layout andNumber:number];
 }
 
--(id)initWithLayout:(LevelLayout *)layout andNumber:(int)number {
+-(id)initWithLayout:(WorldSkin *)layout andNumber:(int)number {
     self = [super init];
     if (self != nil) {
         _layout = layout;

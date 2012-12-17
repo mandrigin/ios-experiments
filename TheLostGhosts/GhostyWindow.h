@@ -8,10 +8,10 @@
 
 #import "cocos2d.h"
 #import "GhostyWindowState.h"
-#import "LevelLayout.h"
+#import "WorldSkin.h"
 
 @interface GhostyWindow : CCMenuItemImage {
-    LevelLayout *_layout;
+    WorldSkin *_layout;
 }
 
 @property (getter = isSelected, setter = setSelected:) BOOL selected;
@@ -26,9 +26,9 @@
 
 -(void)toggleWindowSelection;
 
-+(id)createWithState:(GhostyWindowState)state layout:(LevelLayout *)layout andCallback:(void(^)(GhostyWindow* sender))callback;
++(id)createWithState:(GhostyWindowState)state layout:(WorldSkin *)layout andCallback:(void(^)(GhostyWindow* sender))callback;
 
--(void)setLayout:(LevelLayout *)layout;
+-(void)setLayout:(WorldSkin *)layout;
 
 -(bool)isCorrect;
 

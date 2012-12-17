@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface LevelLayout : NSObject
+@interface WorldSkin : NSObject
 
 @property float topMarginFactor;
 

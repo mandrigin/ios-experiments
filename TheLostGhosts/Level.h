@@ -17,14 +17,14 @@ typedef enum {
 
 
 @interface Level : NSObject {
-    LevelLayout   * _layout;
+    WorldSkin   * _layout;
     int             _levelNumber;
     LevelState      _state;
     NSMutableArray* _roundFactories;
     int             _currentRoundNumber;
 }
 
-+(id) createWithLayout:(LevelLayout *)layout andNumber:(int)number;
++(id) createWithLayout:(WorldSkin *)layout andNumber:(int)number;
 
 -(NSArray *) getRounds;
 

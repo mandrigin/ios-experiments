@@ -26,7 +26,7 @@
 }
 
 -(void)createLayouts {
-    funTownLevelLayout = [LevelLayout createWithTopMargin:5.0f
+    funTownLevelLayout = [WorldSkin createWithTopMargin:5.0f
                                              bottomMargin:6.0f
                                          horizontalMargin:8.7f
                                                      rows:4
@@ -53,7 +53,7 @@
 }
 
 -(void)addLevelTo:(NSMutableArray*)array
-           layout:(LevelLayout *)layout
+           layout:(WorldSkin *)layout
            ghosts:(int)ghosts
           badMans:(int)badMans
       previewTime:(int) preview

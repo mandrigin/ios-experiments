@@ -144,7 +144,7 @@
     
     self->numberOfWindowsLeft = [settings numOfGhosts];
     
-    LevelLayout *layout = [settings getLayout];
+    WorldSkin *layout = [settings getLayout];
     
     if(self != nil) {
         

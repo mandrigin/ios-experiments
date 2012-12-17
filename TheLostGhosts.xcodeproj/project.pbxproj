@@ -180,7 +180,7 @@
 		74D35ECD165CB6010040F054 /* wnd_fun_town_fail_empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 74D35EC7165CB6010040F054 /* wnd_fun_town_fail_empty.png */; };
 		74D35ECE165CB6010040F054 /* wnd_fun_town_preview_badman.png in Resources */ = {isa = PBXBuildFile; fileRef = 74D35EC8165CB6010040F054 /* wnd_fun_town_preview_badman.png */; };
 		74D35ECF165CB6010040F054 /* wnd_fun_town_fail_badman.png in Resources */ = {isa = PBXBuildFile; fileRef = 74D35EC9165CB6010040F054 /* wnd_fun_town_fail_badman.png */; };
-		74D35ED3165F53FE0040F054 /* LevelLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D35ED2165F53FE0040F054 /* LevelLayout.m */; };
+		74D35ED3165F53FE0040F054 /* WorldSkin.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D35ED2165F53FE0040F054 /* WorldSkin.m */; };
 		74D35ED6165F6B8B0040F054 /* LevelStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D35ED5165F6B8B0040F054 /* LevelStorage.m */; };
 		74D35ED9165F76890040F054 /* Round.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D35ED8165F76890040F054 /* Round.m */; };
 		74D35EDC165F76D40040F054 /* RoundFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D35EDB165F76D40040F054 /* RoundFactory.m */; };
@@ -520,8 +520,8 @@
 		74D35EC7165CB6010040F054 /* wnd_fun_town_fail_empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wnd_fun_town_fail_empty.png; sourceTree = "<group>"; };
 		74D35EC8165CB6010040F054 /* wnd_fun_town_preview_badman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wnd_fun_town_preview_badman.png; sourceTree = "<group>"; };
 		74D35EC9165CB6010040F054 /* wnd_fun_town_fail_badman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wnd_fun_town_fail_badman.png; sourceTree = "<group>"; };
-		74D35ED1165F53FE0040F054 /* LevelLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelLayout.h; sourceTree = "<group>"; };
-		74D35ED2165F53FE0040F054 /* LevelLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelLayout.m; sourceTree = "<group>"; };
+		74D35ED1165F53FE0040F054 /* WorldSkin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorldSkin.h; sourceTree = "<group>"; };
+		74D35ED2165F53FE0040F054 /* WorldSkin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorldSkin.m; sourceTree = "<group>"; };
 		74D35ED4165F6B8B0040F054 /* LevelStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelStorage.h; sourceTree = "<group>"; };
 		74D35ED5165F6B8B0040F054 /* LevelStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelStorage.m; sourceTree = "<group>"; };
 		74D35ED7165F76890040F054 /* Round.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Round.h; sourceTree = "<group>"; };
@@ -1059,8 +1059,8 @@
 		74D35ED0165F53E30040F054 /* Levels */ = {
 			isa = PBXGroup;
 			children = (
-				74D35ED1165F53FE0040F054 /* LevelLayout.h */,
-				74D35ED2165F53FE0040F054 /* LevelLayout.m */,
+				74D35ED1165F53FE0040F054 /* WorldSkin.h */,
+				74D35ED2165F53FE0040F054 /* WorldSkin.m */,
 				74D35ED4165F6B8B0040F054 /* LevelStorage.h */,
 				74D35ED5165F6B8B0040F054 /* LevelStorage.m */,
 				74D35ED7165F76890040F054 /* Round.h */,
@@ -1288,7 +1288,7 @@
 				74D35EB5165BBF010040F054 /* GamePauseLayer.m in Sources */,
 				74D35EBA165BC23C0040F054 /* GamePlayLayer.m in Sources */,
 				74D35EBF165BCEEC0040F054 /* GhostyWindow.m in Sources */,
-				74D35ED3165F53FE0040F054 /* LevelLayout.m in Sources */,
+				74D35ED3165F53FE0040F054 /* WorldSkin.m in Sources */,
 				74D35ED6165F6B8B0040F054 /* LevelStorage.m in Sources */,
 				74D35ED9165F76890040F054 /* Round.m in Sources */,
 				74D35EDC165F76D40040F054 /* RoundFactory.m in Sources */,

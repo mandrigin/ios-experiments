@@ -10,7 +10,7 @@
 
 @implementation RoundSettings
 
--(id)initWithLayout:(LevelLayout *)layout {
+-(id)initWithLayout:(WorldSkin *)layout {
     self = [super init];
     if(self != nil) {
         self->levelLayout = layout;
@@ -18,11 +18,11 @@
     return self;
 }
 
--(LevelLayout *)getLayout {
+-(WorldSkin *)getLayout {
     return self->levelLayout;
 }
 
-+(id) createWithLayout:(LevelLayout *)layout
++(id) createWithLayout:(WorldSkin *)layout
                 ghosts:(int)numOfGhosts
                badMans:(int)numOfBadmans
            previewTime:(long)previewTime

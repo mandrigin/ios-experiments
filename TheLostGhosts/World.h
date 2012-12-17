@@ -9,10 +9,19 @@
 #import <Foundation/Foundation.h>
 #import "Level.h"
 
+typedef enum {
+      AVAILABLE
+    , UNAVAILABLE
+} WorldState;
+
 @interface World : NSObject {
     
-    int _levelNumber;
-    NSMutableArray *_levels;
+    WorldState       _state;
+    int              _currentLevelNumber;
+    NSMutableArray * _levels;
+    int              _worldNumber;
+    WorldSkin *      _skin;
+
 }
 
 @property(readonly, nonatomic, retain) NSString* caption;

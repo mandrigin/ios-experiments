@@ -6,10 +6,10 @@
 //
 //
 
-#import "LevelLayout.h"
+#import "WorldSkin.h"
 
 
-@implementation LevelLayout
+@implementation WorldSkin
 
 +(id)createWithTopMargin:(float)topM
             bottomMargin:(float)bottomM
@@ -25,7 +25,7 @@
           windowSelected:(NSString *)wSelected
             windowNormal:(NSString *)wNormal {
     
-    LevelLayout *layout = [[LevelLayout alloc] initWithTopMargin:topM
+    WorldSkin *layout = [[WorldSkin alloc] initWithTopMargin:topM
                                                     bottomMargin:bottomM
                                                 horizontalMargin:horizontalM
                                                             rows:rows

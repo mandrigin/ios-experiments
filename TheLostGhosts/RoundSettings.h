@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "LevelLayout.h"
+#import "WorldSkin.h"
 
 @interface RoundSettings : NSObject{
-    LevelLayout *levelLayout;
+    WorldSkin *levelLayout;
 }
 
 @property int numOfBadMans;
@@ -23,10 +23,10 @@
 
 @property long levelTime;
 
--(LevelLayout *) getLayout;
+-(WorldSkin *) getLayout;
 
 
-+(id) createWithLayout:(LevelLayout*)layout
++(id) createWithLayout:(WorldSkin*)layout
                 ghosts:(int)numOfGhosts
                badMans:(int)numOfBadmans
            previewTime:(long)previewTime

@@ -15,7 +15,7 @@
         previewTime:(long)previewTime
           levelTime:(long)levelTime
            training:(bool)training
-          andLayout:(LevelLayout *) layout {
+          andLayout:(WorldSkin *) layout {
     
     self = [super init];
     
@@ -36,7 +36,7 @@
           previewTime:(long)previewTime
             levelTime:(long)levelTime
              training:(bool)training
-            andLayout:(LevelLayout *)layout {
+            andLayout:(WorldSkin *)layout {
     return [[RoundFactory alloc] initWithGhosts:numOfGhosts
                                         badMans:numOfBadmans
                                     previewTime:previewTime

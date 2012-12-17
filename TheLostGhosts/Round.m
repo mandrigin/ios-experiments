@@ -25,7 +25,7 @@
 -(NSArray *)createPlaygroundFromSettings:(RoundSettings *)settting {
     NSMutableArray* result = [[NSMutableArray alloc] init];
     
-    LevelLayout *layout = [settting getLayout];
+    WorldSkin *layout = [settting getLayout];
     
     int rows = [layout rows];
     int cols = [layout columns];

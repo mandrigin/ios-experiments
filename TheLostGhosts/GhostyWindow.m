@@ -8,11 +8,11 @@
 
 #import "cocos2d.h"
 #import "GhostyWindow.h"
-#import "LevelLayout.h"
+#import "WorldSkin.h"
 
 @implementation GhostyWindow
 
-+(id) createWithState:(GhostyWindowState)state layout:(LevelLayout *)layout andCallback:(void(^)(GhostyWindow* sender))callback; {
++(id) createWithState:(GhostyWindowState)state layout:(WorldSkin *)layout andCallback:(void(^)(GhostyWindow* sender))callback; {
     
     GhostyWindow *window = [GhostyWindow itemFromNormalImage:[layout windowNormal]
                                                selectedImage:[layout windowNormal]
@@ -30,7 +30,7 @@
     return window;
 }
 
--(void)setLayout:(LevelLayout *)layout {
+-(void)setLayout:(WorldSkin *)layout {
     self->_layout = layout;
 }
 

@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "LevelLayout.h"
+#import "WorldSkin.h"
 
 @interface LevelStorage : NSObject {
-    LevelLayout    *funTownLevelLayout;
+    WorldSkin    *funTownLevelLayout;
     NSMutableArray *funTownLevels;
 }
 

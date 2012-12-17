@@ -19,7 +19,7 @@
           previewTime:(long)previewTime
             levelTime:(long)levelTime
              training:(bool)training
-            andLayout:(LevelLayout *)layout;
+            andLayout:(WorldSkin *)layout;
 
 -(Round *) createRound;
 
