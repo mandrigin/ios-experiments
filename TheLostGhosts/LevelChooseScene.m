@@ -17,6 +17,9 @@
 
 @implementation LevelChooseScene
 
+//TODO_DAN: Имплементировать LevelChooseScene
+// для всяких картинок смотри описание WorldSkin
+
 -(id)init {
     return [super initWithBackground:[DefaulBackgroundLayer node]];
 }
@@ -47,8 +50,7 @@
     btnNextWorld.isEnabled = [[Game sharedGame] hasNextWorld];
     btnPrevWorld.isEnabled = [[Game sharedGame] hasPrevWorld];
 
-    [self showCaption:[currentWorld caption]];
-    
+    [self showCaption:[currentWorld getCaption]];
     [self showLevels:[currentWorld getLevels]];
 }
 
@@ -61,8 +63,8 @@
     CCMenu* menu = [CCMenu menuWithItems:nil];
     int levelIndex = 0;
     for (Level *level in levelsArray) {
-        [menu addChild:[self createButtonFromNormalImage:[level getLevelIcon]
-                                           selectedImage:[level getLevelIcon]
+        [menu addChild:[self createButtonFromNormalImage:[level getIcon]
+                                           selectedImage:[level getIcon]
                                                      tag:LEVCHOOSE_LEVEL_ICON
                                               andIntData:levelIndex]];
         

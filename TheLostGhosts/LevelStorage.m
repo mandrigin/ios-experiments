@@ -67,6 +67,10 @@
 //PRIVATE METHODS
 
 -(void)createSkins {
+    // TODO_DAN: добавить картинки и добавить соответствующие свойства в WorldSkin.
+    //           В этой строчке кода не хватает некоторых параметров в конструкторе worldskin
+    //           Собственно, за описанием элементов -- тоже хорошо бы в worldskin залезть.
+    
     _funTownSkin = [WorldSkin createWithTopMargin:5.0f
                                      bottomMargin:6.0f
                                  horizontalMargin:8.7f
@@ -83,7 +87,7 @@
 }
 
 -(void)createLevels {
-    [self createFunTown];
+    // TODO_DAN: создать один мир, добавить его в _worlds, в мире должно быть 2 level-a в каждом -- по 2 round-а
 }
 
 -(void)dealloc {
