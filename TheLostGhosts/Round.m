@@ -9,6 +9,10 @@
 #import "Round.h"
 #import "GhostyWindowState.h"
 
+@interface Round()
+    -(NSArray *)createPlaygroundFromSettings:(RoundSettings *)settting;
+@end
+
 @implementation Round
 
 -(id) initWithSettings:(RoundSettings *)settings {

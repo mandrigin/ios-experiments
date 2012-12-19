@@ -11,17 +11,12 @@
 #import "RoundSettings.h"
 
 @interface LevelStorage() 
-
--(void)createSkins;
--(void)createLevels;
--(void)dealloc;
-
-
+    -(void)createSkins;
+    -(void)createLevels;
+    -(void)dealloc;
 @end
 
 @implementation LevelStorage
-
-
 
 +(id)create {
     return [[LevelStorage alloc] init];
