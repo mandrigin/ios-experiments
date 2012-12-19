@@ -9,6 +9,7 @@
 #import "LevelStorage.h"
 #import "RoundFactory.h"
 #import "RoundSettings.h"
+#import "World.h"
 
 @interface LevelStorage() 
     -(void)createSkins;
@@ -85,11 +86,20 @@
                                windowPreviewGhost:@"wnd_fun_town_preview_ghost.png"
                               windowPreviewBadman:@"wnd_fun_town_preview_badman.png"
                                    windowSelected:@"wnd_fun_town_selected.png"
-                                     windowNormal:@"wnd_fun_town_normal.png" ];
+                                     windowNormal:@"wnd_fun_town_normal.png" 
+                                    lockedLevelIcon:@"wnd_fun_town_normal.png"
+                                  passedLevelIcon:@"wnd_fun_town_normal.png"
+                                 enabledLevelIcon:@"wnd_fun_town_normal.png"
+                                     worldCaption:@"wnd_fun_town_normal.png"
+                               levelChooseSceneBg:@"wnd_fun_town_normal.png"];
 }
 
 -(void)createLevels {
-    [self createFunTown];
+    World* world = [[World alloc]init];
+    Level* level = [[Level alloc]init];
+    [level addRoundWithGhosts:3 badMans:2 previewTime:2 levelTime:1000 training:NO];
+    [world addLevel:level];
+    [_worlds addObject:world];
 }
 
 -(void)dealloc {
