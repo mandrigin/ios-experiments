@@ -9,6 +9,12 @@
 #import "Level.h"
 
 @implementation Level
+@synthesize skin = _skin;
+@synthesize number = _number;
+@synthesize state = _state;
+@synthesize roundFactories = _roundFactories;
+@synthesize currentRoundNumber = _currentRoundNumber;
+
 
 -(id)init {
     self = [super init];
@@ -103,7 +109,8 @@
     }
     
     [_roundFactories release];
-    
+
+    [_skin release];
     [super dealloc];
 }
 

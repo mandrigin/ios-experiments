@@ -623,7 +623,6 @@
 				74DE5651167F16210068C990 /* Common */,
 				744251AC1664D522000D8F22 /* Game */,
 				74D35ED0165F53E30040F054 /* Levels */,
-				74D35E9E165BB4B80040F054 /* Scenes */,
 				74D35E90165BB2C60040F054 /* AppDelegate.h */,
 				74D35E91165BB2C60040F054 /* AppDelegate.m */,
 				74D35E93165BB2C60040F054 /* HelloWorldLayer.h */,
@@ -681,6 +680,7 @@
 				74D35D2A165BB2C40040F054 /* Icon-Small@2x.png */,
 				74D35D30165BB2C40040F054 /* Info.plist */,
 				74D35D31165BB2C40040F054 /* iTunesArtwork */,
+				74D35E9E165BB4B80040F054 /* Scenes */,
 			);
 			name = Resources;
 			sourceTree = "<group>";

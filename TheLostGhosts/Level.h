@@ -23,6 +23,12 @@ typedef enum {
     NSMutableArray* _roundFactories;
     int             _currentRoundNumber;
 }
+@property(nonatomic, retain) WorldSkin *skin;
+@property(nonatomic) int number;
+@property(nonatomic) LevelState state;
+@property(nonatomic, retain) NSMutableArray *roundFactories;
+@property(nonatomic) int currentRoundNumber;
+
 
 -(NSArray *) getRounds;
 
