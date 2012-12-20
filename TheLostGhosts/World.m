@@ -16,7 +16,7 @@
     
     if(self != nil) {
         _currentLevelNumber = 0;
-        _levels = [NSMutableArray array];
+        _levels = [[NSMutableArray alloc] init];
         _skin = skin;
     }
     

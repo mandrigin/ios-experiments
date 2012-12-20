@@ -40,6 +40,7 @@ Game *_singletonInst;
         self->currentLevelIndex = 0;
         self->_graphics = [[Graphics alloc] init];
         self->_sounds = [[Sounds alloc] init];
+    
     }
     return self;
 }

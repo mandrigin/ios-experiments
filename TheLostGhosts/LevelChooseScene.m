@@ -71,8 +71,8 @@
     CCMenu* menu = [CCMenu menuWithItems:nil];
     int levelIndex = 0;
     for (Level *level in levelsArray) {
-        [menu addChild:[self createButtonFromNormalImage:[level getLevelIcon]
-                                           selectedImage:[level getLevelIcon]
+        [menu addChild:[self createButtonFromNormalImage:[level getIcon]
+                                           selectedImage:[level getIcon]
                                                      tag:LEVCHOOSE_LEVEL_ICON
                                               andIntData:levelIndex]];
         
@@ -82,6 +82,9 @@
     NSNumber* numOfCols = [NSNumber numberWithInt:4];
     
     [menu alignItemsInRows: numOfCols, numOfCols, numOfCols, numOfCols, nil];
+    
+    [self addChild: menu];
+    
 }
 
 @end
