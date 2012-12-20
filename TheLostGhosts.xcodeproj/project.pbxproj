@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6150660F168376BD0022E001 /* BaseBackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6150660E168376BC0022E001 /* BaseBackgroundLayer.m */; };
+		61E0551D16837C7100150BC4 /* LevelBackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E0551C16837C7000150BC4 /* LevelBackgroundLayer.m */; };
+		61E055201683807500150BC4 /* level_choose_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 61E0551F1683807300150BC4 /* level_choose_bg.png */; };
 		744251B01664D546000D8F22 /* Graphics.m in Sources */ = {isa = PBXBuildFile; fileRef = 744251AF1664D546000D8F22 /* Graphics.m */; };
 		744251B31664D5D1000D8F22 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 744251B21664D5D1000D8F22 /* Game.m */; };
 		744251B61664D92B000D8F22 /* Events.m in Sources */ = {isa = PBXBuildFile; fileRef = 744251B51664D92B000D8F22 /* Events.m */; };
@@ -189,6 +192,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6150660D168376BC0022E001 /* BaseBackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseBackgroundLayer.h; sourceTree = "<group>"; };
+		6150660E168376BC0022E001 /* BaseBackgroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseBackgroundLayer.m; sourceTree = "<group>"; };
+		61E0551B16837C7000150BC4 /* LevelBackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelBackgroundLayer.h; sourceTree = "<group>"; };
+		61E0551C16837C7000150BC4 /* LevelBackgroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelBackgroundLayer.m; sourceTree = "<group>"; };
+		61E0551F1683807300150BC4 /* level_choose_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level_choose_bg.png; sourceTree = "<group>"; };
 		744251AE1664D546000D8F22 /* Graphics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graphics.h; sourceTree = "<group>"; };
 		744251AF1664D546000D8F22 /* Graphics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graphics.m; sourceTree = "<group>"; };
 		744251B11664D5D1000D8F22 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
@@ -556,6 +564,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		61506611168376F00022E001 /* BackgroundLayers */ = {
+			isa = PBXGroup;
+			children = (
+				744251DC1667C9F4000D8F22 /* DefaulBackgroundLayer.h */,
+				744251DD1667C9F5000D8F22 /* DefaulBackgroundLayer.m */,
+				6150660D168376BC0022E001 /* BaseBackgroundLayer.h */,
+				6150660E168376BC0022E001 /* BaseBackgroundLayer.m */,
+				74D35EA5165BB7EF0040F054 /* GameBackgroundLayer.h */,
+				74D35EA6165BB7EF0040F054 /* GameBackgroundLayer.m */,
+				61E0551B16837C7000150BC4 /* LevelBackgroundLayer.h */,
+				61E0551C16837C7000150BC4 /* LevelBackgroundLayer.m */,
+			);
+			name = BackgroundLayers;
+			sourceTree = "<group>";
+		};
 		744251AC1664D522000D8F22 /* Game */ = {
 			isa = PBXGroup;
 			children = (
@@ -623,6 +646,7 @@
 				74DE5651167F16210068C990 /* Common */,
 				744251AC1664D522000D8F22 /* Game */,
 				74D35ED0165F53E30040F054 /* Levels */,
+				74D35E9E165BB4B80040F054 /* Scenes */,
 				74D35E90165BB2C60040F054 /* AppDelegate.h */,
 				74D35E91165BB2C60040F054 /* AppDelegate.m */,
 				74D35E93165BB2C60040F054 /* HelloWorldLayer.h */,
@@ -639,6 +663,7 @@
 		74D35D19165BB2C40040F054 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				61E0551F1683807300150BC4 /* level_choose_bg.png */,
 				7463C483167B563500647996 /* default_bg_back.png */,
 				7463C47E167B554C00647996 /* btn_prev_world_pressed.png */,
 				7463C47B167B554C00647996 /* btn_prev_world_normal.png */,
@@ -1031,6 +1056,7 @@
 		74D35E9E165BB4B80040F054 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				61506611168376F00022E001 /* BackgroundLayers */,
 				7463C474167B500F00647996 /* Layouts */,
 				744251B71664E2EF000D8F22 /* LevelWinScene.h */,
 				744251B81664E2EF000D8F22 /* LevelWinScene.m */,
@@ -1040,8 +1066,6 @@
 				744251BE1664E30B000D8F22 /* GameCompletedScene.m */,
 				74D35EA2165BB7770040F054 /* GameScene.h */,
 				74D35EA3165BB7780040F054 /* GameScene.m */,
-				74D35EA5165BB7EF0040F054 /* GameBackgroundLayer.h */,
-				74D35EA6165BB7EF0040F054 /* GameBackgroundLayer.m */,
 				74D35EAC165BBC070040F054 /* GameHUDLayer.h */,
 				74D35EAD165BBC070040F054 /* GameHUDLayer.m */,
 				74D35EB3165BBF010040F054 /* GamePauseLayer.h */,
@@ -1052,8 +1076,6 @@
 				744251C91664EFBB000D8F22 /* MainMenuScene.m */,
 				744251D11664F320000D8F22 /* BaseScene.h */,
 				744251D21664F320000D8F22 /* BaseScene.m */,
-				744251DC1667C9F4000D8F22 /* DefaulBackgroundLayer.h */,
-				744251DD1667C9F5000D8F22 /* DefaulBackgroundLayer.m */,
 				7463C478167B51CC00647996 /* LevelChooseScene.h */,
 				7463C479167B51CC00647996 /* LevelChooseScene.m */,
 			);
@@ -1182,6 +1204,7 @@
 				7463C482167B554C00647996 /* btn_prev_world_pressed.png in Resources */,
 				7463C484167B563500647996 /* default_bg_back.png in Resources */,
 				7463C486167B56F000647996 /* Default-Landscape~ipad.png in Resources */,
+				61E055201683807500150BC4 /* level_choose_bg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1321,6 +1344,8 @@
 				7463C48A167B673900647996 /* World.m in Sources */,
 				7463C48D167B73DA00647996 /* Level.m in Sources */,
 				74DE5654167F16310068C990 /* Logger.m in Sources */,
+				6150660F168376BD0022E001 /* BaseBackgroundLayer.m in Sources */,
+				61E0551D16837C7100150BC4 /* LevelBackgroundLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

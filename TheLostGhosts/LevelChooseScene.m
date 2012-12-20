@@ -14,6 +14,7 @@
 #import "Game.h"
 #import "World.h"
 #import "Level.h"
+#import "LevelBackgroundLayer.h"
 
 @interface LevelChooseScene()
     -(void)showCaption:(NSString *)caption;
@@ -27,7 +28,7 @@
 // для всяких картинок смотри описание WorldSkin
 
 -(id)init {
-    return [super initWithBackground:[DefaulBackgroundLayer node]];
+    return [super initWithBackground:[LevelBackgroundLayer node]];
 }
 
 -(void)onEnter {

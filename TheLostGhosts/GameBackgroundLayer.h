@@ -6,9 +6,9 @@
 //
 //
 
-#import "cocos2d.h"
+#import "BaseBackgroundLayer.h"
 
-@interface GameBackgroundLayer : CCLayer
+@interface GameBackgroundLayer : BaseBackgroundLayer
 
 
 @end
