@@ -10,8 +10,20 @@
 
 #import "DataStorage.h"
 
-
-
 @implementation DataStorage
+
+-(LevelState) loadLevelState:(int)number withWorldNumber:(int)worldNumber {
+    //TODO: Make real!
+    return ENABLED;
+}
+
+-(void) saveLevelState:(LevelState)state forLevelNumber:(int)number withWorldNumber:(int)worldNumber {
+    //TODO: make real!
+}
+
+-(WorldState) getStateForWorld:(int) worldNumber {
+    //TODO: make real!
+    return AVAILABLE;
+}
 
 @end
