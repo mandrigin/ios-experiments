@@ -52,11 +52,11 @@
     _currentRoundNumber++;
 }
 
--(void) loadFromStorage:(DataStorage *)storage withWorldNumber:(int)worldNumber {
+-(void) saveToStorage:(DataStorage *)storage withWorldNumber:(int)worldNumber {
     [storage saveLevelState:_state forLevelNumber:_number withWorldNumber:worldNumber];
 }
 
--(void) saveToStorage:(DataStorage *)storage  withWorldNumber:(int)worldNumber {
+-(void) loadFromStorage:(DataStorage *)storage  withWorldNumber:(int)worldNumber {
     [self setState:[storage loadLevelState:_number withWorldNumber:worldNumber]];
 }
 

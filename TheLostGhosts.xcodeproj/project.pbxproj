@@ -682,7 +682,6 @@
 				74D35D2A165BB2C40040F054 /* Icon-Small@2x.png */,
 				74D35D30165BB2C40040F054 /* Info.plist */,
 				74D35D31165BB2C40040F054 /* iTunesArtwork */,
-				74D35E9E165BB4B80040F054 /* Scenes */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1080,6 +1079,7 @@
 				7463C489167B673900647996 /* World.m */,
 				7463C48B167B73D900647996 /* Level.h */,
 				7463C48C167B73D900647996 /* Level.m */,
+				74D35E9E165BB4B80040F054 /* Scenes */,
 			);
 			name = Levels;
 			sourceTree = "<group>";

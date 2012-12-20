@@ -37,32 +37,33 @@ Game *_singletonInst;
     self = [super init];
     if(self != nil) {
         self->_storage = [LevelStorage create];
-        self->currentLevelIndex = 0;
         self->_graphics = [[Graphics alloc] init];
         self->_sounds = [[Sounds alloc] init];
-    
+        self->_dataStorage = [[DataStorage alloc] init];
+        //
+        [self load];
     }
     return self;
 }
 
--(Round *)createCurrentLevel {
-    RoundFactory *factory = [[self->_storage getFunTownLevels] objectAtIndex:self->currentLevelIndex];
-    return [factory createLevel];
+-(void) load {
+    for(World* world in [_storage getWorlds]) {
+        [world loadFromStorage:_dataStorage];
+    }
 }
 
--(bool)isLastLevel {
-    return self->currentLevelIndex ==  [[self->_storage getFunTownLevels] count] - 1;
+-(void) save {
+    for(World* world in [_storage getWorlds]) {
+        [world saveToStorage:_dataStorage];
+    }
 }
 
 -(LevelStorage *)getLevelStorage {
     return _storage;
 }
 
--(void)incrementLevel {
-    self->currentLevelIndex++;
-}
-
 -(void) dealloc {
+    [_dataStorage release];
     [_storage release];
     [_graphics release];
     [_sounds release];
