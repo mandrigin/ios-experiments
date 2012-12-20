@@ -39,7 +39,7 @@
     return [_levels objectAtIndex:_currentLevelNumber];
 }
 
--(bool) hasMoreLevels {
+-(bool) hasNextLevel {
     return [_levels count] > _currentLevelNumber + 1;
 }
 

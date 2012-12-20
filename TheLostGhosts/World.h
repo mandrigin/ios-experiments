@@ -32,7 +32,7 @@ typedef enum {
 
 -(Level *) getCurrentLevel;
 
--(bool) hasMoreLevels;
+-(bool) hasNextLevel;
 
 -(void) gotoNextLevel;
 
