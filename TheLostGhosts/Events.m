@@ -26,7 +26,7 @@
 +(void)onClickTaggedItem:(int)tag withIntData:(int)data {
     switch (tag) {
         case LEVCHOOSE_LEVEL_ICON:
-            [[[Game sharedGame] getCurrentWorld] setLevelNumber:data];
+            [[[Game sharedGame] getCurrentWorld] setCurrentLevelByNumber:data];
             [[[Game sharedGame] getGraphics] showGameScene];
             break;
         default:

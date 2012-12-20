@@ -16,7 +16,7 @@
     
     if(self != nil) {
         _currentLevelNumber = 0;
-        _levels = [NSMutableArray array];
+        _levels = [[NSMutableArray alloc] init];
         _skin = skin;
     }
     
@@ -39,7 +39,7 @@
     return [_levels objectAtIndex:_currentLevelNumber];
 }
 
--(bool) hasMoreLevels {
+-(bool) hasNextLevel {
     return [_levels count] > _currentLevelNumber + 1;
 }
 

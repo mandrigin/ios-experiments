@@ -19,6 +19,18 @@
 #import "LevelLoseScene.h"
 
 
+@interface GamePlayLayer()
+    -(RoundResult)getRoundResult;
+    -(void)showYouWinMessage;
+    -(void)onWindowDeselected:(GhostyWindow *)window;
+    -(id) initWithHeight:(int)height width:(int)width andLevel:(Round*)currentLevel;
+    -(void)onGameTick;
+    -(void)showResult;
+    -(void)showYouWinMessage;
+    -(void)showYouLoseMessage:(RoundResult)result;
+    -(void)hideWindows;
+@end
+
 @implementation GamePlayLayer
 
 +(id) createWithHeight:(int)height width:(int)width andLevel:(Round *)level {

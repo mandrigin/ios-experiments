@@ -45,4 +45,6 @@
 
 -(void)gotoPreviousWorld;
 
+-(LevelStorage *)getLevelStorage;
+
 @end

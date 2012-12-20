@@ -10,7 +10,15 @@
 #import "GhostyWindow.h"
 #import "WorldSkin.h"
 
-@implementation GhostyWindow
+@implementation GhostyWindow {
+@private
+    BOOL _selected;
+    GhostyWindowState _state;
+}
+
+@synthesize selected = _selected;
+@synthesize state = _state;
+
 
 +(id) createWithState:(GhostyWindowState)state layout:(WorldSkin *)layout andCallback:(void(^)(GhostyWindow* sender))callback; {
     

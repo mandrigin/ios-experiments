@@ -8,7 +8,21 @@
 
 #import "RoundSettings.h"
 
-@implementation RoundSettings
+@implementation RoundSettings {
+@private
+    int _numOfBadMans;
+    int _numOfGhosts;
+    bool _training;
+    long _previewTime;
+    long _levelTime;
+}
+
+@synthesize numOfBadMans = _numOfBadMans;
+@synthesize numOfGhosts = _numOfGhosts;
+@synthesize training = _training;
+@synthesize previewTime = _previewTime;
+@synthesize levelTime = _levelTime;
+
 
 -(id)initWithLayout:(WorldSkin *)layout {
     self = [super init];

@@ -15,6 +15,12 @@
 #import "World.h"
 #import "Level.h"
 
+@interface LevelChooseScene()
+    -(void)showCaption:(NSString *)caption;
+    -(void)showLevels:(NSArray *)levelsArray;
+    -(void)showCurrentWorld;
+@end
+
 @implementation LevelChooseScene
 
 //TODO_DAN: Имплементировать LevelChooseScene
@@ -37,18 +43,22 @@
     
     CCMenu *worldChooseMenu = [CCMenu menuWithItems:btnPrevWorld, btnNextWorld, nil];
     
-    [worldChooseMenu alignItemsHorizontallyWithPadding:size.width * WORLDCHOOSE_MENU_PADDING_FACTOR];
+    [worldChooseMenu alignItemsHorizontallyWithPadding:size.width 
+                                    * WORLDCHOOSE_MENU_PADDING_FACTOR];
     
-    worldChooseMenu.position = ccp(size.width * WORLDCHOOSE_X_OFFSET_FACTOR, size.height * WORLDCHOOSE_Y_OFFSET_FACTOR);
+    worldChooseMenu.position = ccp( size.width * WORLDCHOOSE_X_OFFSET_FACTOR
+                                  , size.height * WORLDCHOOSE_Y_OFFSET_FACTOR);
+    [self showCurrentWorld];
     
     [self addChild:worldChooseMenu];
 }
 
 -(void)showCurrentWorld {
-    World* currentWorld = [[Game sharedGame] getCurrentWorld];
+    LevelStorage* storage = [[Game sharedGame] getLevelStorage];
+    World* currentWorld = [storage getCurrentWorld];
     
-    btnNextWorld.isEnabled = [[Game sharedGame] hasNextWorld];
-    btnPrevWorld.isEnabled = [[Game sharedGame] hasPrevWorld];
+    btnNextWorld.isEnabled = [storage hasNextWorld];
+    btnPrevWorld.isEnabled = [storage hasPrevWorld];
 
     [self showCaption:[currentWorld getCaption]];
     [self showLevels:[currentWorld getLevels]];
@@ -74,6 +84,9 @@
     NSNumber* numOfCols = [NSNumber numberWithInt:4];
     
     [menu alignItemsInRows: numOfCols, numOfCols, numOfCols, numOfCols, nil];
+    
+    [self addChild: menu];
+    
 }
 
 @end

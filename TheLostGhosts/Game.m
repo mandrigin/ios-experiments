@@ -40,6 +40,7 @@ Game *_singletonInst;
         self->currentLevelIndex = 0;
         self->_graphics = [[Graphics alloc] init];
         self->_sounds = [[Sounds alloc] init];
+    
     }
     return self;
 }
@@ -51,6 +52,10 @@ Game *_singletonInst;
 
 -(bool)isLastLevel {
     return self->currentLevelIndex ==  [[self->_storage getFunTownLevels] count] - 1;
+}
+
+-(LevelStorage *)getLevelStorage {
+    return _storage;
 }
 
 -(void)incrementLevel {

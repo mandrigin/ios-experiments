@@ -12,7 +12,11 @@
 #import "MainMenuScene.h"
 #import "LevelChooseScene.h"
 
-@implementation Graphics
+@interface Graphics() 
+    -(void) replaceScene:(CCScene*)scene;
+@end
+
+@implementation Graphics 
 
 -(void) showPauseOverlay {
     if(rootScene != nil && overlayLayer == nil) {
