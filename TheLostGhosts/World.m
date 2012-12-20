@@ -8,6 +8,7 @@
 
 #import "World.h"
 #import "Logger.h"
+#import "DataStorage.h"
 
 @implementation World
 
@@ -18,17 +19,26 @@
         _currentLevelNumber = 0;
         _levels = [[NSMutableArray alloc] init];
         _skin = skin;
+        _state = UNAVAILABLE;
     }
     
     return self;
 }
 
--(void) loadFromStorage:(id)storage {
+-(void) loadFromStorage:(DataStorage *)storage {
+    
+    [self setWorldState:[storage getStateForWorld:_worldNumber]];
+    
+    for (Level *level in _levels) {
+        [level loadFromStorage:storage withWorldNumber:_worldNumber];
+    }
     
 }
 
--(void) saveToStorage:(id)storage {
-    
+-(void) saveToStorage:(DataStorage *)storage {
+    for(Level* level in _levels) {
+        [level saveToStorage:storage withWorldNumber:_worldNumber];
+    }
 }
 
 -(NSArray *)getLevels {
@@ -61,12 +71,24 @@
     }
 }
 
+-(void) setWorldNumber:(int)number {
+    _worldNumber = number;
+}
+
 -(NSString *) getBackground {
     return [_skin levelChooseSceneBg];
 }
 
 -(NSString *) getCaption {
     return [_skin worldCaption];
+}
+
+-(WorldState) getWorldState {
+    return _state;
+}
+
+-(void) setWorldState:(WorldState)state {
+    _state = state;
 }
 
 -(void) dealloc {

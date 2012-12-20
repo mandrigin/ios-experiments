@@ -8,11 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Level.h"
-
-typedef enum {
-      AVAILABLE
-    , UNAVAILABLE
-} WorldState;
+#import "WorldState.h"
 
 @interface World : NSObject {
     
@@ -39,6 +35,10 @@ typedef enum {
 -(void) setCurrentLevelByNumber:(int)levelNumber;
 
 -(void) addLevel:(Level *)level;
+
+-(WorldState) getWorldState;
+
+-(void) setWorldNumber:(int)number;
 
 -(NSString *) getBackground;
 

@@ -239,6 +239,8 @@
 		7463C489167B673900647996 /* World.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = World.m; sourceTree = "<group>"; };
 		7463C48B167B73D900647996 /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
 		7463C48C167B73D900647996 /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level.m; sourceTree = "<group>"; };
+		746EC0AF1683659000CF413A /* LevelState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LevelState.h; sourceTree = "<group>"; };
+		746EC0B116836AD500CF413A /* WorldState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorldState.h; sourceTree = "<group>"; };
 		74D35D02165BB2C40040F054 /* TheLostGhosts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheLostGhosts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D35D06165BB2C40040F054 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		74D35D08165BB2C40040F054 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1087,6 +1089,8 @@
 			children = (
 				74DE5652167F16310068C990 /* Logger.h */,
 				74DE5653167F16310068C990 /* Logger.m */,
+				746EC0AF1683659000CF413A /* LevelState.h */,
+				746EC0B116836AD500CF413A /* WorldState.h */,
 			);
 			name = Common;
 			sourceTree = "<group>";

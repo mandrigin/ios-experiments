@@ -7,7 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LevelState.h"
+#import "WorldState.h"
 
 @interface DataStorage : NSObject
+
+-(LevelState) loadLevelState:(int)number withWorldNumber:(int)worldNumber;
+
+-(void) saveLevelState:(LevelState)state forLevelNumber:(int)number withWorldNumber:(int)worldNumber;
+
+-(WorldState) getStateForWorld:(int) worldNumber;
 
 @end
