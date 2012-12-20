@@ -18,6 +18,7 @@
 @interface LevelChooseScene()
     -(void)showCaption:(NSString *)caption;
     -(void)showLevels:(NSArray *)levelsArray;
+    -(void)showCurrentWorld;
 @end
 
 @implementation LevelChooseScene
@@ -44,17 +45,19 @@
     
     worldChooseMenu.position = ccp( size.width * WORLDCHOOSE_X_OFFSET_FACTOR
                                   , size.height * WORLDCHOOSE_Y_OFFSET_FACTOR);
+    [self showCurrentWorld];
     
     [self addChild:worldChooseMenu];
 }
 
 -(void)showCurrentWorld {
-    World* currentWorld = [[Game sharedGame] getCurrentWorld];
+    LevelStorage* storage = [[Game sharedGame] getLevelStorage];
+    World* currentWorld = [storage getCurrentWorld];
     
-    btnNextWorld.isEnabled = [[Game sharedGame] hasNextWorld];
-    btnPrevWorld.isEnabled = [[Game sharedGame] hasPrevWorld];
+    btnNextWorld.isEnabled = [storage hasNextWorld];
+    btnPrevWorld.isEnabled = [storage hasPrevWorld];
 
-    [self showCaption:[currentWorld caption]];
+    [self showCaption:[currentWorld getCaption]];
     
     [self showLevels:[currentWorld getLevels]];
 }

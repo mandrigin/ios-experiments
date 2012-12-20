@@ -53,6 +53,10 @@ Game *_singletonInst;
     return self->currentLevelIndex ==  [[self->_storage getFunTownLevels] count] - 1;
 }
 
+-(LevelStorage *)getLevelStorage {
+    return _storage;
+}
+
 -(void)incrementLevel {
     self->currentLevelIndex++;
 }
