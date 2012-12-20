@@ -35,7 +35,7 @@
     
     [layer setWorldBack: [currentWorld getBackground]];
     
-    return [super initWithBackground:layer];
+    return [super initWithBackground:layer ];
 }
 
 -(void)onEnter {
@@ -52,8 +52,7 @@
     CCMenu *worldChooseMenu = [CCMenu menuWithItems:btnPrevWorld, btnNextWorld, nil];
     
     [worldChooseMenu alignItemsHorizontallyWithPadding:size.width 
-//                                    * WORLDCHOSE_MENU_PADDING_FACTOR];
-     
+                                    * WORLDCHOOSE_MENU_PADDING_FACTOR];
     
     worldChooseMenu.position = ccp( size.width * WORLDCHOOSE_X_OFFSET_FACTOR
                                   , size.height * WORLDCHOOSE_Y_OFFSET_FACTOR);
