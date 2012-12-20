@@ -15,4 +15,10 @@
     return self;
 }
 
+-(void) setWorldBack: (NSString *)additionalImage {
+    CCSprite* background = [CCSprite spriteWithFile: additionalImage];
+    [self addChild: background];
+}
+
+
 @end

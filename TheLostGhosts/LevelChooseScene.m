@@ -28,7 +28,14 @@
 // для всяких картинок смотри описание WorldSkin
 
 -(id)init {
-    return [super initWithBackground:[LevelBackgroundLayer node]];
+    
+    LevelBackgroundLayer *layer = [LevelBackgroundLayer node];
+    LevelStorage* storage = [[Game sharedGame] getLevelStorage];
+    World* currentWorld = [storage getCurrentWorld];
+    
+    [layer setWorldBack: [currentWorld getBackground]];
+    
+    return [super initWithBackground:layer];
 }
 
 -(void)onEnter {
@@ -45,7 +52,8 @@
     CCMenu *worldChooseMenu = [CCMenu menuWithItems:btnPrevWorld, btnNextWorld, nil];
     
     [worldChooseMenu alignItemsHorizontallyWithPadding:size.width 
-                                    * WORLDCHOOSE_MENU_PADDING_FACTOR];
+//                                    * WORLDCHOSE_MENU_PADDING_FACTOR];
+     
     
     worldChooseMenu.position = ccp( size.width * WORLDCHOOSE_X_OFFSET_FACTOR
                                   , size.height * WORLDCHOOSE_Y_OFFSET_FACTOR);

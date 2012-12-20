@@ -7,7 +7,10 @@
 //
 
 #import "BaseBackgroundLayer.h"
+#import "cocos2d.h"
 
 @interface LevelBackgroundLayer : BaseBackgroundLayer
+
+    -(void) setWorldBack: (NSString *)additionalImage;
 
 @end
