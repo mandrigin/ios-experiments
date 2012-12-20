@@ -15,6 +15,11 @@
 #import "World.h"
 #import "Level.h"
 
+@interface LevelChooseScene()
+    -(void)showCaption:(NSString *)caption;
+    -(void)showLevels:(NSArray *)levelsArray;
+@end
+
 @implementation LevelChooseScene
 
 -(id)init {
@@ -34,9 +39,11 @@
     
     CCMenu *worldChooseMenu = [CCMenu menuWithItems:btnPrevWorld, btnNextWorld, nil];
     
-    [worldChooseMenu alignItemsHorizontallyWithPadding:size.width * WORLDCHOOSE_MENU_PADDING_FACTOR];
+    [worldChooseMenu alignItemsHorizontallyWithPadding:size.width 
+                                    * WORLDCHOOSE_MENU_PADDING_FACTOR];
     
-    worldChooseMenu.position = ccp(size.width * WORLDCHOOSE_X_OFFSET_FACTOR, size.height * WORLDCHOOSE_Y_OFFSET_FACTOR);
+    worldChooseMenu.position = ccp( size.width * WORLDCHOOSE_X_OFFSET_FACTOR
+                                  , size.height * WORLDCHOOSE_Y_OFFSET_FACTOR);
     
     [self addChild:worldChooseMenu];
 }
