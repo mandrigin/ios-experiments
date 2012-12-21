@@ -10,7 +10,7 @@
 #define TheLostGhosts_WorldState_h
 
 typedef enum {
-    AVAILABLE
+      AVAILABLE
     , UNAVAILABLE
 } WorldState;
 
