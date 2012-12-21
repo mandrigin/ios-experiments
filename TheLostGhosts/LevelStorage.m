@@ -7,9 +7,9 @@
 //
 
 #import "LevelStorage.h"
-#import "RoundFactory.h"
-#import "RoundSettings.h"
 #import "World.h"
+#import "LevelState.h"
+#import "Game.h"
 
 @interface LevelStorage() 
     -(void)createSkins;
@@ -106,6 +106,8 @@
     for (int j = 0; j < 16; j++) {
         Level* level = [[Level alloc]init];
         [level addRoundWithGhosts:3 badMans:2 previewTime:2 levelTime:1000 training:NO];
+        [level setState: ENABLED];
+        [[Game sharedGame] save];
         [world addLevel: level];
     }
 
