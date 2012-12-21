@@ -189,6 +189,7 @@
 		74D35EDC165F76D40040F054 /* RoundFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D35EDB165F76D40040F054 /* RoundFactory.m */; };
 		74D35EDF165F7FC50040F054 /* RoundSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D35EDE165F7FC40040F054 /* RoundSettings.m */; };
 		74DE5654167F16310068C990 /* Logger.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DE5653167F16310068C990 /* Logger.m */; };
+		B229D12168F46F8E6806DF1C /* level_choose_malinki_house.png in Resources */ = {isa = PBXBuildFile; fileRef = B229D132CE7051ECF0247C0A /* level_choose_malinki_house.png */; };
 		B229D6D86227C9FC5688812D /* caption_malinki.png in Resources */ = {isa = PBXBuildFile; fileRef = B229D1CB77BB41482CD898B6 /* caption_malinki.png */; };
 /* End PBXBuildFile section */
 
@@ -543,6 +544,7 @@
 		74D35EE0165F83CC0040F054 /* GhostyWindowState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GhostyWindowState.h; sourceTree = "<group>"; };
 		74DE5652167F16310068C990 /* Logger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Logger.h; sourceTree = "<group>"; };
 		74DE5653167F16310068C990 /* Logger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Logger.m; sourceTree = "<group>"; };
+		B229D132CE7051ECF0247C0A /* level_choose_malinki_house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level_choose_malinki_house.png; sourceTree = "<group>"; };
 		B229D1CB77BB41482CD898B6 /* caption_malinki.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = caption_malinki.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -709,6 +711,7 @@
 				74D35D31165BB2C40040F054 /* iTunesArtwork */,
 				74D35E9E165BB4B80040F054 /* Scenes */,
 				B229D1CB77BB41482CD898B6 /* caption_malinki.png */,
+				B229D132CE7051ECF0247C0A /* level_choose_malinki_house.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1209,6 +1212,7 @@
 				7463C486167B56F000647996 /* Default-Landscape~ipad.png in Resources */,
 				61E055201683807500150BC4 /* level_choose_bg.png in Resources */,
 				B229D6D86227C9FC5688812D /* caption_malinki.png in Resources */,
+				B229D12168F46F8E6806DF1C /* level_choose_malinki_house.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
