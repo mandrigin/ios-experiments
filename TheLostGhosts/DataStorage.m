@@ -12,18 +12,28 @@
 
 @implementation DataStorage
 
+
 -(LevelState) loadLevelState:(int)number withWorldNumber:(int)worldNumber {
-    //TODO: Make real!
-    return ENABLED;
+    int data = [[NSUserDefaults standardUserDefaults] integerForKey:[self keyFromWorld:worldNumber andLevel:number]];
+    return (LevelState)data;
 }
 
 -(void) saveLevelState:(LevelState)state forLevelNumber:(int)number withWorldNumber:(int)worldNumber {
-    //TODO: make real!
+    [[NSUserDefaults standardUserDefaults] setInteger:state forKey:[self keyFromWorld:worldNumber andLevel:number]];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 -(WorldState) getStateForWorld:(int) worldNumber {
-    //TODO: make real!
-    return AVAILABLE;
+    int data = [[NSUserDefaults standardUserDefaults] integerForKey:[self keyFromWorld:worldNumber]];
+    return (WorldState)data;
+}
+
+-(NSString *) keyFromWorld:(int)world andLevel:(int)level {
+    return [NSString stringWithFormat:@"w%dl%d", world, level];
+}
+
+-(NSString *) keyFromWorld:(int)world {
+    return [NSString stringWithFormat:@"w%d", world];
 }
 
 @end
