@@ -7,9 +7,9 @@
 //
 
 #import "LevelStorage.h"
-#import "RoundFactory.h"
-#import "RoundSettings.h"
 #import "World.h"
+#import "LevelState.h"
+#import "Game.h"
 
 @interface LevelStorage() 
     -(void)createSkins;
@@ -92,9 +92,9 @@
                               windowPreviewBadman:@"wnd_fun_town_preview_badman.png"
                                    windowSelected:@"wnd_fun_town_selected.png"
                                      windowNormal:@"wnd_fun_town_normal.png" 
-                                  lockedLevelIcon:@"wnd_fun_town_normal.png"
-                                  passedLevelIcon:@"wnd_fun_town_normal.png"
-                                 enabledLevelIcon:@"level_choose_malinki_house.png"
+                                  lockedLevelIcon:@"lc_house_malinki_disabled.png"
+                                  passedLevelIcon:@"lc_house_malinki_passed.png"
+                                 enabledLevelIcon:@"lc_house_malinki_enabled.png"
                                      worldCaption:@"caption_malinki.png"
                                levelChooseSceneBg:@"level_choose_malinki_back.png"];
 }
@@ -106,6 +106,8 @@
     for (int j = 0; j < 16; j++) {
         Level* level = [[Level alloc]init];
         [level addRoundWithGhosts:3 badMans:2 previewTime:2 levelTime:1000 training:NO];
+        [level setState: ENABLED];
+        [[Game sharedGame] save];
         [world addLevel: level];
     }
 
