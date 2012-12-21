@@ -11,7 +11,7 @@
 
 @interface LevelBackgroundLayer : BaseBackgroundLayer
 
-    -(void) setWorldBack: (NSString *)additionalImage;
+    -(void)setWorldShadow: (NSString *)additionalImage;
 
 - (void)setCaption:(NSString *)captionImage;
 

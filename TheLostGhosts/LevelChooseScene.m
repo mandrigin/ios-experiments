@@ -17,24 +17,21 @@
 #import "LevelBackgroundLayer.h"
 
 @interface LevelChooseScene()
-    -(void)showCaption:(NSString *)caption;
-    -(void)showLevels:(NSArray *)levelsArray;
+    -(void)showWorldShadow:(NSString *)changeCaption;
+
+- (void)showWorldShadow:(NSString *)worldShadow andWorldCaption:(NSString *)captionImage;
+
+-(void)showLevels:(NSArray *)levelsArray;
     -(void)showCurrentWorld;
 @end
 
-@implementation LevelChooseScene
-
-//TODO_DAN: Имплементировать LevelChooseScene
-// для всяких картинок смотри описание WorldSkin
+@implementation LevelChooseScene {
+    LevelBackgroundLayer *_layer;
+}
 
 -(id)init {
-      
-    LevelBackgroundLayer *layer = [LevelBackgroundLayer node];
-    World* currentWorld = [[[Game sharedGame] getLevelStorage] getCurrentWorld];
-    
-    [layer setWorldBack: [currentWorld getBackground]];
-    [layer setCaption: [currentWorld getCaption]];
-    return [super initWithBackground:layer];
+    _layer = [LevelBackgroundLayer node];
+    return [super initWithBackground:_layer];
 }
 
 -(void)onEnter {
@@ -67,12 +64,16 @@
     btnNextWorld.isEnabled = [storage hasNextWorld];
     btnPrevWorld.isEnabled = [storage hasPrevWorld];
 
-    [self showCaption:[currentWorld getCaption]];
+    [self showWorldShadow:[currentWorld getBackground]
+          andWorldCaption: [currentWorld getCaption]];
     [self showLevels:[currentWorld getLevels]];
 }
 
--(void)showCaption:(NSString *)caption {
-    
+-(void)showWorldShadow:(NSString *)worldShadow
+       andWorldCaption:(NSString *)captionImage {
+
+    [_layer setWorldShadow: worldShadow];
+    [_layer setCaption: captionImage];
 }
 
 -(void)showLevels:(NSArray *)levelsArray {
@@ -90,7 +91,7 @@
     
     NSNumber* numOfCols = [NSNumber numberWithInt:4];
     
-    [menu alignItemsInRows: numOfCols, numOfCols, numOfCols, numOfCols, nil];
+    [menu alignItemsInColumns: numOfCols, numOfCols, numOfCols, numOfCols, nil];
     
     [self addChild: menu];
     

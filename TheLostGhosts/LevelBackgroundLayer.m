@@ -16,7 +16,7 @@
     return self;
 }
 
--(void) setWorldBack: (NSString *)additionalImage {
+-(void)setWorldShadow: (NSString *)additionalImage {
     CCSprite* background = [CCSprite spriteWithFile: additionalImage];
     CGSize size = [self contentSize];
     [background setPosition: ccp( size.width / 2
