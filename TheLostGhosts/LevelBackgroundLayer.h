@@ -13,4 +13,7 @@
 
     -(void) setWorldBack: (NSString *)additionalImage;
 
+- (void)setCaption:(NSString *)captionImage;
+
+
 @end

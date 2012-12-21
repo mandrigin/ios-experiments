@@ -7,6 +7,7 @@
 //
 
 #import "LevelBackgroundLayer.h"
+#import "cocos2d.h"
 
 @implementation LevelBackgroundLayer
 
@@ -17,7 +18,18 @@
 
 -(void) setWorldBack: (NSString *)additionalImage {
     CCSprite* background = [CCSprite spriteWithFile: additionalImage];
+    CGSize size = [self contentSize];
+    [background setPosition: ccp( size.width / 2
+                                , [background contentSize].height / 2)];
     [self addChild: background];
+}
+
+-(void) setCaption: (NSString *)captionImage {
+    CCSprite*caption = [CCSprite spriteWithFile: captionImage];
+    CGSize size = [self contentSize];
+    [caption setPosition:ccp( size.width / 2
+                            , size.height - [caption contentSize].height / 2)];
+    [self addChild:caption];
 }
 
 

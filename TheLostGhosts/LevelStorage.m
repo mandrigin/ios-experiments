@@ -95,8 +95,8 @@
                                     lockedLevelIcon:@"wnd_fun_town_normal.png"
                                   passedLevelIcon:@"wnd_fun_town_normal.png"
                                  enabledLevelIcon:@"wnd_fun_town_normal.png"
-                                     worldCaption:@"wnd_fun_town_normal.png"
-                               levelChooseSceneBg:@"wnd_fun_town_normal.png"];
+                                     worldCaption:@"caption_malinki.png"
+                               levelChooseSceneBg:@"level_choose_malinki_back.png"];
 }
 
 -(void)createLevels {

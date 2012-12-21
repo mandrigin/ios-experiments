@@ -28,14 +28,13 @@
 // для всяких картинок смотри описание WorldSkin
 
 -(id)init {
-    
+      
     LevelBackgroundLayer *layer = [LevelBackgroundLayer node];
-    LevelStorage* storage = [[Game sharedGame] getLevelStorage];
-    World* currentWorld = [storage getCurrentWorld];
+    World* currentWorld = [[[Game sharedGame] getLevelStorage] getCurrentWorld];
     
     [layer setWorldBack: [currentWorld getBackground]];
-    
-    return [super initWithBackground:layer ];
+    [layer setCaption: [currentWorld getCaption]];
+    return [super initWithBackground:layer];
 }
 
 -(void)onEnter {
