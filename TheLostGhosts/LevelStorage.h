@@ -12,15 +12,14 @@
 
 @interface LevelStorage : NSObject {
     NSMutableArray * _worlds;
-    
-    int _currentWorldNumber;
-    
-    WorldSkin *      _funTownSkin;
+    DataStorage    * _dataStorage;
+    int              _currentWorldNumber;
+    WorldSkin      * _funTownSkin;
 }
 
--(void) loadFromStorage:(id)dataStorage;
+-(void) loadFromStorage;
 
--(void) saveToStorage:(id)dataStorage;
+-(void) saveToStorage;
 
 -(NSArray *)getWorlds;
 

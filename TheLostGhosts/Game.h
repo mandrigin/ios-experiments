@@ -20,9 +20,6 @@
     Graphics     * _graphics;
     Sounds       * _sounds;
     LevelStorage * _storage;
-    
-    DataStorage  * _dataStorage;
-    
 }
 
 +(Game *) sharedGame;

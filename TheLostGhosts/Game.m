@@ -7,7 +7,6 @@
 //
 
 #import "Game.h"
-#import "RoundFactory.h"
 
 @implementation Game
 
@@ -39,7 +38,6 @@ Game *_singletonInst;
         self->_storage = [LevelStorage create];
         self->_graphics = [[Graphics alloc] init];
         self->_sounds = [[Sounds alloc] init];
-        self->_dataStorage = [[DataStorage alloc] init];
         //
         [self load];
     }
@@ -47,15 +45,13 @@ Game *_singletonInst;
 }
 
 -(void) load {
-    for(World* world in [_storage getWorlds]) {
-        [world loadFromStorage:_dataStorage];
-    }
+    [_storage loadFromStorage];
+
 }
 
 -(void) save {
-    for(World* world in [_storage getWorlds]) {
-        [world saveToStorage:_dataStorage];
-    }
+    [_storage saveToStorage];
+
 }
 
 -(LevelStorage *)getLevelStorage {
@@ -63,7 +59,6 @@ Game *_singletonInst;
 }
 
 -(void) dealloc {
-    [_dataStorage release];
     [_storage release];
     [_graphics release];
     [_sounds release];

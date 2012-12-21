@@ -12,7 +12,6 @@
 @implementation Level
 @synthesize skin = _skin;
 @synthesize number = _number;
-@synthesize state = _state;
 @synthesize roundFactories = _roundFactories;
 @synthesize currentRoundNumber = _currentRoundNumber;
 
@@ -97,8 +96,13 @@
     return _skin != nil;
 }
 
+-(LevelState)getState {
+    return _state;
+}
+
 //PRIVATE
 -(void) setState:(LevelState)newState {
+    NSLog( @"setState called. new state is %d", newState );
     _state = newState;
 }
 

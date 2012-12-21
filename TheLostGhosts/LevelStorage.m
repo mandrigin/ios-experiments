@@ -8,8 +8,6 @@
 
 #import "LevelStorage.h"
 #import "World.h"
-#import "LevelState.h"
-#import "Game.h"
 
 @interface LevelStorage() 
     -(void)createSkins;
@@ -29,6 +27,8 @@
         
         _currentWorldNumber = 0;
         _worlds             = [[NSMutableArray alloc] init];
+        _dataStorage        = [[DataStorage alloc] init];
+
         
         [self createSkins];
         [self createLevels];
@@ -36,12 +36,16 @@
     return self;
 }
 
--(void) loadFromStorage:(id)dataStorage {
-    
+-(void) loadFromStorage {
+    for(World* world in [self getWorlds]) {
+        [world loadFromStorage:_dataStorage];
+    }
 }
 
--(void) saveToStorage:(id)dataStorage {
-    
+-(void) saveToStorage {
+    for(World* world in [self getWorlds]) {
+        [world saveToStorage:_dataStorage];
+    }
 }
 
 -(NSArray *)getWorlds {
@@ -100,21 +104,22 @@
 }
 
 -(void)createLevels {
-    // TODO_DAN: создать один мир, добавить его в _worlds, в мире должно быть 2 level-a в каждом -- по 2 round-а
     World* world = [[World alloc] initWithSkin: _funTownSkin];
 
     for (int j = 0; j < 16; j++) {
         Level* level = [[Level alloc]init];
         [level addRoundWithGhosts:3 badMans:2 previewTime:2 levelTime:1000 training:NO];
-        [level setState: ENABLED];
+        [level markEnabled];
         [world addLevel: level];
     }
 
     [_worlds addObject:world];
+    [self saveToStorage];
 }
 
 -(void)dealloc {
     [_funTownSkin release];
+    [_dataStorage release];
     
     for (id world in _worlds) {
         [world release];

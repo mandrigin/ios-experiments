@@ -22,7 +22,6 @@
 }
 @property(nonatomic, retain) WorldSkin *skin;
 @property(nonatomic) int number;
-@property(nonatomic) LevelState state;
 @property(nonatomic, retain) NSMutableArray *roundFactories;
 @property(nonatomic) int currentRoundNumber;
 
@@ -56,5 +55,8 @@
 -(void) setNumber:(int) number;
 
 -(bool) addedToSomeWorld;
+
+- (LevelState)getState;
+
 
 @end
