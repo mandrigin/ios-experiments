@@ -17,11 +17,8 @@
 #import "LevelBackgroundLayer.h"
 
 @interface LevelChooseScene()
-    -(void)showWorldShadow:(NSString *)changeCaption;
-
-- (void)showWorldShadow:(NSString *)worldShadow andWorldCaption:(NSString *)captionImage;
-
--(void)showLevels:(NSArray *)levelsArray;
+    -(void)showWorldShadow:(NSString *)worldShadow andWorldCaption:(NSString *)captionImage;
+    -(void)showLevels:(NSArray *)levelsArray;
     -(void)showCurrentWorld;
 @end
 
@@ -77,7 +74,6 @@
 }
 
 -(void)showLevels:(NSArray *)levelsArray {
-    
     CCMenu* menu = [CCMenu menuWithItems:nil];
     int levelIndex = 0;
     for (Level *level in levelsArray) {
@@ -94,7 +90,6 @@
     [menu alignItemsInColumns: numOfCols, numOfCols, numOfCols, numOfCols, nil];
     
     [self addChild: menu];
-    
 }
 
 @end
