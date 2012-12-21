@@ -42,6 +42,12 @@
     }
 }
 
+- (void)saveWorldState:(WorldState)state forWorldNumber:(int)worldNumber {
+    [[NSUserDefaults standardUserDefaults] setInteger:state forKey:[self keyFromWorld:worldNumber]];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+
 -(NSString *) keyFromWorld:(int)world andLevel:(int)level {
     return [NSString stringWithFormat:@"w%dl%d", world, level];
 }

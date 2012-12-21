@@ -36,6 +36,9 @@
 }
 
 -(void) saveToStorage:(DataStorage *)storage {
+
+    [storage saveWorldState:_state forWorldNumber:_worldNumber];
+
     for(Level* level in _levels) {
         [level saveToStorage:storage withWorldNumber:_worldNumber];
     }

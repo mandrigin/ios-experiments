@@ -18,4 +18,6 @@
 
 -(WorldState) getStateForWorld:(int) worldNumber;
 
+-(void) saveWorldState: (WorldState)state forWorldNumber:(int)worldNumber;
+
 @end
