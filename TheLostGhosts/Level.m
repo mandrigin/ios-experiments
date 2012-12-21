@@ -7,6 +7,7 @@
 //
 
 #import "Level.h"
+#import "DataStorage.h"
 
 @implementation Level
 @synthesize skin = _skin;
@@ -51,12 +52,12 @@
     _currentRoundNumber++;
 }
 
--(void) loadFromStorage:(id)storage {
-    [storage saveLevelState:_state forLevelNumber:_number];
+-(void) saveToStorage:(DataStorage *)storage withWorldNumber:(int)worldNumber {
+    [storage saveLevelState:_state forLevelNumber:_number withWorldNumber:worldNumber];
 }
 
--(void) saveToStorage:(id)storage {
-    [self setState:(LevelState)[storage loadLevelState:_number]];
+-(void) loadFromStorage:(DataStorage *)storage  withWorldNumber:(int)worldNumber {
+    [self setState:[storage loadLevelState:_number withWorldNumber:worldNumber]];
 }
 
 -(void)markPassed {

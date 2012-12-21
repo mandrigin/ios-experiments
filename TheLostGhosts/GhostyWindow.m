@@ -8,7 +8,6 @@
 
 #import "cocos2d.h"
 #import "GhostyWindow.h"
-#import "WorldSkin.h"
 
 @implementation GhostyWindow {
 @private

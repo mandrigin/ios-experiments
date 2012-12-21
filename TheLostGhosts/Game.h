@@ -17,11 +17,11 @@
 
 @interface Game : NSObject {
     
-    int currentLevelIndex;
-    
     Graphics     * _graphics;
     Sounds       * _sounds;
     LevelStorage * _storage;
+    
+    DataStorage  * _dataStorage;
     
 }
 
@@ -34,16 +34,6 @@
 -(void)load;
 
 -(void)save;
-
--(World *)getCurrentWorld;
-
--(bool)hasNextWorld;
-
--(bool)hasPrevWorld;
-
--(void)gotoNextWorld;
-
--(void)gotoPreviousWorld;
 
 -(LevelStorage *)getLevelStorage;
 

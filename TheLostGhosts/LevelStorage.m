@@ -120,6 +120,11 @@
     [world addLevel:level2];
     [world addLevel:level3];
     
+    [self addWorld:world];
+}
+
+-(void)addWorld:(World *)world {
+    [world setWorldNumber:[_worlds count]];
     
     [_worlds addObject:world];
 }
