@@ -8,12 +8,9 @@
 
 #import "RoundFactory.h"
 #import <Foundation/Foundation.h>
+#import "LevelState.h"
+#import "DataStorage.h"
 
-typedef enum {
-    LOCKED = 1,
-    ENABLED = 2,
-    PASSED = 3
-} LevelState;
 
 
 @interface Level : NSObject {
@@ -44,9 +41,9 @@ typedef enum {
 
 -(void) gotoNextRound;
 
--(void) loadFromStorage:(id)storage;
+-(void) loadFromStorage:(DataStorage *)storage withWorldNumber:(int)worldNumber;
 
--(void) saveToStorage:(id)storage;
+-(void) saveToStorage:(DataStorage *)storage withWorldNumber:(int)worldNumber;
 
 -(void) markPassed;
 
