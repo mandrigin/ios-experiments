@@ -92,9 +92,9 @@
                               windowPreviewBadman:@"wnd_fun_town_preview_badman.png"
                                    windowSelected:@"wnd_fun_town_selected.png"
                                      windowNormal:@"wnd_fun_town_normal.png" 
-                                  lockedLevelIcon:@"wnd_fun_town_normal.png"
-                                  passedLevelIcon:@"wnd_fun_town_normal.png"
-                                 enabledLevelIcon:@"level_choose_malinki_house.png"
+                                  lockedLevelIcon:@"lc_house_malinki_disabled.png"
+                                  passedLevelIcon:@"lc_house_malinki_passed.png"
+                                 enabledLevelIcon:@"lc_house_malinki_enabled.png"
                                      worldCaption:@"caption_malinki.png"
                                levelChooseSceneBg:@"level_choose_malinki_back.png"];
 }
