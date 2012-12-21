@@ -7,7 +7,8 @@
 //
 
 #import "CCLayer.h"
+#import "BaseBackgroundLayer.h"
 
-@interface DefaulBackgroundLayer : CCLayer
+@interface DefaulBackgroundLayer : BaseBackgroundLayer
 
 @end

@@ -14,20 +14,21 @@
 #import "Game.h"
 #import "World.h"
 #import "Level.h"
+#import "LevelBackgroundLayer.h"
 
 @interface LevelChooseScene()
-    -(void)showCaption:(NSString *)caption;
+    -(void)showWorldShadow:(NSString *)worldShadow andWorldCaption:(NSString *)captionImage;
     -(void)showLevels:(NSArray *)levelsArray;
     -(void)showCurrentWorld;
 @end
 
-@implementation LevelChooseScene
-
-//TODO_DAN: Имплементировать LevelChooseScene
-// для всяких картинок смотри описание WorldSkin
+@implementation LevelChooseScene {
+    LevelBackgroundLayer *_layer;
+}
 
 -(id)init {
-    return [super initWithBackground:[DefaulBackgroundLayer node]];
+    _layer = [LevelBackgroundLayer node];
+    return [super initWithBackground:_layer];
 }
 
 -(void)onEnter {
@@ -60,16 +61,19 @@
     btnNextWorld.isEnabled = [storage hasNextWorld];
     btnPrevWorld.isEnabled = [storage hasPrevWorld];
 
-    [self showCaption:[currentWorld getCaption]];
+    [self showWorldShadow:[currentWorld getBackground]
+          andWorldCaption: [currentWorld getCaption]];
     [self showLevels:[currentWorld getLevels]];
 }
 
--(void)showCaption:(NSString *)caption {
-    
+-(void)showWorldShadow:(NSString *)worldShadow
+       andWorldCaption:(NSString *)captionImage {
+
+    [_layer setWorldShadow: worldShadow];
+    [_layer setCaption: captionImage];
 }
 
 -(void)showLevels:(NSArray *)levelsArray {
-    
     CCMenu* menu = [CCMenu menuWithItems:nil];
     int levelIndex = 0;
     for (Level *level in levelsArray) {
@@ -83,10 +87,9 @@
     
     NSNumber* numOfCols = [NSNumber numberWithInt:4];
     
-    [menu alignItemsInRows: numOfCols, numOfCols, numOfCols, numOfCols, nil];
+    [menu alignItemsInColumns: numOfCols, numOfCols, numOfCols, numOfCols, nil];
     
     [self addChild: menu];
-    
 }
 
 @end
