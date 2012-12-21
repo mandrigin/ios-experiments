@@ -193,6 +193,7 @@
 		B229D1525B676BCFC9FA9066 /* lc_house_malinki_enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = B229D91642C3DAFD9CDA52C1 /* lc_house_malinki_enabled.png */; };
 		B229D53DD165F7E1433F7F04 /* lc_house_malinki_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = B229D9075D6BFF78D955CAD4 /* lc_house_malinki_disabled.png */; };
 		B229D6D86227C9FC5688812D /* caption_malinki.png in Resources */ = {isa = PBXBuildFile; fileRef = B229D1CB77BB41482CD898B6 /* caption_malinki.png */; };
+		E97F110E0AB49F542B3AE9DC /* level_choose_malinki_back.png in Resources */ = {isa = PBXBuildFile; fileRef = E97F1E0AB8DD903D5C8D4824 /* level_choose_malinki_back.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -552,6 +553,7 @@
 		B229D9075D6BFF78D955CAD4 /* lc_house_malinki_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lc_house_malinki_disabled.png; sourceTree = "<group>"; };
 		B229D91642C3DAFD9CDA52C1 /* lc_house_malinki_enabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lc_house_malinki_enabled.png; sourceTree = "<group>"; };
 		B229DFA034C6F769B85086E9 /* lc_house_malinki_passed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lc_house_malinki_passed.png; sourceTree = "<group>"; };
+		E97F1E0AB8DD903D5C8D4824 /* level_choose_malinki_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level_choose_malinki_back.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -719,6 +721,7 @@
 				B229D9075D6BFF78D955CAD4 /* lc_house_malinki_disabled.png */,
 				B229D91642C3DAFD9CDA52C1 /* lc_house_malinki_enabled.png */,
 				B229DFA034C6F769B85086E9 /* lc_house_malinki_passed.png */,
+				E97F1E0AB8DD903D5C8D4824 /* level_choose_malinki_back.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1225,6 +1228,7 @@
 				B229D53DD165F7E1433F7F04 /* lc_house_malinki_disabled.png in Resources */,
 				B229D1525B676BCFC9FA9066 /* lc_house_malinki_enabled.png in Resources */,
 				B229D0E2225C2A6B7DA7791A /* lc_house_malinki_passed.png in Resources */,
+				E97F110E0AB49F542B3AE9DC /* level_choose_malinki_back.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
