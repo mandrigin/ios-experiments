@@ -10,12 +10,21 @@
 
 #import "DataStorage.h"
 
+#define NO_DATA_RECEIVED    0
+#define DEFAULT_LEVEL_STATE LOCKED
+#define DEFAULT_WORLD_STATE AVAILABLE
+
 @implementation DataStorage
 
 
 -(LevelState) loadLevelState:(int)number withWorldNumber:(int)worldNumber {
     int data = [[NSUserDefaults standardUserDefaults] integerForKey:[self keyFromWorld:worldNumber andLevel:number]];
-    return (LevelState)data;
+
+    if (NO_DATA_RECEIVED == data) {
+        return DEFAULT_LEVEL_STATE;
+    } else {
+        return (LevelState)data;
+    }
 }
 
 -(void) saveLevelState:(LevelState)state forLevelNumber:(int)number withWorldNumber:(int)worldNumber {
@@ -25,7 +34,12 @@
 
 -(WorldState) getStateForWorld:(int) worldNumber {
     int data = [[NSUserDefaults standardUserDefaults] integerForKey:[self keyFromWorld:worldNumber]];
-    return (WorldState)data;
+
+    if (NO_DATA_RECEIVED == data) {
+        return DEFAULT_WORLD_STATE;
+    } else {
+        return (WorldState)data;
+    }
 }
 
 -(NSString *) keyFromWorld:(int)world andLevel:(int)level {
