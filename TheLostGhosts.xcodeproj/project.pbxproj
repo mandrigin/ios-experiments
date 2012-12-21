@@ -1422,6 +1422,7 @@
 				GCC_PREFIX_HEADER = TheLostGhosts/Prefix.pch;
 				HEADER_SEARCH_PATHS = "\"TheLostGhosts/libs/kazmath/include\"";
 				INFOPLIST_FILE = TheLostGhosts/Resources/Info.plist;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-ObjC",
