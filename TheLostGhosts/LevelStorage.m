@@ -33,7 +33,7 @@
         _currentWorldNumber = 0;
         _worlds = [[NSMutableArray alloc] init];
 
-        _dataStorage        = [[DataStorage alloc] init];
+        _dataStorage = [[DataStorage alloc] init];
 
         [self createSkins];
         [self createLevels];
@@ -112,17 +112,18 @@
         [level addRoundWithGhosts:3 badMans:2 previewTime:2 levelTime:1000 training:NO];
         [level markEnabled];
         [world addLevel: level];
-        //[level release];
+        [level release];
     }
 
     [_worlds addObject:world];
     [self saveToStorage];
-//    [world release];
+    [world release];
 }
 
 -(void)dealloc {
     [_funTownSkin release];
     [_dataStorage release];
+    [_worlds release];
 
     [super dealloc];
     
