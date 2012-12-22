@@ -7,10 +7,13 @@
 //
 
 #import "LevelStorage.h"
-#import "World.h"
 
-@interface LevelStorage() 
-    -(void)createSkins;
+@interface LevelStorage()
+- (void)setCurrentWorldNumber:(int)number;
+
+- (int)getCurrentWorldNumber;
+
+-(void)createSkins;
     -(void)createLevels;
     -(void)dealloc;
 @end
@@ -19,18 +22,19 @@
 
 +(id)levelStorageCreate {
     id newInstance = [[self alloc] init];
-    return [newInstance autorelease];
+    return newInstance;
 }
 
 -(id)init {
+
     self = [super init];
     if(self != nil) {
         
         _currentWorldNumber = 0;
-        _worlds             = [[NSMutableArray alloc] init];
+        _worlds = [[NSMutableArray alloc] init];
+
         _dataStorage        = [[DataStorage alloc] init];
 
-        
         [self createSkins];
         [self createLevels];
     }
@@ -38,52 +42,48 @@
 }
 
 -(void) loadFromStorage {
-    for(World* world in [self getWorlds]) {
+    for(World* world in _worlds) {
         [world loadFromStorage:_dataStorage];
     }
 }
 
 -(void) saveToStorage {
-    for(World* world in [self getWorlds]) {
+    for(World* world in _worlds) {
         [world saveToStorage:_dataStorage];
     }
 }
 
--(NSArray *)getWorlds {
-    return _worlds;
-}
-
 -(bool) hasNextWorld {
-    return [_worlds count] > _currentWorldNumber + 1;
+    return [_worlds count] > [self getCurrentWorldNumber] + 1;
 }
 
 -(bool) hasPrevWorld {
-    return _currentWorldNumber > 0;
+    return [self getCurrentWorldNumber] > 0;
 }
 
 -(void) gotoNextWorld {
-    _currentWorldNumber++;
+    [self setCurrentWorldNumber: [self getCurrentWorldNumber] + 1];
 }
 
 -(void) gotoPrevWorld {
-    _currentWorldNumber--;
-}
-
--(void) setCurrentWorldByNumber:(int)number {
-    _currentWorldNumber = number;
+    [self setCurrentWorldNumber: [self getCurrentWorldNumber] - 1];
 }
 
 -(World *) getCurrentWorld {
-    return [_worlds objectAtIndex:_currentWorldNumber];
+    return [[_worlds objectAtIndex:[self getCurrentWorldNumber]] retain];
 }
 
 //PRIVATE METHODS
 
+-(void)setCurrentWorldNumber:(int)number {
+    self->_currentWorldNumber = number;
+}
+
+-(int)getCurrentWorldNumber {
+    return _currentWorldNumber;
+}
+
 -(void)createSkins {
-    // TODO_DAN: добавить картинки и добавить соответствующие свойства в WorldSkin.
-    //           В этой строчке кода не хватает некоторых параметров в конструкторе worldskin
-    //           Собственно, за описанием элементов -- тоже хорошо бы в worldskin залезть.
-    
     _funTownSkin = [WorldSkin createWithTopMargin:5.0f
                                      bottomMargin:6.0f
                                  horizontalMargin:8.7f
@@ -112,27 +112,20 @@
         [level addRoundWithGhosts:3 badMans:2 previewTime:2 levelTime:1000 training:NO];
         [level markEnabled];
         [world addLevel: level];
-        [level release];
+        //[level release];
     }
 
     [_worlds addObject:world];
     [self saveToStorage];
+//    [world release];
 }
 
 -(void)dealloc {
     [_funTownSkin release];
     [_dataStorage release];
-    
-    for (id world in _worlds) {
-        [world release];
-    }
-    
-    [_worlds release];
+
     [super dealloc];
     
 }
-
-
-
 
 @end

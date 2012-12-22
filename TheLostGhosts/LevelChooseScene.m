@@ -58,11 +58,11 @@
 }
 
 -(void)showCurrentWorld {
-    LevelStorage* storage = [[Game sharedGame] getLevelStorage];
-    World* currentWorld = [storage getCurrentWorld];
+    World* currentWorld = [[Game sharedGame] getCurrentWorld];
+
     
-    btnNextWorld.isEnabled = [storage hasNextWorld];
-    btnPrevWorld.isEnabled = [storage hasPrevWorld];
+//    btnNextWorld.isEnabled = [storage hasNextWorld];
+//    btnPrevWorld.isEnabled = [storage hasPrevWorld];
 
     [self showWorldShadow:[currentWorld getBackground]
           andWorldCaption: [currentWorld getCaption]];

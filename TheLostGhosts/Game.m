@@ -9,7 +9,8 @@
 #import "Game.h"
 
 @implementation Game
-@synthesize storage = _storage;
+@synthesize levelStorage = _levelStorage;
+
 
 Game *_singletonInst;
 
@@ -36,7 +37,7 @@ Game *_singletonInst;
 -(id) init {
     self = [super init];
     if(self != nil) {
-        self->_storage = [LevelStorage levelStorageCreate];
+        self->_levelStorage = [[LevelStorage alloc] init];
         self->_graphics = [[Graphics alloc] init];
         self->_sounds = [[Sounds alloc] init];
         //
@@ -46,12 +47,17 @@ Game *_singletonInst;
 }
 
 -(void) load {
-    [_storage loadFromStorage];
+    [[self levelStorage]   loadFromStorage];
 }
 
 -(void) save {
-    [_storage saveToStorage];
+    [[self levelStorage] saveToStorage];
 }
+
+- (World *)getCurrentWorld {
+    return [[self levelStorage] getCurrentWorld];
+}
+
 
 -(void) dealloc {
     [_graphics release];

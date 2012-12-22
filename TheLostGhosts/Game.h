@@ -19,10 +19,10 @@
     
     Graphics     * _graphics;
     Sounds       * _sounds;
-    LevelStorage * _storage;
+    LevelStorage *_levelStorage;
 }
+@property(nonatomic, retain) LevelStorage *levelStorage;
 
-@property (readonly) LevelStorage * storage;
 
 +(Game *) sharedGame;
 
@@ -34,6 +34,6 @@
 
 -(void)save;
 
--(LevelStorage *)getLevelStorage;
+-(World *) getCurrentWorld;
 
 @end

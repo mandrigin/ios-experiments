@@ -17,7 +17,7 @@
     
     if(self != nil) {
         _currentLevelNumber = 0;
-        _levels = [NSMutableArray array];
+        _levels = [[NSMutableArray array] init];
         _skin = skin;
         _state = UNAVAILABLE;
     }
@@ -45,7 +45,7 @@
 }
 
 -(NSArray *)getLevels {
-    return _levels;
+    return [_levels retain];
 }
 
 -(Level *) getCurrentLevel {

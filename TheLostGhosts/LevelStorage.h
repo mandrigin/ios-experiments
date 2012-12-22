@@ -11,17 +11,15 @@
 #import "World.h"
 
 @interface LevelStorage : NSObject {
-    NSMutableArray * _worlds;
     DataStorage    * _dataStorage;
     int              _currentWorldNumber;
     WorldSkin      * _funTownSkin;
+    NSMutableArray * _worlds;
 }
 
 -(void) loadFromStorage;
 
 -(void) saveToStorage;
-
--(NSArray *)getWorlds;
 
 -(bool) hasNextWorld;
 
