@@ -31,7 +31,7 @@ typedef enum {
     GameState state;
 }
 
-+(id) createWithHeight:(int)height width:(int)width andLevel:(Round *)level;
++(id)createWithHeight:(int)height width:(int)width andRound:(Round *)round;
 
 -(void)start;
 

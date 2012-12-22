@@ -58,6 +58,10 @@ Game *_singletonInst;
     return [[self levelStorage] getCurrentWorld];
 }
 
+- (Round *)getCurrentRound {
+    return [[[[[self levelStorage] getCurrentWorld] getCurrentLevel] getCurrentRound] createRound];
+}
+
 
 -(void) dealloc {
     [_graphics release];

@@ -23,7 +23,7 @@
     -(RoundResult)getRoundResult;
     -(void)showYouWinMessage;
     -(void)onWindowDeselected:(GhostyWindow *)window;
-    -(id) initWithHeight:(int)height width:(int)width andLevel:(Round*)currentLevel;
+    -(id)initWithHeight:(int)height width:(int)width andRound:(Round*)currentLevel;
     -(void)onGameTick;
     -(void)showResult;
     -(void)showYouWinMessage;
@@ -33,8 +33,8 @@
 
 @implementation GamePlayLayer
 
-+(id) createWithHeight:(int)height width:(int)width andLevel:(Round *)level {
-    return [[[self alloc] initWithHeight:height width:width andLevel:level] autorelease];
++(id)createWithHeight:(int)height width:(int)width andRound:(Round *)round {
+    return [[[self alloc] initWithHeight:height width:width andRound:round] autorelease];
 }
 
 -(void)start {
@@ -149,7 +149,7 @@
     [super dealloc];
 }
 
--(id) initWithHeight:(int)height width:(int)width andLevel:(Round*)currentLevel {
+-(id)initWithHeight:(int)height width:(int)width andRound:(Round*)currentLevel {
     self = [super init];
     
     RoundSettings *settings = [currentLevel getSettings];

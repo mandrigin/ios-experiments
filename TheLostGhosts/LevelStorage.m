@@ -70,7 +70,7 @@
 }
 
 -(World *) getCurrentWorld {
-    return [[_worlds objectAtIndex:[self getCurrentWorldNumber]] retain];
+    return [_worlds objectAtIndex:[self getCurrentWorldNumber]];
 }
 
 //PRIVATE METHODS

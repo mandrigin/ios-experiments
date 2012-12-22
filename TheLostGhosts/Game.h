@@ -25,15 +25,11 @@
 
 
 +(Game *) sharedGame;
-
 -(Graphics *)getGraphics;
-
 -(Sounds *)getSounds;
-
 -(void)load;
-
 -(void)save;
-
 -(World *) getCurrentWorld;
+-(Round *) getCurrentRound;
 
 @end

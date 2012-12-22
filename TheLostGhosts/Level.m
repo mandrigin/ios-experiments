@@ -20,7 +20,7 @@
 -(id)init {
     self = [super init];
     if (self != nil) {
-        _roundFactories = [NSMutableArray array];
+        _roundFactories = [[NSMutableArray alloc] init];
         _skin = nil;
     }
     return self;
@@ -95,6 +95,7 @@
 
 //PRIVATE
 -(void)dealloc {
+    [_roundFactories release];
     [_skin release];
     [super dealloc];
 }
