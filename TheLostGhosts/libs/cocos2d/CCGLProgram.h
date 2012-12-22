@@ -100,7 +100,7 @@ struct _hashUniformEntry;
 /** it will call glUseProgram() */
 - (void)use;
 
-/** It will create 3 uniforms:
+/** It will levelStorageCreate 3 uniforms:
 	- kCCUniformPMatrix
 	- kCCUniformMVMatrix
 	- kCCUniformSampler

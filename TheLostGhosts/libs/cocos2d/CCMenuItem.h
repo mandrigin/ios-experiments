@@ -36,7 +36,7 @@
 #pragma mark CCMenuItem
 /** CCMenuItem base class
  *
- *  Subclass CCMenuItem (or any subclass) to create your custom CCMenuItem objects.
+ *  Subclass CCMenuItem (or any subclass) to levelStorageCreate your custom CCMenuItem objects.
  */
 @interface CCMenuItem : CCNode
 {
@@ -143,7 +143,7 @@
 +(id) itemWithLabel:(CCNode<CCLabelProtocol,CCRGBAProtocol>*)label block:(void(^)(id sender))block;
 
 /** initializes a CCMenuItemLabel with a Label, target and selector.
- Internally it will create a block that executes the target/selector.
+ Internally it will levelStorageCreate a block that executes the target/selector.
  The "target" won't be retained.
  */
 -(id) initWithLabel:(CCNode<CCLabelProtocol,CCRGBAProtocol>*)label target:(id)target selector:(SEL)selector;

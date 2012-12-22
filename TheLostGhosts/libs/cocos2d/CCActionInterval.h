@@ -74,9 +74,9 @@ Example:
 	ccTime split_;
 	int last_;
 }
-/** helper contructor to create an array of sequenceable actions */
+/** helper contructor to levelStorageCreate an array of sequenceable actions */
 +(id) actions: (CCFiniteTimeAction*) action1, ... NS_REQUIRES_NIL_TERMINATION;
-/** helper contructor to create an array of sequenceable actions given an array */
+/** helper contructor to levelStorageCreate an array of sequenceable actions given an array */
 +(id) actionWithArray: (NSArray*) arrayOfActions;
 /** creates the action */
 +(id) actionOne:(CCFiniteTimeAction*)actionOne two:(CCFiniteTimeAction*)actionTwo;
@@ -114,9 +114,9 @@ Example:
 	CCFiniteTimeAction *one_;
 	CCFiniteTimeAction *two_;
 }
-/** helper constructor to create an array of spawned actions */
+/** helper constructor to levelStorageCreate an array of spawned actions */
 +(id) actions: (CCFiniteTimeAction*) action1, ... NS_REQUIRES_NIL_TERMINATION;
-/** helper contructor to create an array of spawned actions given an array */
+/** helper contructor to levelStorageCreate an array of spawned actions given an array */
 +(id) actionWithArray: (NSArray*) arrayOfActions;
 /** creates the Spawn action */
 +(id) actionOne: (CCFiniteTimeAction*) one two:(CCFiniteTimeAction*) two;

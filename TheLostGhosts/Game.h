@@ -22,6 +22,8 @@
     LevelStorage * _storage;
 }
 
+@property (readonly) LevelStorage * storage;
+
 +(Game *) sharedGame;
 
 -(Graphics *)getGraphics;

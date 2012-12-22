@@ -17,7 +17,7 @@
     
     if(self != nil) {
         _currentLevelNumber = 0;
-        _levels = [[NSMutableArray alloc] init];
+        _levels = [NSMutableArray array];
         _skin = skin;
         _state = UNAVAILABLE;
     }
@@ -92,17 +92,6 @@
 
 -(void) setWorldState:(WorldState)state {
     _state = state;
-}
-
--(void) dealloc {
-    
-    for (id level in _levels) {
-        [level release];
-    }
-    
-    [_levels release];
-    
-    [super dealloc];
 }
 
 @end

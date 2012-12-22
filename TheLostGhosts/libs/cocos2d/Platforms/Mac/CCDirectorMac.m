@@ -132,7 +132,7 @@
 //	
 //	return;
 
-	// Mac OS X 10.6 and later offer a simplified mechanism to create full-screen contexts
+	// Mac OS X 10.6 and later offer a simplified mechanism to levelStorageCreate full-screen contexts
 #if MAC_OS_X_VERSION_MIN_REQUIRED > MAC_OS_X_VERSION_10_5
 
     if (isFullScreen_ == fullscreen)
@@ -492,7 +492,7 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTime
 {
 	while( ![[NSThread currentThread] isCancelled] ) {
 		// There is no autorelease pool when this method is called because it will be called from a background thread
-		// It's important to create one or you will leak objects
+		// It's important to levelStorageCreate one or you will leak objects
 		NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 
 		[[NSRunLoop currentRunLoop] run];

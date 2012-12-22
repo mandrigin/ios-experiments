@@ -29,7 +29,7 @@
  */
 
 /*
- * To create sprite frames and texture atlas, use any of these tools:
+ * To levelStorageCreate sprite frames and texture atlas, use any of these tools:
  * http://zwoptexapp.com/
  * http://www.texturepacker.com/
  *

@@ -24,6 +24,7 @@
 @property(nonatomic) int number;
 @property(nonatomic, retain) NSMutableArray *roundFactories;
 @property(nonatomic) int currentRoundNumber;
+@property LevelState state;
 
 
 -(NSArray *) getRounds;

@@ -56,7 +56,7 @@ enum {
 
  Subclassing a CCNode usually means (one/all) of:
  - overriding init to initialize resources and schedule callbacks
- - create callbacks to handle the advancement of time
+ - levelStorageCreate callbacks to handle the advancement of time
  - overriding draw to render the node
 
  Features of CCNode:

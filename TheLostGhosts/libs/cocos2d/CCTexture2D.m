@@ -98,7 +98,7 @@
 //CLASS IMPLEMENTATIONS:
 
 
-// If the image has alpha, you can create RGBA8 (32-bit) or RGBA4 (16-bit) or RGB5A1 (16-bit)
+// If the image has alpha, you can levelStorageCreate RGBA8 (32-bit) or RGBA4 (16-bit) or RGB5A1 (16-bit)
 // Default is: RGBA8888 (32-bit textures)
 static CCTexture2DPixelFormat defaultAlphaPixelFormat_ = kCCTexture2DPixelFormat_Default;
 
@@ -248,7 +248,7 @@ static CCTexture2DPixelFormat defaultAlphaPixelFormat_ = kCCTexture2DPixelFormat
 	CCTexture2DPixelFormat	pixelFormat;
 
 	if(cgImage == NULL) {
-		CCLOG(@"cocos2d: CCTexture2D. Can't create Texture. cgImage is nil");
+		CCLOG(@"cocos2d: CCTexture2D. Can't levelStorageCreate Texture. cgImage is nil");
 		[self release];
 		return nil;
 	}
@@ -280,7 +280,7 @@ static CCTexture2DPixelFormat defaultAlphaPixelFormat_ = kCCTexture2DPixelFormat
 			info = kCGImageAlphaNoneSkipLast;
 
 			// Use RGBA8888 if default is RGBA8888, otherwise use RGB565.
-			// DO NOT USE RGB888 since it is the same as RGBA8888, but it is more expensive to create it
+			// DO NOT USE RGB888 since it is the same as RGBA8888, but it is more expensive to levelStorageCreate it
 			if( defaultAlphaPixelFormat_ == kCCTexture2DPixelFormat_RGBA8888 )
 				pixelFormat = kCCTexture2DPixelFormat_RGBA8888;
 			else
@@ -690,7 +690,7 @@ static CCTexture2DPixelFormat defaultAlphaPixelFormat_ = kCCTexture2DPixelFormat
 		return nil;
 	}
 
-	// create paragraph style
+	// levelStorageCreate paragraph style
 	NSInteger linebreaks[] = {NSLineBreakByWordWrapping, -1, -1, -1, -1, -1};	
 	NSUInteger alignments[] = { NSLeftTextAlignment, NSCenterTextAlignment, NSRightTextAlignment };
 
@@ -703,7 +703,7 @@ static CCTexture2DPixelFormat defaultAlphaPixelFormat_ = kCCTexture2DPixelFormat
 
 	[pstyle release];
 
-	// create string with attributes
+	// levelStorageCreate string with attributes
 	NSAttributedString *stringWithAttributes = [[[NSAttributedString alloc] initWithString:string attributes:attributes] autorelease];
 
 	return [self initWithString:string dimensions:dimensions hAlignment:hAlignment vAlignment:vAlignment attributedString:stringWithAttributes];

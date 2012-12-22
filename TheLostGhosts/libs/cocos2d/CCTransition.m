@@ -839,13 +839,13 @@ const NSInteger kSceneFade = 0xFADEFADE;
 {
 	[super onEnter];
 
-	// create a transparent color layer
+	// levelStorageCreate a transparent color layer
 	// in which we are going to add our rendertextures
 	ccColor4B  color = {0,0,0,0};
 	CGSize size = [[CCDirector sharedDirector] winSize];
 	CCLayerColor * layer = [CCLayerColor layerWithColor:color];
 
-	// create the first render texture for inScene_
+	// levelStorageCreate the first render texture for inScene_
 	CCRenderTexture *inTexture = [CCRenderTexture renderTextureWithWidth:size.width height:size.height];
 	inTexture.sprite.anchorPoint= ccp(0.5f,0.5f);
 	inTexture.position = ccp(size.width/2, size.height/2);
@@ -856,7 +856,7 @@ const NSInteger kSceneFade = 0xFADEFADE;
 	[inScene_ visit];
 	[inTexture end];
 
-	// create the second render texture for outScene_
+	// levelStorageCreate the second render texture for outScene_
 	CCRenderTexture *outTexture = [CCRenderTexture renderTextureWithWidth:size.width height:size.height];
 	outTexture.sprite.anchorPoint= ccp(0.5f,0.5f);
 	outTexture.position = ccp(size.width/2, size.height/2);
@@ -867,7 +867,7 @@ const NSInteger kSceneFade = 0xFADEFADE;
 	[outScene_ visit];
 	[outTexture end];
 
-	// create blend functions
+	// levelStorageCreate blend functions
 
 	ccBlendFunc blend1 = {GL_ONE, GL_ONE}; // inScene_ will lay on background and will not be used with alpha
 	ccBlendFunc blend2 = {GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA}; // we are going to blend outScene_ via alpha
@@ -884,7 +884,7 @@ const NSInteger kSceneFade = 0xFADEFADE;
 	[inTexture.sprite setOpacity:255];
 	[outTexture.sprite setOpacity:255];
 
-	// create the blend action
+	// levelStorageCreate the blend action
 	CCActionInterval * layerAction = [CCSequence actions:
 									  [CCFadeTo actionWithDuration:duration_ opacity:0],
 									  [CCCallFunc actionWithTarget:self selector:@selector(hideOutShowIn)],

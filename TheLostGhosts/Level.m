@@ -14,6 +14,7 @@
 @synthesize number = _number;
 @synthesize roundFactories = _roundFactories;
 @synthesize currentRoundNumber = _currentRoundNumber;
+@synthesize state = _state;
 
 
 -(id)init {
@@ -30,21 +31,21 @@
                previewTime:(long)previewTime
                  levelTime:(long)levelTime
                   training:(bool)training {
-    [_roundFactories addObject:[RoundFactory createWithGhosts:numOfGhosts
+    [[self roundFactories] addObject:[RoundFactory createWithGhosts:numOfGhosts
                                                       badMans:numOfBadmans
                                                   previewTime:previewTime
                                                     levelTime:levelTime
                                                      training:training
-                                                    andLayout:_skin]];
+                                                    andLayout:[self skin]]];
 }
 
 
 -(RoundFactory *)getCurrentRound {
-    return [_roundFactories objectAtIndex:_currentRoundNumber];
+    return [[self roundFactories] objectAtIndex:_currentRoundNumber];
 }
 
 -(bool) hasMoreRounds {
-    return [_roundFactories count] > (_currentRoundNumber + 1);
+    return [[self roundFactories] count] > (_currentRoundNumber + 1);
 }
 
 -(void) gotoNextRound {
@@ -52,7 +53,7 @@
 }
 
 -(void) saveToStorage:(DataStorage *)storage withWorldNumber:(int)worldNumber {
-    [storage saveLevelState:_state forLevelNumber:_number withWorldNumber:worldNumber];
+    [storage saveLevelState:[self state] forLevelNumber:_number withWorldNumber:worldNumber];
 }
 
 -(void) loadFromStorage:(DataStorage *)storage  withWorldNumber:(int)worldNumber {
@@ -71,21 +72,17 @@
     
     switch (_state) {
         case LOCKED:
-            return [_skin lockedLevelIcon];
+            return [[self skin] lockedLevelIcon];
             
         case PASSED:
-            return [_skin passedLevelIcon];
+            return [[self skin]  passedLevelIcon];
             
         case ENABLED:
-            return [_skin enabledLevelIcon];
+            return [[self skin]  enabledLevelIcon];
         
         default:
-            return [_skin enabledLevelIcon];
+            return [[self skin]  enabledLevelIcon];
     }
-}
-
--(void) setSkin:(WorldSkin *)skin {
-    _skin = skin;
 }
 
 -(void) setNumber:(int)number {
@@ -96,25 +93,8 @@
     return _skin != nil;
 }
 
--(LevelState)getState {
-    return _state;
-}
-
 //PRIVATE
--(void) setState:(LevelState)newState {
-    NSLog( @"setState called. new state is %d", newState );
-    _state = newState;
-}
-
-
 -(void)dealloc {
-    
-    for(id factory in _roundFactories) {
-        [factory release];
-    }
-    
-    [_roundFactories release];
-
     [_skin release];
     [super dealloc];
 }

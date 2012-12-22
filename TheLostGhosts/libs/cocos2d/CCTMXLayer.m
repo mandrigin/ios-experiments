@@ -271,7 +271,7 @@ int compareInts (const void * a, const void * b);
 		int z = pos.x + pos.y * layerSize_.width;
 		tile = (CCSprite*) [self getChildByTag:z];
 
-		// tile not created yet. create it
+		// tile not created yet. levelStorageCreate it
 		if( ! tile ) {
 			CGRect rect = [tileset_ rectForGID:gid];
 			rect = CC_RECT_PIXELS_TO_POINTS(rect);
@@ -509,7 +509,7 @@ int compareInts (const void * a, const void * b)
 		if( gid == 0 )
 			[self removeTileAt:pos];
 
-		// empty tile. create a new one
+		// empty tile. levelStorageCreate a new one
 		else if( currentGID == 0 )
 			[self insertTileForGID:gidAndFlags at:pos];
 

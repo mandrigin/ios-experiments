@@ -343,7 +343,7 @@
 	if( oldIndex == newIndex )
 		return;
 
-	//create buffer
+	//levelStorageCreate buffer
 	size_t quadSize = sizeof(ccV3F_C4B_T2F_Quad);
 	ccV3F_C4B_T2F_Quad *tempQuads = malloc( quadSize * amount);
 	memcpy( tempQuads, &quads_[oldIndex], quadSize * amount );

@@ -195,7 +195,7 @@ typedef struct _ccGridSize
 	NSInteger	y;
 } ccGridSize;
 
-//! helper function to create a ccGridSize
+//! helper function to levelStorageCreate a ccGridSize
 static inline ccGridSize
 ccg(const NSInteger x, const NSInteger y)
 {

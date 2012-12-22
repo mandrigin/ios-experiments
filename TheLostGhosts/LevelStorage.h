@@ -35,6 +35,6 @@
 
 -(World *) getCurrentWorld;
 
-+(id) create;
++(id)levelStorageCreate;
 
 @end

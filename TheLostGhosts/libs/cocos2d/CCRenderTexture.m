@@ -117,7 +117,7 @@
 		glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, texture_.name, 0);
 
 		if (depthStencilFormat != 0) {
-			//create and attach depth buffer
+			//levelStorageCreate and attach depth buffer
 			glGenRenderbuffers(1, &depthRenderBufffer_);
 			glBindRenderbuffer(GL_RENDERBUFFER, depthRenderBufffer_);
 			glRenderbufferStorage(GL_RENDERBUFFER, depthStencilFormat, (GLsizei)powW, (GLsizei)powH);
@@ -380,7 +380,7 @@
 	CGImageRef imageRef = [self newCGImage];
 
 	if( ! imageRef ) {
-		CCLOG(@"cocos2d: Error: Cannot create CGImage ref from texture");
+		CCLOG(@"cocos2d: Error: Cannot levelStorageCreate CGImage ref from texture");
 		return NO;
 	}
 	

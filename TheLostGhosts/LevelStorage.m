@@ -17,8 +17,9 @@
 
 @implementation LevelStorage
 
-+(id)create {
-    return [[LevelStorage alloc] init];
++(id)levelStorageCreate {
+    id newInstance = [[self alloc] init];
+    return [newInstance autorelease];
 }
 
 -(id)init {
@@ -111,6 +112,7 @@
         [level addRoundWithGhosts:3 badMans:2 previewTime:2 levelTime:1000 training:NO];
         [level markEnabled];
         [world addLevel: level];
+        [level release];
     }
 
     [_worlds addObject:world];

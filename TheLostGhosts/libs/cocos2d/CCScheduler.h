@@ -128,7 +128,7 @@ struct _hashUpdateEntry;
 /** Modifies the time of all scheduled callbacks.
  You can use this property to create a 'slow motion' or 'fast fordward' effect.
  Default is 1.0. To create a 'slow motion' effect, use values below 1.0.
- To create a 'fast fordward' effect, use values higher than 1.0.
+ To levelStorageCreate a 'fast fordward' effect, use values higher than 1.0.
  @since v0.8
  @warning It will affect EVERY scheduled selector / action.
  */

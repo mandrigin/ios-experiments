@@ -135,13 +135,13 @@
 */
 -(void) addSpriteFrame:(CCSpriteFrame*)frame;
 
-/** Adds a frame with an image filename. Internally it will create a CCSpriteFrame and it will add it.
+/** Adds a frame with an image filename. Internally it will levelStorageCreate a CCSpriteFrame and it will add it.
  The frame will be added with one "delay unit".
  Added to facilitate the migration from v0.8 to v0.9.
  */
 -(void) addSpriteFrameWithFilename:(NSString*)filename;
 
-/** Adds a frame with a texture and a rect. Internally it will create a CCSpriteFrame and it will add it.
+/** Adds a frame with a texture and a rect. Internally it will levelStorageCreate a CCSpriteFrame and it will add it.
  The frame will be added with one "delay unit".
  Added to facilitate the migration from v0.8 to v0.9.
  */
