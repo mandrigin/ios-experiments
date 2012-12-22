@@ -86,14 +86,14 @@
                                            andIntData:levelIndex];
 
 
-        [self addLabelToCenter:[NSString stringWithFormat:@"%d", levelIndex +1]
+        [self addLabelToCenter:[NSString stringWithFormat:@"%d", levelIndex + 1]
                          addTo:button];
         [menu addChild: button];
         levelIndex++;
     }
 
 
-    NSNumber* numOfCols = [NSNumber numberWithInt:4];
+    NSNumber* numOfCols = [NSNumber numberWithInt: 4];
     
     [menu alignItemsInColumns: numOfCols, numOfCols, numOfCols, numOfCols, nil];
     
