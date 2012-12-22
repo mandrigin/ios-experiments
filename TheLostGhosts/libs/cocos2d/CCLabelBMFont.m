@@ -208,7 +208,7 @@ typedef struct _FontDefHashElement
 			// Ignore this line
 		}
 		else if([line hasPrefix:@"char"]) {
-			// Parse the current line and create a new CharDef
+			// Parse the current line and levelStorageCreate a new CharDef
 			tFontDefHashElement *element = malloc( sizeof(*element) );
 			
 			[self parseCharacterDefinition:line charDef:&element->fontDef];
@@ -501,7 +501,7 @@ typedef struct _FontDefHashElement
 
 	if( fntFile ) {
 		CCBMFontConfiguration *newConf = FNTConfigLoadFile(fntFile);
-		NSAssert( newConf, @"CCLabelBMFont: Impossible to create font. Please check file: '%@'", fntFile );
+		NSAssert( newConf, @"CCLabelBMFont: Impossible to levelStorageCreate font. Please check file: '%@'", fntFile );
 
 		configuration_ = [newConf retain];
     
@@ -903,7 +903,7 @@ typedef struct _FontDefHashElement
 		
 		CCBMFontConfiguration *newConf = FNTConfigLoadFile(fntFile);
 		
-		NSAssert( newConf, @"CCLabelBMFont: Impossible to create font. Please check file: '%@'", fntFile );
+		NSAssert( newConf, @"CCLabelBMFont: Impossible to levelStorageCreate font. Please check file: '%@'", fntFile );
 		
 		[fntFile_ release];
 		fntFile_ = [fntFile retain];

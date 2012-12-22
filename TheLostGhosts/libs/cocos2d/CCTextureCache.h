@@ -56,7 +56,7 @@
 
 
 /** Returns a Texture2D object given an file image
- * If the file image was not previously loaded, it will create a new CCTexture2D
+ * If the file image was not previously loaded, it will levelStorageCreate a new CCTexture2D
  *  object and it will return it. It will use the filename as a key.
  * Otherwise it will return a reference of a previosly loaded image.
  * Supported image extensions: .png, .bmp, .tiff, .jpeg, .pvr, .gif
@@ -66,7 +66,7 @@
 /** Asynchronously, load a texture2d from a file.
  * If the file image was previously loaded, it will use it.
  * Otherwise it will load a texture in a new thread, and when the image is loaded, the callback will be called with the Texture2D as a parameter.
- * The callback will be called in the cocos2d thread, so it is safe to create any cocos2d object from the callback.
+ * The callback will be called in the cocos2d thread, so it is safe to levelStorageCreate any cocos2d object from the callback.
  * Supported image extensions: .png, .bmp, .tiff, .jpeg, .pvr, .gif
  * @since v0.8
  */
@@ -75,7 +75,7 @@
 /** Asynchronously, load a texture2d from a file.
  * If the file image was previously loaded, it will use it.
  * Otherwise it will load a texture in a new thread, and when the image is loaded, the block will be called.
- * The callback will be called in the cocos2d thread, so it is safe to create any cocos2d object from the callback.
+ * The callback will be called in the cocos2d thread, so it is safe to levelStorageCreate any cocos2d object from the callback.
  * Supported image extensions: .png, .bmp, .tiff, .jpeg, .pvr, .gif
  * @since v2.0
  */
@@ -83,7 +83,7 @@
 
 
 /** Returns a Texture2D object given an CGImageRef image
- * If the image was not previously loaded, it will create a new CCTexture2D object and it will return it.
+ * If the image was not previously loaded, it will levelStorageCreate a new CCTexture2D object and it will return it.
  * Otherwise it will return a reference of a previously loaded image
  * The "key" parameter will be used as the "key" for the cache.
  * If "key" is nil, then a new texture will be created each time.
@@ -126,7 +126,7 @@
 @interface CCTextureCache (PVRSupport)
 
 /** Returns a Texture2D object given an PVR filename.
- * If the file image was not previously loaded, it will create a new CCTexture2D
+ * If the file image was not previously loaded, it will levelStorageCreate a new CCTexture2D
  *  object and it will return it. Otherwise it will return a reference of a previosly loaded image
  *
  */

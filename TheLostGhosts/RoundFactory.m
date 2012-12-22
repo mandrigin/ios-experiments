@@ -37,23 +37,17 @@
             levelTime:(long)levelTime
              training:(bool)training
             andLayout:(WorldSkin *)layout {
-    return [[RoundFactory alloc] initWithGhosts:numOfGhosts
-                                        badMans:numOfBadmans
-                                    previewTime:previewTime
-                                      levelTime:levelTime
-                                       training:training
-                                      andLayout:layout];
+    return [[[RoundFactory alloc] initWithGhosts:numOfGhosts
+                                         badMans:numOfBadmans
+                                     previewTime:previewTime
+                                       levelTime:levelTime
+                                        training:training
+                                       andLayout:layout] autorelease];
 }
 
 -(Round *) createRound {
     RoundSettings *settings = self->_settings;
     return [[Round alloc] initWithSettings:settings];
-}
-
-
--(void)dealloc {
-    [_settings release];
-    [super dealloc];
 }
 
 @end

@@ -7,9 +7,10 @@
 //
 
 #import "Game.h"
-#import "RoundFactory.h"
 
 @implementation Game
+@synthesize levelStorage = _levelStorage;
+
 
 Game *_singletonInst;
 
@@ -36,10 +37,9 @@ Game *_singletonInst;
 -(id) init {
     self = [super init];
     if(self != nil) {
-        self->_storage = [LevelStorage create];
+        self->_levelStorage = [[LevelStorage alloc] init];
         self->_graphics = [[Graphics alloc] init];
         self->_sounds = [[Sounds alloc] init];
-        self->_dataStorage = [[DataStorage alloc] init];
         //
         [self load];
     }
@@ -47,24 +47,19 @@ Game *_singletonInst;
 }
 
 -(void) load {
-    for(World* world in [_storage getWorlds]) {
-        [world loadFromStorage:_dataStorage];
-    }
+    [[self levelStorage]   loadFromStorage];
 }
 
 -(void) save {
-    for(World* world in [_storage getWorlds]) {
-        [world saveToStorage:_dataStorage];
-    }
+    [[self levelStorage] saveToStorage];
 }
 
--(LevelStorage *)getLevelStorage {
-    return _storage;
+- (World *)getCurrentWorld {
+    return [[self levelStorage] getCurrentWorld];
 }
+
 
 -(void) dealloc {
-    [_dataStorage release];
-    [_storage release];
     [_graphics release];
     [_sounds release];
     [super dealloc];

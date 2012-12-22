@@ -56,5 +56,10 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>Fonts provided by application</key>
+    <array>
+        <string>Candarab.ttf</string>
+    </array>
+
 </dict>
 </plist>

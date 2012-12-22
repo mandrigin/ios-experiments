@@ -19,7 +19,10 @@
 @interface LevelChooseScene()
     -(void)showWorldShadow:(NSString *)worldShadow andWorldCaption:(NSString *)captionImage;
     -(void)showLevels:(NSArray *)levelsArray;
-    -(void)showCurrentWorld;
+
+- (void)addLabelToCenter:(NSArray *)label addTo:(CCNode *)parent;
+
+-(void)showCurrentWorld;
 @end
 
 @implementation LevelChooseScene {
@@ -55,11 +58,11 @@
 }
 
 -(void)showCurrentWorld {
-    LevelStorage* storage = [[Game sharedGame] getLevelStorage];
-    World* currentWorld = [storage getCurrentWorld];
+    World* currentWorld = [[Game sharedGame] getCurrentWorld];
+
     
-    btnNextWorld.isEnabled = [storage hasNextWorld];
-    btnPrevWorld.isEnabled = [storage hasPrevWorld];
+//    btnNextWorld.isEnabled = [storage hasNextWorld];
+//    btnPrevWorld.isEnabled = [storage hasPrevWorld];
 
     [self showWorldShadow:[currentWorld getBackground]
           andWorldCaption: [currentWorld getCaption]];
@@ -77,19 +80,37 @@
     CCMenu* menu = [CCMenu menuWithItems:nil];
     int levelIndex = 0;
     for (Level *level in levelsArray) {
-        [menu addChild:[self createButtonFromNormalImage:[level getIcon]
-                                           selectedImage:[level getIcon]
-                                                     tag:LEVCHOOSE_LEVEL_ICON
-                                              andIntData:levelIndex]];
-        
+        CCMenuItemSprite * button = [self createButtonFromNormalImage:[level getIcon]
+                                        selectedImage:[level getIcon]
+                                                  tag:LEVCHOOSE_LEVEL_ICON
+                                           andIntData:levelIndex];
+
+
+        [self addLabelToCenter:[NSString stringWithFormat:@"%d", levelIndex + 1]
+                         addTo:button];
+        [menu addChild: button];
         levelIndex++;
     }
-    
-    NSNumber* numOfCols = [NSNumber numberWithInt:4];
+
+
+    NSNumber* numOfCols = [NSNumber numberWithInt: 4];
     
     [menu alignItemsInColumns: numOfCols, numOfCols, numOfCols, numOfCols, nil];
     
     [self addChild: menu];
+}
+
+
+-(void)addLabelToCenter:(NSArray *)text
+                          addTo:(CCNode *)parent {
+    CCLabelTTF * label = [CCLabelTTF labelWithString: text
+                                            fontName:@"Arial"
+                                            fontSize:30];
+    [label setPosition:ccp( parent.contentSize.width / 2
+                          , parent.contentSize.height / 2
+                                 - label.contentSize.height / 3)];
+    [label setColor:ccc3(0, 20, 0)];
+    [parent addChild:label];
 }
 
 @end

@@ -102,7 +102,7 @@ static CCTextureCache *sharedTextureCache;
 
 #endif // __CC_PLATFORM_MAC
 
-		NSAssert( _auxGLcontext, @"TextureCache: Could not create EAGL context");
+		NSAssert( _auxGLcontext, @"TextureCache: Could not levelStorageCreate EAGL context");
 
 	}
 
@@ -172,7 +172,7 @@ static CCTextureCache *sharedTextureCache;
 #ifdef __CC_PLATFORM_IOS
 		if( [EAGLContext setCurrentContext:_auxGLcontext] ) {
 
-			// load / create the texture
+			// load / levelStorageCreate the texture
 			texture = [self addImage:path];
 
 			glFlush();
@@ -189,7 +189,7 @@ static CCTextureCache *sharedTextureCache;
 
 		[_auxGLcontext makeCurrentContext];
 
-		// load / create the texture
+		// load / levelStorageCreate the texture
 		texture = [self addImage:path];
 
 		glFlush();
@@ -233,7 +233,7 @@ static CCTextureCache *sharedTextureCache;
 #ifdef __CC_PLATFORM_IOS
 		if( [EAGLContext setCurrentContext:_auxGLcontext] ) {
 
-			// load / create the texture
+			// load / levelStorageCreate the texture
 			texture = [self addImage:path];
 
 			glFlush();
@@ -251,7 +251,7 @@ static CCTextureCache *sharedTextureCache;
 
 		[_auxGLcontext makeCurrentContext];
 
-		// load / create the texture
+		// load / levelStorageCreate the texture
 		texture = [self addImage:path];
 
 		glFlush();
@@ -351,7 +351,7 @@ static CCTextureCache *sharedTextureCache;
 
 	__block CCTexture2D * tex = nil;
 
-	// If key is nil, then create a new texture each time
+	// If key is nil, then levelStorageCreate a new texture each time
 	if( key ) {
 		dispatch_sync(_dictQueue, ^{
 			tex = [textures_ objectForKey:key];

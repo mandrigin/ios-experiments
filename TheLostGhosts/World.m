@@ -94,15 +94,8 @@
     _state = state;
 }
 
--(void) dealloc {
-    
-    for (id level in _levels) {
-        [level release];
-    }
-    
+- (void)dealloc {
     [_levels release];
-    
     [super dealloc];
 }
-
 @end

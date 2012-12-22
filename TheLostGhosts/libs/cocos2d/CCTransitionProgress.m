@@ -53,11 +53,11 @@ enum {
 
 	[self setupTransition];
 	
-	// create a transparent color layer
+	// levelStorageCreate a transparent color layer
 	// in which we are going to add our rendertextures
 	CGSize size = [[CCDirector sharedDirector] winSize];
 
-	// create the second render texture for outScene
+	// levelStorageCreate the second render texture for outScene
 	CCRenderTexture *texture = [CCRenderTexture renderTextureWithWidth:size.width height:size.height];
 	texture.sprite.anchorPoint= ccp(0.5f,0.5f);
 	texture.position = ccp(size.width/2, size.height/2);
@@ -77,7 +77,7 @@ enum {
 	//	We need the texture in RenderTexture.
 	CCProgressTimer *node = [self progressTimerNodeWithRenderTexture:texture];
 
-	// create the blend action
+	// levelStorageCreate the blend action
 	CCActionInterval * layerAction = [CCSequence actions:
 									  [CCProgressFromTo actionWithDuration:duration_ from:from_ to:to_],
 									  [CCCallFunc actionWithTarget:self selector:@selector(finish)],

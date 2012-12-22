@@ -104,7 +104,7 @@ typedef enum {
 @class CCGLProgram;
 
 /** CCTexture2D class.
- * This class allows to easily create OpenGL 2D textures from images, text or raw data.
+ * This class allows to easily levelStorageCreate OpenGL 2D textures from images, text or raw data.
  * The created CCTexture2D object will always have power-of-two dimensions.
  * Depending on how you create the CCTexture2D object, the actual image area of the texture might be smaller than the texture dimensions i.e. "contentSize" != (pixelsWide, pixelsHigh) and (maxS, maxT) != (1.0, 1.0).
  * Be aware that the content of the generated textures will be upside-down!
@@ -132,7 +132,7 @@ typedef enum {
 /** Intializes with a texture2d with data */
 - (id) initWithData:(const void*)data pixelFormat:(CCTexture2DPixelFormat)pixelFormat pixelsWide:(NSUInteger)width pixelsHigh:(NSUInteger)height contentSize:(CGSize)size;
 
-/** These functions are needed to create mutable textures */
+/** These functions are needed to levelStorageCreate mutable textures */
 - (void) releaseData:(void*)data;
 - (void*) keepData:(void*)data length:(NSUInteger)length;
 
@@ -189,7 +189,7 @@ These functions require GL_TEXTURE_2D and both GL_VERTEX_ARRAY and GL_TEXTURE_CO
 @end
 
 /**
-Extensions to make it easy to create a CCTexture2D object from an image file.
+Extensions to make it easy to levelStorageCreate a CCTexture2D object from an image file.
 Note that RGBA type textures will have their alpha premultiplied - use the blending mode (GL_ONE, GL_ONE_MINUS_SRC_ALPHA).
 */
 @interface CCTexture2D (Image)
@@ -202,7 +202,7 @@ Note that RGBA type textures will have their alpha premultiplied - use the blend
 @end
 
 /**
-Extensions to make it easy to create a CCTexture2D object from a string of text.
+Extensions to make it easy to levelStorageCreate a CCTexture2D object from a string of text.
 Note that the generated textures are of type A8 - use the blending mode (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA).
 */
 @interface CCTexture2D (Text)
@@ -221,7 +221,7 @@ Note that the generated textures are of type A8 - use the blending mode (GL_SRC_
 
 
 /**
- Extensions to make it easy to create a CCTexture2D object from a PVRTC file
+ Extensions to make it easy to levelStorageCreate a CCTexture2D object from a PVRTC file
  Note that the generated textures don't have their alpha premultiplied - use the blending mode (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA).
  */
 @interface CCTexture2D (PVRSupport)

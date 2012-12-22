@@ -67,10 +67,10 @@
 
         // Create default framebuffer object. The backing will be allocated for the current layer in -resizeFromLayer
         glGenFramebuffers(1, &defaultFramebuffer_);
-		NSAssert( defaultFramebuffer_, @"Can't create default frame buffer");
+		NSAssert( defaultFramebuffer_, @"Can't levelStorageCreate default frame buffer");
 
         glGenRenderbuffers(1, &colorRenderbuffer_);
-		NSAssert( colorRenderbuffer_, @"Can't create default render buffer");
+		NSAssert( colorRenderbuffer_, @"Can't levelStorageCreate default render buffer");
 
         glBindFramebuffer(GL_FRAMEBUFFER, defaultFramebuffer_);
         glBindRenderbuffer(GL_RENDERBUFFER, colorRenderbuffer_);
@@ -84,7 +84,7 @@
 			
 			/* Create the MSAA framebuffer (offscreen) */
 			glGenFramebuffers(1, &msaaFramebuffer_);
-			NSAssert( msaaFramebuffer_, @"Can't create default MSAA frame buffer");
+			NSAssert( msaaFramebuffer_, @"Can't levelStorageCreate default MSAA frame buffer");
 			glBindFramebuffer(GL_FRAMEBUFFER, msaaFramebuffer_);
 			
 		}
@@ -121,7 +121,7 @@
 		//msaaFrameBuffer needs to be binded
 		glBindFramebuffer(GL_FRAMEBUFFER, msaaFramebuffer_);
 		glGenRenderbuffers(1, &msaaColorbuffer_);
-		NSAssert(msaaFramebuffer_, @"Can't create MSAA color buffer");
+		NSAssert(msaaFramebuffer_, @"Can't levelStorageCreate MSAA color buffer");
 		
 		glBindRenderbuffer(GL_RENDERBUFFER, msaaColorbuffer_);
 		
@@ -143,7 +143,7 @@
 	{
 		if( ! depthBuffer_ ) {
 			glGenRenderbuffers(1, &depthBuffer_);
-			NSAssert(depthBuffer_, @"Can't create depth buffer");
+			NSAssert(depthBuffer_, @"Can't levelStorageCreate depth buffer");
 		}
 
 		glBindRenderbuffer(GL_RENDERBUFFER, depthBuffer_);

@@ -260,7 +260,7 @@
 -(void) setTextureRect:(CGRect)rect rotated:(BOOL)rotated untrimmedSize:(CGSize)size;
 
 /** set the vertex rect.
- It will be called internally by setTextureRect. Useful if you want to create 2x images from SD images in Retina Display.
+ It will be called internally by setTextureRect. Useful if you want to levelStorageCreate 2x images from SD images in Retina Display.
  Do not call it manually. Use setTextureRect instead.
  */
 -(void)setVertexRect:(CGRect)rect;
