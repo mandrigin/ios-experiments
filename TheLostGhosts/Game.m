@@ -8,9 +8,12 @@
 
 #import "Game.h"
 
+@interface Game ()
+    @property(nonatomic, retain) LevelStorage *levelStorage;
+@end
+
 @implementation Game
 @synthesize levelStorage = _levelStorage;
-
 
 Game *_singletonInst;
 
@@ -37,7 +40,7 @@ Game *_singletonInst;
 -(id) init {
     self = [super init];
     if(self != nil) {
-        self->_levelStorage = [[LevelStorage alloc] init];
+        self.levelStorage = [LevelStorage levelStorageCreate];
         self->_graphics = [[Graphics alloc] init];
         self->_sounds = [[Sounds alloc] init];
         //

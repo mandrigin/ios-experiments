@@ -26,7 +26,6 @@
     -(id)initWithHeight:(int)height width:(int)width andRound:(Round*)currentLevel;
     -(void)onGameTick;
     -(void)showResult;
-    -(void)showYouWinMessage;
     -(void)showYouLoseMessage:(RoundResult)result;
     -(void)hideWindows;
 @end

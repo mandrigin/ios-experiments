@@ -27,14 +27,11 @@
         int bottomMargin = 180;
         int leftMargin   = 120;
         int rightMargin  = 120;
-        Round *currentLevel = [[Game sharedGame] getCurrentRound];
-        
-        
-        
-        
+        Round *currentRound = [[Game sharedGame] getCurrentRound];
+
         GamePlayLayer *gamePlayLayer = [GamePlayLayer createWithHeight:(int) size.height - (topMargin + bottomMargin)
                                                                  width:(int) size.width - (leftMargin + rightMargin)
-                                                              andRound:currentLevel];
+                                                              andRound:currentRound];
         
         int x = (leftMargin);
         int y = (bottomMargin);
@@ -43,7 +40,7 @@
         
         [self addChild:gamePlayLayer z:5];
         
-        GameHUDLayer *gameHudLayer = [[GameHUDLayer alloc] init];
+        GameHUDLayer *gameHudLayer = [GameHUDLayer node];
         
         [self addChild:gameHudLayer z:10];
         

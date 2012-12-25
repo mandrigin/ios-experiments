@@ -36,7 +36,7 @@
              levelTime:(long)levelTime
               training:(bool)training {
     
-    RoundSettings *settings = [[[RoundSettings alloc] initWithLayout:layout] autorelease];
+    RoundSettings *settings = [[RoundSettings alloc] initWithLayout:layout];
     
     [settings setNumOfGhosts:numOfGhosts];
     [settings setNumOfBadMans:numOfBadmans];
@@ -45,7 +45,7 @@
     
     settings.training = training;
     
-    return settings;
+    return [settings autorelease];
 }
 
 @end

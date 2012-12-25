@@ -22,7 +22,7 @@
 
 +(id)levelStorageCreate {
     id newInstance = [[self alloc] init];
-    return newInstance;
+    return [newInstance autorelease];
 }
 
 -(id)init {

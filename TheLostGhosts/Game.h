@@ -21,8 +21,6 @@
     Sounds       * _sounds;
     LevelStorage *_levelStorage;
 }
-@property(nonatomic, retain) LevelStorage *levelStorage;
-
 
 +(Game *) sharedGame;
 -(Graphics *)getGraphics;
