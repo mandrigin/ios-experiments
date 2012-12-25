@@ -59,7 +59,9 @@ Game *_singletonInst;
 }
 
 - (Round *)getCurrentRound {
-    return [[[[[self levelStorage] getCurrentWorld] getCurrentLevel] getCurrentRound] createRound];
+    Round * result = [[[[[self levelStorage] getCurrentWorld] getCurrentLevel] getCurrentRound] createRound];
+
+    return result;
 }
 
 

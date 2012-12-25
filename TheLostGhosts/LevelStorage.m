@@ -109,9 +109,9 @@
 
     for (int j = 0; j < 16; j++) {
         Level* level = [[Level alloc]init];
+        [world addLevel: level];
         [level addRoundWithGhosts:3 badMans:2 previewTime:2 levelTime:1000 training:NO];
         [level markEnabled];
-        [world addLevel: level];
         [level release];
     }
 

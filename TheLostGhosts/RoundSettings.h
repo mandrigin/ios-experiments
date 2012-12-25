@@ -10,6 +10,14 @@
 #import "WorldSkin.h"
 
 @interface RoundSettings : NSObject{
+
+    @private
+        int _numOfBadMans;
+        int _numOfGhosts;
+        bool _training;
+        long _previewTime;
+        long _levelTime;
+
     WorldSkin *levelLayout;
 }
 

@@ -10,7 +10,7 @@
 #import "GhostyWindowState.h"
 
 @interface Round()
-    -(NSArray *)createPlaygroundFromSettings:(RoundSettings *)settting;
+    -(NSArray *)createPlaygroundFromSettings:(RoundSettings *)settings;
 @end
 
 @implementation Round
@@ -26,16 +26,16 @@
     return self;
 }
 
--(NSArray *)createPlaygroundFromSettings:(RoundSettings *)settting {
+-(NSArray *)createPlaygroundFromSettings:(RoundSettings *)settings {
     NSMutableArray* result = [[NSMutableArray alloc] init];
-    
-    WorldSkin *layout = [settting getLayout];
+
+    WorldSkin *layout = [settings getLayout];
     
     int rows = [layout rows];
     int cols = [layout columns];
     
-    int ghosts = [settting numOfGhosts];
-    int badMans= [settting numOfBadMans];
+    int ghosts = [settings numOfGhosts];
+    int badMans= [settings numOfBadMans];
     
     for(int i = 0; i < rows * cols; ++i) {
         [result addObject:[NSNumber numberWithInt:(int)kEmpty]];
@@ -47,7 +47,7 @@
             int index = arc4random() % [result count];
             GhostyWindowState state = (GhostyWindowState)[[result objectAtIndex: index] intValue];
             if(state == kEmpty) {
-                [result setObject:[NSNumber numberWithInt:(int)kGhost] atIndexedSubscript:index];
+                [result replaceObjectAtIndex:(NSUInteger) index withObject:[NSNumber numberWithInt:(int)kGhost]];
                 written = true;
             }
         }
@@ -59,7 +59,7 @@
             int index = arc4random() % [result count];
             GhostyWindowState state = (GhostyWindowState)[[result objectAtIndex: index] intValue];
             if(state == kEmpty) {
-                [result setObject:[NSNumber numberWithInt:(int)kBadMan] atIndexedSubscript:index];
+                [result replaceObjectAtIndex:(NSUInteger) index withObject:[NSNumber numberWithInt:(int)kBadMan]];
                 written = true;
             }
         }

@@ -51,8 +51,6 @@
 
 -(NSString *) getIcon;
 
--(void) setSkin:(WorldSkin *)skin;
-
 -(void) setNumber:(int) number;
 
 -(bool) addedToSomeWorld;

@@ -8,14 +8,7 @@
 
 #import "RoundSettings.h"
 
-@implementation RoundSettings {
-@private
-    int _numOfBadMans;
-    int _numOfGhosts;
-    bool _training;
-    long _previewTime;
-    long _levelTime;
-}
+@implementation RoundSettings
 
 @synthesize numOfBadMans = _numOfBadMans;
 @synthesize numOfGhosts = _numOfGhosts;

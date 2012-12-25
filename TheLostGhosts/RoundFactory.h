@@ -14,6 +14,7 @@
     RoundSettings * _settings;
 }
 
+
 +(id)createWithGhosts:(int)numOfGhosts
               badMans:(int)numOfBadmans
           previewTime:(long)previewTime
